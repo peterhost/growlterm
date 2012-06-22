@@ -183,6 +183,7 @@ __growltermParseOpts(){
         -f | --from        )  __from="$2"             ;  shift 2 ;;
         -i | --importance  )  __importance="$2"       ;  shift 2 ;;
         -o | --oneliner    )  __oneliner="true"       ;  shift 1 ;;
+        -u | --underline   )  __underline="true"      ;  shift 1 ;;
         -x | --nostripansi )  __nostripansi="yes"     ;  shift 1 ;;
         -* | --*           ) echo "unknown option $1" ; return 1 ;;
         #[a-zA-Z0-9]*      ) printf "%s\n%s\n%s\n%s\n%s\n\n" $__G_"UNKNOWN OPTION $__Y_$0$__G_ : missing argument somewhere" "PRECEEDED BY [$__Y_$__latestOpts$__G_]" "FOLLOWED BY [$__Y_$2 $3$__G_]" "OPTIONS were : $__B_$__allOpts$__G_" "OPTIONS READ SOFAR ARE : $__B_$__readSofar |$__NN_"; __growltermShortUsage; return 1;;
@@ -632,16 +633,13 @@ growlterm ()
       #
       # ==============================================================
 
+      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' '▔')"
 
       #TODO: REMOVEME !!!
       tput sc; # Save current cursor position
       tput cup $(($firstL )) $(($firstC ));
       printf "%s" "${__NN_}${__leftstr}${__centerstr}${__rightstr}${__NN_}";
-
-
-      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' '▔')"
-      printf "\n%s" "${__NN_}${__colUnderlineFG}${__colUnderlineBG}${__underLiner}${__NN_}";
-
+      [ -n "$__underline" ] && printf "\n%s" "${__NN_}${__colUnderlineFG}${__colUnderlineBG}${__underLiner}${__NN_}";
       tput rc;
     fi
   fi;
@@ -1054,8 +1052,21 @@ __growltermDefaultTheme(){
 
 
 
+
   # ==============================================================
-  #                3. REGISTER YOUR THEME
+  #                3. GROWLTERM GLOBALS
+  #                 (to be used soon)
+  # ==============================================================
+
+  __growltermHistoryEnabled=1
+  __growltermHistoryFile="~/.bash/growlterm/.growlterm_history"
+  __growltermHistoryMaxSize=0
+  __growltermHistoryRemoveDups=1
+
+
+
+  # ==============================================================
+  #                4. REGISTER YOUR THEME
   #                (with a GLOBAL variable)
   # ==============================================================
 
