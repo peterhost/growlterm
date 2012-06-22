@@ -3,133 +3,169 @@ growlterm
 
 growl-like notifications for your terminal
 
-## Dependancies
+# Description
 
-the `striptansi` functionality is only functional if `Perl` is
-installed on your system (and if it's not, WTF is it you're developing
-on ?? ;+)
+## Whatisit ?
 
-It's enabled by default.
+* A sugary way to display `background jobs`messages to your terminal (that
+was the original purpose
+* a revamp of something that I used for a long time to display `git`
+  info in my prompt or anywhere else on the screen (top right corner
+  being my favorite as it leaves the TERM history copy/pasteable)
+* looks TOTALLY inspired by the excellent [Vim-powerline]() plugin for VIM
+* Growl server on its way
 
-You can disable it by passing the command-line switch
+## Drawbacks
 
-    --nostripansi
-
-What it does is strip the message passed to growlterm of any fancy ANSI
-escape sequences. In case you don't control the message's source, it can
-be handy.
-
-As we parse the string's length to display the message, the ANSI escape
-sequences count as characters and bork the output and menu box. If
-you're certain your `--message` does not contain any of these, you can
-safely use the `--nostripansi` switch.
-
-
-
+Leaves your terminal in an unclean statr as the `message` erases the
+line that was under it.
 
 # Additional scripts (you could even use them!)
 
-add 2 scripts to define TERM safe color variables : `safetermcolors8.sh`
+The following two scripts are used to define TERM safe color variables
+useable throughout your journey in bash scripting : `safetermcolors8.sh`
 and `safetermcolors-addit-256.sh`
 
-##`safetermcolors8.sh`
+##USAGE
+
+Just source them in your `.profile` or `.myFavShellRC`
+(they are `sh`compliant)
+
+    . safetermcolors8.sh
+    . safetermcolors-addit-256.sh
+
+> * note 1 : the second script is, most of the case, totally overkill. I
+> never source it as a whole, but rather keep it as a reminder of how to
+> quickly insert TERM-SAFE color variables in my scripts. 
+
+> * note 2 : the sourcing of the first script, however, cannot do you no
+> harm
+
+##safetermcolors8.sh
 
 safely (*in terms on `terminfo`*) defines the 001-015 color range, which
 exist on any TERM which has more than 2 colors capacity, plus modifiers
 (underline, reset, bold, ...) (also works on TERMS which don't by
 degrading quietly and still provide modifier styles (underline & such)
 
+##safetermcolors-addit-256.sh
 
-###NOta Bene
+In a fancy mood ? add custom variables for all 256 color range
+(foreground and background) in a safe (*in terms of `terminfo`*) way
 
-sourcing this script exports the aditional variable
 
-    export \_\_TPUT_COLORS_DEFINED="true"
+##NOTA BENE
+
+sourcing this script exports the aditional variable 
+
+    export __TPUT_COLORS_DEFINED="true"
 
 so that you can check later on that it's already done
 
 
-###more info
+## more info
 
-    COLOR VARS :
-                * declare the 8 SYSTEM TERM colors (and their variants :
-                 background & bold) and the modifiers (DOUBLE INTENSITY, DIM,
-                 BLINK, RESET,... ONCE and for ALL.
+*COLOR VARS :*
 
-               * declare the defaults for old TERMS, and adapt to less
-                 horrid defaults for 256-colors TERMS
+  * declare the 8 SYSTEM TERM colors (and their variants :
+    background & bold) and the modifiers (DOUBLE INTENSITY, DIM,
+    BLINK, RESET,... ONCE and for ALL.
 
-                 -> This somewhat pollutes the GLOBAL SCOPE but the variable
-                    names are (thought to be) unique enough so that won't cause
-                    problems
+  * declare the defaults for old TERMS, and adapt to less
+    horrid defaults for `256-colors` TERMS
 
-               * do that like a grownup (tput, resort to not ANSI escapes only
-                                         as a fallback with `tput
-                                         setaf`)
+    >This somewhat pollutes the GLOBAL SCOPE but the variable
+    >names are (thought to be) unique enough so that won't cause
+    >problems
 
-               * TODO: handle dark vs light background
+  * do that like a grownup ( use `tput`, and only resort to ANSI escapes
+    as a fallback with `tput setaf`)
 
-               * TODO: handle 256 colors (if [ $(tput colors) -ge 256 ] ...)
+  * TODO: handle dark vs light background
 
-                                                                     # ANSI equivalent
-                                                                     # <attr> <fg>  <bg>
-### variable list
+  * TODO: handle `more than 256 colors terms` (`if [ $(tput colors) -ge 256 ] ...`)
 
-    | ALL 8-COLOR COMPATIBLE VARIABLES DEFINED |
-    | :--------------------------------------- | ---------------------- | ------------------------------------: |
-    | MODIFIERS                                |
-    | Variable NAME                            | equivalent ANSI escape | Description                           |
-    |                                          | ATTR   FG   BG         |                                       |
-    | __NN_                                    | \[ 0m                  | RESET ALL attributes                  |
-    | STYLES                                   |
-    | __EM_                                    | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode    |
-    | __DM_                                    | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode    |
-    | __UN_                                    | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode    |
-    | __BL_                                    | \[ 5m                  | BEGIN BLINKING                mode    |
-    | __RV_                                    | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode    |
-    | __SO_                                    | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode    |
-    | __IN_                                    | \[ 8m                  | BEGIN INVISIBLE               mode    |
-    | __DEL_                                   |                        | MOVE cursor LEFT one space            |
-    | __SOQ_                                   | ?\[ 27m                | END   STANDOUT      (reverse) mode    |
-    | __UNQ_                                   | \[ 24m                 | END   UNDESCORE  (underlined) mode    |
-    | DEFAULT SYSTEM COLORS                    |
-    | <Foreground>                             |
-    | __K_                                     | \[       0m            | SET   FG color to BLACK               |
-    | __R_                                     | \[       1m            | SET   FG color to RED                 |
-    | __G_                                     | \[       2m            | SET   FG color to GREEN               |
-    | __Y_                                     | \[       3m            | SET   FG color to YELLOW              |
-    | __B_                                     | \[       4m            | SET   FG color to BLUE                |
-    | __M_                                     | \[       5m            | SET   FG color to MAGENTA             |
-    | __C_                                     | \[       6m            | SET   FG color to CYAN                |
-    | __W_                                     | \[       7m            | SET   FG color to WHITE               |
-    | <Backgound>                              |
-    | __BGK_                                   | \[       0m            | SET   BG color to BLACK               |
-    | __BGR_                                   | \[       1m            | SET   BG color to RED                 |
-    | __BGG_                                   | \[       2m            | SET   BG color to GREEN               |
-    | __BGY_                                   | \[       3m            | SET   BG color to YELLOW              |
-    | __BGB_                                   | \[       4m            | SET   BG color to BLUE                |
-    | __BGM_                                   | \[       5m            | SET   BG color to MAGENTA             |
-    | __BGC_                                   | \[       6m            | SET   BG color to CYAN                |
-    | __BGW_                                   | \[       7m            | SET   BG color to WHITE               |
-    | <reset>                                  |
-    | __NF_                                    | \[       39m           | RESET FG color to term's default      |
-    | __NG_                                    | \[             49m     | RESET BG color to term's default      |
-    | __NFG_                                   | \[       39;   49m     | RESET FG & BG color to term's default |
-    | PSOEUDO(BOLD) COLORS                     |
-    | <Foreground-bold>                        |
-    | __EMK_                                   | \[ 1;    20m           | SET   FG color to BOLD BLACK          |
-    | __EMR_                                   | \[ 1;    21m           | SET   FG color to BOLD RED            |
-    | __EMG_                                   | \[ 1;    22m           | SET   FG color to BOLD GREEN          |
-    | __EMY_                                   | \[ 1;    23m           | SET   FG color to BOLD YELLOW         |
-    | __EMB_                                   | \[ 1;    24m           | SET   FG color to BOLD BLUE           |
-    | __EMM_                                   | \[ 1;    25m           | SET   FG color to BOLD MAGENTA        |
-    | __EMC_                                   | \[ 1;    26m           | SET   FG color to BOLD CYAN           |
-    | __EMW_                                   | \[ 1;    27m           | SET   FG color to BOLD RED            |
-    | MISC (non color)                         |
-    | __NL_   most compatible NEWLINE ever     |
-    [[TITLE]]
+# safetermcolors8.sh : variable list
 
-##`safetermcolors-addit-256.sh`
+##ALL 8-COLOR COMPATIBLE VARIABLES DEFINED
+
+###STYLES
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR                   |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_EM\_                                 | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode    |
+| \_\_DM\_                                 | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode    |
+| \_\_UN\_                                 | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode    |
+| \_\_BL\_                                 | \[ 5m                  | BEGIN BLINKING                mode    |
+| \_\_RV\_                                 | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode    |
+| \_\_SO\_                                 | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode    |
+| \_\_IN\_                                 | \[ 8m                  | BEGIN INVISIBLE               mode    |
+| \_\_DEL\_                                |                        | MOVE cursor LEFT one space            |
+| \_\_SOQ\_                                | ?\[ 27m                | END   STANDOUT      (reverse) mode    |
+| \_\_UNQ\_                                | \[ 24m                 | END   UNDESCORE  (underlined) mode    |
+
+###DEFAULT SYSTEM FOREGROUND COLORS (or better ones if 256-colors)
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR....FG             |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_K\_                                  | \[0;....0m             | SET   FG color to BLACK               |
+| \_\_R\_                                  | \[0;....1m             | SET   FG color to RED                 |
+| \_\_G\_                                  | \[0;....2m             | SET   FG color to GREEN               |
+| \_\_Y\_                                  | \[0;....3m             | SET   FG color to YELLOW              |
+| \_\_B\_                                  | \[0;....4m             | SET   FG color to BLUE                |
+| \_\_M\_                                  | \[0;....5m             | SET   FG color to MAGENTA             |
+| \_\_C\_                                  | \[0;....6m             | SET   FG color to CYAN                |
+| \_\_W\_                                  | \[0;....7m             | SET   FG color to WHITE               |
+
+###DEFAULT SYSTEM BACKGROUND COLORS (or better ones if 256-colors)
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR....••••BG         |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_BGK\_                                | \[1;....••••0m         | SET   BG color to BLACK               |
+| \_\_BGR\_                                | \[1;....••••1m         | SET   BG color to RED                 |
+| \_\_BGG\_                                | \[1;....••••2m         | SET   BG color to GREEN               |
+| \_\_BGY\_                                | \[1;....••••3m         | SET   BG color to YELLOW              |
+| \_\_BGB\_                                | \[1;....••••4m         | SET   BG color to BLUE                |
+| \_\_BGM\_                                | \[1;....••••5m         | SET   BG color to MAGENTA             |
+| \_\_BGC\_                                | \[1;....••••6m         | SET   BG color to CYAN                |
+| \_\_BGW\_                                | \[1;....••••7m         | SET   BG color to WHITE               |
+
+###RESETS
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR....FG••••BG       |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_NN\_                                 | \[ 0m                  | RESET ALL attributes                  |
+| \_\_NF\_                                 | \[.......39m           | RESET FG color to term's default      |
+| \_\_NG\_                                 | \[..........••••49m    | RESET BG color to term's default      |
+| \_\_NFG\_                                | \[.......39;••••49m    | RESET FG & BG color to term's default |
+
+###PSOEUDO (BOLD) FOREGROUND COLORS
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR....FG             |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_EMK\_                                | \[ 1;....20m           | SET   FG color to BOLD BLACK          |
+| \_\_EMR\_                                | \[ 1;....21m           | SET   FG color to BOLD RED            |
+| \_\_EMG\_                                | \[ 1;....22m           | SET   FG color to BOLD GREEN          |
+| \_\_EMY\_                                | \[ 1;....23m           | SET   FG color to BOLD YELLOW         |
+| \_\_EMB\_                                | \[ 1;....24m           | SET   FG color to BOLD BLUE           |
+| \_\_EMM\_                                | \[ 1;....25m           | SET   FG color to BOLD MAGENTA        |
+| \_\_EMC\_                                | \[ 1;....26m           | SET   FG color to BOLD CYAN           |
+| \_\_EMW\_                                | \[ 1;....27m           | SET   FG color to BOLD RED            |
+
+###MISC
+
+| Variable NAME                            | equivalent ANSI escape | Description                           |
+|                                          | ATTR....COLOR•••BG     |                                       |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
+| \_\_NL\_                                 |                        | most compatible NEWLINE ever          |
+
+
+#safetermcolors-addit-256.sh : variable list
 
 In a fancy mood ? add custom variables for all 256 color range
 (foreground and background) in a safe (*in terms of `terminfo`*) way

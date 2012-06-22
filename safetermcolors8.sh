@@ -57,21 +57,21 @@ __define_colors8_TPUT() {
                                                                       #
                                                                       # <Foreground>
     export __K_=$( tput setf 0 || tput setaf 0 || : 2>/dev/null )     # [       0m          SET   FG color to BLACK
-    export __R_=$( tput setf 4 || tput setaf 1 || : 2>/dev/null )     # [       1m          SET   FG color to RED
+    export __R_=$( tput setf 1 || tput setaf 1 || : 2>/dev/null )     # [       1m          SET   FG color to RED
     export __G_=$( tput setf 2 || tput setaf 2 || : 2>/dev/null )     # [       2m          SET   FG color to GREEN
-    export __Y_=$( tput setf 6 || tput setaf 3 || : 2>/dev/null )     # [       3m          SET   FG color to YELLOW
-    export __B_=$( tput setf 1 || tput setaf 4 || : 2>/dev/null )     # [       4m          SET   FG color to BLUE
+    export __Y_=$( tput setf 3 || tput setaf 3 || : 2>/dev/null )     # [       3m          SET   FG color to YELLOW
+    export __B_=$( tput setf 4 || tput setaf 4 || : 2>/dev/null )     # [       4m          SET   FG color to BLUE
     export __M_=$( tput setf 5 || tput setaf 5 || : 2>/dev/null )     # [       5m          SET   FG color to MAGENTA
-    export __C_=$( tput setf 3 || tput setaf 6 || : 2>/dev/null )     # [       6m          SET   FG color to CYAN
+    export __C_=$( tput setf 6 || tput setaf 6 || : 2>/dev/null )     # [       6m          SET   FG color to CYAN
     export __W_=$( tput setf 7 || tput setaf 7 || : 2>/dev/null )     # [       7m          SET   FG color to WHITE
                                                                       # <Background>
   export __BGK_=$( tput setb 0 || tput setab 0 || : 2>/dev/null )     # [       0m          SET   BG color to BLACK
-  export __BGR_=$( tput setb 4 || tput setab 1 || : 2>/dev/null )     # [       1m          SET   BG color to RED
+  export __BGR_=$( tput setb 1 || tput setab 1 || : 2>/dev/null )     # [       1m          SET   BG color to RED
   export __BGG_=$( tput setb 2 || tput setab 2 || : 2>/dev/null )     # [       2m          SET   BG color to GREEN
-  export __BGY_=$( tput setb 6 || tput setab 3 || : 2>/dev/null )     # [       3m          SET   BG color to YELLOW
-  export __BGB_=$( tput setb 1 || tput setab 4 || : 2>/dev/null )     # [       4m          SET   BG color to BLUE
+  export __BGY_=$( tput setb 3 || tput setab 3 || : 2>/dev/null )     # [       3m          SET   BG color to YELLOW
+  export __BGB_=$( tput setb 4 || tput setab 4 || : 2>/dev/null )     # [       4m          SET   BG color to BLUE
   export __BGM_=$( tput setb 5 || tput setab 5 || : 2>/dev/null )     # [       5m          SET   BG color to MAGENTA
-  export __BGC_=$( tput setb 3 || tput setab 6 || : 2>/dev/null )     # [       6m          SET   BG color to CYAN
+  export __BGC_=$( tput setb 6 || tput setab 6 || : 2>/dev/null )     # [       6m          SET   BG color to CYAN
   export __BGW_=$( tput setb 7 || tput setab 7 || : 2>/dev/null )     # [       7m          SET   BG color to WHITE
                                                                       # <reset>
    export __NF_=$( tput setf 9 || tput setaf 9 || : 2>/dev/null )     # [       39m         RESET FG color to term's default
