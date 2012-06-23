@@ -216,435 +216,6 @@ __growltermParseOpts(){
 
 }
 
-growlterm ()
-{
-
-  [[ $@ == "" ]] && __growltermVersion
-
-  # Our main variables : declare them so that __growltermParseOpts() has
-  # them in it's dynamic scope
-  local __menupos=""
-  local __mystring=""
-  local __oneliner=""
-  local __from=""
-  local __importance=""
-
-  # $@ MUST BE QUOTED !!
-  __growltermParseOpts "$@" || return 1
-
-
-  # ================================================================== #
-  #                                                                    #
-  #               DECLARE LOCAL  PARAMETERS                            #
-  #                                                                    #
-  # ================================================================== #
-
-
-
-
-  # RESET ALL STYLES
-  local __NN_=
-
-  #---------------------------------------------------------------
-  #             FANCY MENU VARS (see THEMES for info)
-  #---------------------------------------------------------------
-
-  local __colBGleft=
-  local __colBGleft2=
-  local __colFGleft=
-  local __colFGleftDelim=
-
-
-  local __colBGcenterInfo=
-  local __colBGcenterRemark=
-  local __colBGcenterWarn=
-  local __colBGcenterErr=
-  local __colBGcenterFatal=
-
-  local __colFGcenter=
-  local __colBGcenter=
-
-
-  local __colFGcenterInfo=
-  local __colFGcenterRemark=
-  local __colFGcenterWarn=
-  local __colFGcenterErr=
-  local __colFGcenterFatal=
-
-
-  local __colBGright=
-  local __colFGright=
-  local __colFGrightDelim=
-
-  local __importanceMSG=
-
-  local __colUnderlineFG=
-  local __colUnderlineBG=
-
-
-  local __LEFTHEADER_FROM=
-  local __LEFTHEADER_SEP=
-
-  local __RIGHTHEADER_TYPE=
-  local __RIGHTHEADER_SEP=
-
-  local __TYPEMSG_IMPORT_0=
-  local __TYPEMSG_IMPORT_1=
-  local __TYPEMSG_IMPORT_2=
-  local __TYPEMSG_IMPORT_3=
-  local __TYPEMSG_IMPORT_4=
-
-  local __TRUNCATED=
-  local __CENTER_MSG_PADDING=
-
-  #---------------------------------------------------------------
-  #             BOX MENU VARS (see THEMES for info)
-  #---------------------------------------------------------------
-
-  local __colBoxMenuBorder=
-  local __colTextMenu=
-
-  #---------------------------------------------------------------
-  #             MISC VARS
-  #---------------------------------------------------------------
-
-  # DISABLING of the ANSI stripping function
-  local __nostripansi=
-
-  # TERM capacity detection variables
-  local __supports8=
-  local __colorPrefix=
-  local __UTFprefix=
-
-  # ================================================================== #
-  #                                                                    #
-  #                    MAIN FUNCTION                                   #
-  #                                                                    #
-  # ================================================================== #
-
-
-
-  #---------------------------------------------------------------------
-  # take care of non UTF-8 terminals
-  locale >/dev/null 2>&1
-  [ $? = 0 ] && locale | grep -i utf-8 >/dev/null 2>&1 && __supports8="true"
-
-  #---------------------------------------------------------------------
-  # don't load default theme in case a user defined theme is already loaded
-  [ -n "$__customGrowltermThemeSet" ] || __growltermDefaultTheme
-
-
-  #---------------------------------------------------------------------
-  # DETERMINE VARIABLE PREFIXES
-  [ 256 = "$(tput colors)" ]  || __colorPrefix="NO256"
-  [ "true" = "$__supports8" ] || __UTFprefix="NO8"
-
-  #---------------------------------------------------------------------
-  # DYNAMICALLY COMPUTE COLOR VALUES according to those present in the
-  # environment (either DEFAULT THEME or user-defined THEME)
-  #---------------------------------------------------------------------
-
-  # ....................................................................
-  #
-  # FANCY MENU
-  #
-  # ....................................................................
-
-  # COLORS
-  __colBGleft=$(eval         "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_BG_FROM""      )
-  __colBGleft2=$(eval        "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_BG_FROMTEXT""  )
-  __colFGleft=$(eval         "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_FROMTEXT""  )
-  __colFGleftDelim=$(eval    "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_SEP""       )
-
-
-  #__colBGcenterInfo=$(eval   "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_0""  )
-  #__colBGcenterRemark=$(eval "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_1""  )
-  #__colBGcenterWarn=$(eval   "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_2""  )
-  #__colBGcenterErr=$(eval    "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_3""  )
-  #__colBGcenterFatal=$(eval  "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_4""  )
-
-  __colBGcenter=$(eval  "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_${__importance}""  )
-
-
-
-  #__colFGcenterInfo=$(eval   "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_0""  )
-  #__colFGcenterRemark=$(eval "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_1""  )
-  #__colFGcenterWarn=$(eval   "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_2""  )
-  #__colFGcenterErr=$(eval    "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_3""  )
-  #__colFGcenterFatal=$(eval  "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_4""  )
-
-  __colFGcenter=$(eval  "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_${__importance}""  )
-
-
-  __colBGright=$(eval        "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_BG_TYPE""     ) ; # TODO= !!!!!! PAS UTILISE !!!!!!!
-  __colBGright2=$(eval       "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_BG_TYPETEXT"" )
-  __colFGright=$(eval        "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_TYPETEXT"" )
-  __colFGrightDelim=$(eval   "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_SEP""      )
-
-
-  __colUnderlineFG=$(eval    "printf "%s" "\$${__colorPrefix}__COLOR_FG_UNDERLINE""            )
-  __colUnderlineBG=$(eval    "printf "%s" "\$${__colorPrefix}__COLOR_BG_UNDERLINE""            )
-
-  # MENU BORDERS & ELEMENTS
-
-  # Replace value of these VARS with non-utf8 variant if need be
-  [ "true" = "$__supports8" ] || {
-    __LEFTHEADER_FROM="$(eval  "printf "%s" "\$${__UTFprefix}__LEFTHEADER_FROM""  )"
-    __LEFTHEADER_SEP="$(eval   "printf "%s" "\$${__UTFprefix}__LEFTHEADER_SEP""   )"
-
-    __RIGHTHEADER_TYPE="$(eval "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_TYPE"" )"
-    __RIGHTHEADER_SEP="$(eval  "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_SEP""  )"
-
-
-    #__TYPEMSG_IMPORT_0="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_0"" )"
-    #__TYPEMSG_IMPORT_1="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_1"" )"
-    #__TYPEMSG_IMPORT_2="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_2"" )"
-    #__TYPEMSG_IMPORT_3="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_3"" )"
-    #__TYPEMSG_IMPORT_4="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_4"" )"
-
-    __importanceMSG="$(eval "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_${__importance}"" )"
-
-    __TRUNCATED="$(eval        "printf "%s" "\$${__UTFprefix}__TRUNCATED""        )"
-
-  }
-
-
-  # ....................................................................
-  #
-  # BOX MENU
-  #
-  # ....................................................................
-
-  # COLORS
-  __colBoxMenuBorder=$(eval "printf "%s" "\$${__colorPrefix}__COLOR_BOX_IMPORT_${__importance}""     ) ; # TODO= !!!!!! PAS UTILISE !!!!!!!
-  __colTextMenu=$(eval      "printf "%s" "\$${__colorPrefix}__COLOR_BOXTEXT_IMPORT_${__importance}"" )
-
-
-
-  # MENU BORDERS & ELEMENTS
-
-  # Replace value of these VARS with non-utf8 variant if need be
-  [ "true" = "$__supports8" ] || {
-    __BOX_MENU_TOPLEFT="$(eval     "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOPLEFT""     )"
-    __BOX_MENU_TOP="$(eval         "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOP""         )"
-    __BOX_MENU_TOPRIGHT="$(eval    "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOPRIGHT""    )"
-    __BOX_MENU_LEFT="$(eval        "printf "%s" "\$${__UTFprefix}__BOX_MENU_LEFT""        )"
-    __BOX_MENU_RIGHT="$(eval       "printf "%s" "\$${__UTFprefix}__BOX_MENU_RIGHT""       )"
-    __BOX_MENU_BOTTOMLEFT="$(eval  "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOMLEFT""  )"
-    __BOX_MENU_BOTTOM="$(eval      "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOM""      )"
-    __BOX_MENU_BOTTOMRIGHT="$(eval "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOMRIGHT"" )"
-
-    __ONELINER_MENU_LEFT="$(eval   "printf "%s" "\$${__UTFprefix}__ONELINER_MENU_LEFT""   )"
-    __ONELINER_MENU_RIGHT="$(eval  "printf "%s" "\$${__UTFprefix}__ONELINER_MENU_RIGHT""  )"
-  }
-
-  #TODO: NOCOLORS for delimiters !!
-  #result=$(tartify "n/b - l");
-  #local border=$__NN_$__B_;
-
-  if [ -z "$__mystring" ]; then
-    :;
-  else
-    local stripansi="$__mystring"
-    [ -z "$__nostripansi" ] && stripansi=$(printf "%s" "$__mystring" | perl -pe 's/\e\[?.*?[\@-~]//g');
-    local resLength=$((${#stripansi} + 4));
-
-    local blankLine=$(printf "%s" "$stripansi""####")
-    blankLine=$(printf "%${#blankLine}s")
-    ##much slower alternative :
-    #local blankLine=$(printf "%s" $stripansi"    " | tr "[:print:]" ' ');
-
-    local firstC=
-    local firstL=
-    local oneliner=
-    [ "TRUE" = "$__oneliner" ] || [ "true" = "$__oneliner" ] && oneliner="$__oneliner"
-    local sttysize=
-    local nlines=
-    local ncol=
-    local additLines=
-    local screenwidemenu=
-    local __strlen=
-    local __remainmain=
-    local __filler1=
-    local __filler2=
-
-    sttysize=$(stty size 2>/dev/null)
-    [ $? -eq 0 ]  && {
-      nlines=${sttysize%% *}
-      ncol=${sttysize##* }
-    } || {
-      nlines=$(tput lines);
-      ncol=$(tput cols);
-    }
-
-
-
-    case $__menupos in
-
-      10) firstL=0                ; firstC=0                            ;                screenwidemenu="true" ;;
-      1) firstL=0                 ; firstC=0                                                                   ;;
-      2) firstL=0                 ; firstC=$(( ($ncol - $resLength)/2 ))                                       ;;
-      3) firstL=0                 ; firstC=$((  $ncol - $resLength ))                                          ;;
-      4) firstL=1                 ; firstC=0                            ; additLines=1                         ;;
-      5) firstL=1                 ; firstC=$(( ($ncol - $resLength)/2 )); additLines=1                         ;;
-      6) firstL=1                 ; firstC=$((  $ncol - $resLength ))   ; additLines=1                         ;;
-      7) firstL=2                 ; firstC=0                            ; additLines=2                         ;;
-      8) firstL=2                 ; firstC=$(( ($ncol - $resLength)/2 )); additLines=2                         ;;
-      9) firstL=2                 ; firstC=$((  $ncol - $resLength ))   ; additLines=2                         ;;
-      0) firstL=$(( $nlines - 1 )); firstC=$((  $ncol - $resLength ))   ; additLines=2 ; oneliner="true"       ;;
-      #NEW : one line filling top of screen
-
-    esac
-
-
-    if [ -z "$oneliner" ] && [ -z "$screenwidemenu" ]; then
-    # ___________________________________
-    # NORMAL MENU WITH UPPER/LOWER BORDER
-    #   ┌───────────────┐
-    #   │  message      │
-    #   └───────────────┘
-    #
-      local menuBorderTop=$(printf "%s" "$stripansi""##" | tr "[:print:]" $__BOX_MENU_TOP);
-      local menuBorderBottom=$(printf "%s" "$stripansi""##" | tr "[:print:]" $__BOX_MENU_BOTTOM);
-
-      tput sc; # Save current cursor position
-      __growltermAdditLines
-      tput cup $firstL $firstC;
-      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_TOPLEFT$menuBorderTop$__BOX_MENU_TOPRIGHT$__NN_";
-      tput cup $(($firstL + 1)) $firstC;
-      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_LEFT$__NN_" "$__colTextMenu$__mystring$__NN_" "$__colBoxMenuBorder$__BOX_MENU_RIGHT$__NN_";
-      tput cup $(($firstL + 2)) $firstC;
-      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_BOTTOMLEFT$menuBorderBottom$__BOX_MENU_BOTTOMRIGHT$__NN_";
-      tput rc;
-
-    elif [ -z "$screenwidemenu" ]; then
-
-      # _________________________________
-      # ONE LINER MENU
-      #
-      #   │  message      │
-      #
-      tput sc; # Save current cursor position
-      __growltermAdditLines
-      tput cup $(($firstL )) $(($firstC + 4));
-      printf "%s" "$__NN_$__ONELINER_MENU_LEFT$__mystring$__ONELINER_MENU_RIGHT$__NN_";
-      tput rc;
-    else
-
-      # _________________________________
-      # SCREEN WIDE MENU
-      #   ┌────────────────────────────────────────────────┐
-      #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
-      #   └────────────────────────────────────────────────┘
-      #
-
-
-
-      # ==============================================================
-      #                      Zone COMPUTATION
-      #
-      # ==============================================================
-
-      # --------------------------------------------------------------
-      # compute zone1 : LEFT
-      # --------------------------------------------------------------
-
-      #Keep it simple : we don't compute nothing : the center field adapts
-      __leftstrWithoutEscapes="${__LEFTHEADER_FROM}${__from} ${__LEFTHEADER_SEP}"
-      __leftStrLen=${#__leftstrWithoutEscapes}
-
-      __leftstr="${__NN_}${__colBGleft}${__colFGleft}${__LEFTHEADER_FROM}${__from} ${__colBGcenter}${__colFGleftDelim}${__LEFTHEADER_SEP}${__NN_}"
-
-
-      # --------------------------------------------------------------
-      # compute zone3 : RIGHT
-      # --------------------------------------------------------------
-
-      #Keep it simple : we don't compute nothing : the center field adapts
-      __rightstrWithoutEscapes="${__RIGHTHEADER_SEP} ${__importanceMSG}${__RIGHTHEADER_TYPE}"
-      __rightStrLen=${#__rightstrWithoutEscapes}
-
-      __rightstr="${__NN_}${__colBGcenter}${__colFGrightDelim}${__RIGHTHEADER_SEP}${__colBGright}${__colFGright} ${__importanceMSG}${__RIGHTHEADER_TYPE}${__NN_}"
-
-      # --------------------------------------------------------------
-      # compute fillers for zone2 : CENTER
-      #
-      # (obviously we do that after computing the other two)
-      # --------------------------------------------------------------
-
-      #__strlen="${#__mystring}"
-      #__remainmain=$(($ncol - $__strlen))
-
-      # how much space left do we have
-      [ -z "$__CENTER_MSG_PADDING" ] && __CENTER_MSG_PADDING=4; #DEFAULT, don't bug the user if his theme is faulty
-      __remainmain=$ncol
-      __remainmain=$(($__remainmain - $__leftStrLen - $__rightStrLen))
-      __remainmain=$(( $__remainmain - $((2 * $__CENTER_MSG_PADDING)) ))
-
-      # ..............................................................
-      # compute left, right and padding fillers for CENTER zone
-      # (in case message is short)
-      # ..............................................................
-
-      # generate a '$__CENTER_MSG_PADDING' long empty string
-      __paddingcenter="$(head -c $__CENTER_MSG_PADDING < /dev/zero | tr '\0' ' ')"
-
-
-      __msg="$__mystring"
-      __strlen="${#__mystring}"
-
-      if [ $__strlen -gt $__remainmain ]; then
-      # STRING TOO LONG ?
-
-        # TRIM IT !
-        __lenTrunc=${#__TRUNCATED}
-        __msg="${__msg:0:$(($__remainmain - 1 - $__lenTrunc))}""$__TRUNCATED"
-
-      else
-      # STRING TOO SHORT ?
-
-        # ELONGATE IT !
-
-        # compute the half of space left to fill
-        __strlendiv2="$(printf "%0.f\n" $((  $(($__remainmain - ${#__msg} )) / 2  )) )"; # rounded to inferior
-        # and the remainder if ODD result
-        __strlenremain="$((  $(($__remainmain - ${#__msg} )) % 2))"; # remainder : 0 or 1
-
-        [ $__strlendiv2 -gt 0 ] && {
-          __filler="$(head -c $__strlendiv2 < /dev/zero | tr '\0' ' ')"
-          __msg="$__filler$__msg$__filler"
-        }
-
-        [ $__strlenremain = 1 ] && {
-          # add one space
-          __msg="$__msg"" "
-        }
-
-      fi
-
-
-      __centerstr="${__NN_}${__colBGcenter}${__colFGcenter}${__paddingcenter}${__msg}${__paddingcenter}${__NN_}"
-
-
-
-
-      # ==============================================================
-      # display infobar
-      #
-      # ==============================================================
-
-      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' '▔')"
-
-      #TODO: REMOVEME !!!
-      tput sc; # Save current cursor position
-      tput cup $(($firstL )) $(($firstC ));
-      printf "%s" "${__NN_}${__leftstr}${__centerstr}${__rightstr}${__NN_}";
-      [ -n "$__underline" ] && printf "\n%s" "${__NN_}${__colUnderlineFG}${__colUnderlineBG}${__underLiner}${__NN_}";
-      tput rc;
-    fi
-  fi;
-}
-
 __growltermAdditLines() {
 
   #DYNAMIC SCOPE !
@@ -759,17 +330,37 @@ __growltermDefaultTheme(){
   # ______________________BACKGROUND COLORS_______________________
 
   #  BACKGROUND color for HARDCODED FROM field
-  NO256__COLOR_LEFTHEADER_BG_FROM=$( tput setb 7   || tput setab 7   || : 2>/dev/null )     ; # WHITE     (7)
-       __COLOR_LEFTHEADER_BG_FROM=$( tput setb 252 || tput setab 252 || : 2>/dev/null )     ; # Grey82    (252)
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #   ^^^^^
+      NO256__COLOR_LEFTHEADER_BG_FROM=$( tput setb 7   || tput setab 7   || : 2>/dev/null )     ; # WHITE     (7)
+           __COLOR_LEFTHEADER_BG_FROM=$( tput setb 248 || tput setab 248 || : 2>/dev/null )     ; # Grey82    (252)
 
   #  BACKGROUND color for CONTENTS of FROM field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #           ^^^^^^^
   NO256__COLOR_LEFTHEADER_BG_FROMTEXT=$( tput setb 7   || tput setab 7   || : 2>/dev/null ) ; # WHITE     (7)
        __COLOR_LEFTHEADER_BG_FROMTEXT=$( tput setb 255 || tput setab 255 || : 2>/dev/null ) ; # Grey93    (255)
 
 
   # ______________________FOREGROUND COLORS_______________________
 
+  #  FOREGROUND color for HARDCODED FROM field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #   ^^^^^
+      NO256__COLOR_LEFTHEADER_FG_FROM=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
+           __COLOR_LEFTHEADER_FG_FROM=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+
   #  FOREGROUND color for CONTENTS of FROM field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #           ^^^^^^^
   NO256__COLOR_LEFTHEADER_FG_FROMTEXT=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
        __COLOR_LEFTHEADER_FG_FROMTEXT=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
@@ -783,8 +374,19 @@ __growltermDefaultTheme(){
   #  or
   #  $__BG255_     --> $__255_
   #
-  NO256__COLOR_LEFTHEADER_FG_SEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
-       __COLOR_LEFTHEADER_FG_SEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )      ; # Grey93    (255)
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #         ^
+  NO256__COLOR_LEFTHEADER_FG_FROMSEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+       __COLOR_LEFTHEADER_FG_FROMSEP=$( tput setf 244 || tput setaf 244 || : 2>/dev/null )      ; # Grey93    (255)
+
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                   ^
+      NO256__COLOR_LEFTHEADER_FG_SEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+           __COLOR_LEFTHEADER_FG_SEP=$( tput setf 255 || tput setaf 255 || : 2>/dev/null )      ; # Grey93    (255)
 
 
   # ..............................................................
@@ -858,17 +460,37 @@ __growltermDefaultTheme(){
   # ______________________BACKGROUND COLORS_______________________
 
   #  BACKGROUND color for HARDCODED TYPE field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                                ^^^^
   NO256__COLOR_RIGHTHEADER_BG_TYPE=$( tput setb 7   || tput setab 7   || : 2>/dev/null )     ; # WHITE     (7)
        __COLOR_RIGHTHEADER_BG_TYPE=$( tput setb 252 || tput setab 252 || : 2>/dev/null )     ; # Grey82    (252)
 
   #  BACKGROUND color for CONTENTS of TYPE field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                        ^^^^^
   NO256__COLOR_RIGHTHEADER_BG_TYPETEXT=$( tput setb 7   || tput setab 7   || : 2>/dev/null ) ; # WHITE     (7)
        __COLOR_RIGHTHEADER_BG_TYPETEXT=$( tput setb 255 || tput setab 255 || : 2>/dev/null ) ; # Grey93    (255)
 
 
   # ______________________FOREGROUND COLORS_______________________
 
+  #  FOREGROUND color for HARDCODED TYPE field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                                ^^^^
+      NO256__COLOR_RIGHTHEADER_FG_TYPE=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
+           __COLOR_RIGHTHEADER_FG_TYPE=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+
   #  FOREGROUND color for CONTENTS of TYPE field
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                        ^^^^^
   NO256__COLOR_RIGHTHEADER_FG_TYPETEXT=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
        __COLOR_RIGHTHEADER_FG_TYPETEXT=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
@@ -882,9 +504,19 @@ __growltermDefaultTheme(){
   #  or
   #  $__BG255_     --> $__255_
   #
-  NO256__COLOR_RIGHTHEADER_FG_SEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
-       __COLOR_RIGHTHEADER_FG_SEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )      ; # Grey93    (255)
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                              ^
+  NO256__COLOR_RIGHTHEADER_FG_TYPESEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )  ; # WHITE     (7)
+       __COLOR_RIGHTHEADER_FG_TYPESEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )  ; # Grey93    (255)
 
+  #   ┌────────────────────────────────────────────────┐
+  #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+  #   └────────────────────────────────────────────────┘
+  #                                      ^
+      NO256__COLOR_RIGHTHEADER_FG_SEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )  ; # WHITE     (7)
+           __COLOR_RIGHTHEADER_FG_SEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )  ; # Grey93    (255)
 
 
 
@@ -912,16 +544,23 @@ __growltermDefaultTheme(){
 
   # LEFT HEADER : shows the contents of the string passed with the
   #               --from option
-     __LEFTHEADER_FROM="FROM ⮁ "
-  NO8__LEFTHEADER_FROM="FROM >"
+     #__LEFTHEADER_FROM="FROM ⮁ "
+     __LEFTHEADER_FROM="FROM "
+  NO8__LEFTHEADER_FROM="FROM "
+    # Following 4 nedd to be 1 character long !
+     __LEFTHEADER_FROM_SEP="⮀"
+  NO8__LEFTHEADER_FROM_SEP="|"
   __LEFTHEADER_SEP="⮀"
-  NO8__LEFTHEADER_SEP=">"
+  NO8__LEFTHEADER_SEP="|"
 
   # RIGHT HEADER : shows the TYPE of message (see below)
-     __RIGHTHEADER_TYPE=" ⮃ TYPE"
-  NO8__RIGHTHEADER_TYPE=" < TYPE"
+     __RIGHTHEADER_TYPE=" TYPE"
+  NO8__RIGHTHEADER_TYPE=" TYPE"
+    # Following 4 nedd to be 1 character long !
+     __RIGHTHEADER_TYPE_SEP="⮂"
+  NO8__RIGHTHEADER_TYPE_SEP=" "
   __RIGHTHEADER_SEP="⮂"
-  NO8__RIGHTHEADER_SEP="<"
+  NO8__RIGHTHEADER_SEP=" "
 
   # TYPES OF MESSAGES (one per level of importance)
   NO8__TYPEMSG_IMPORT_0="  INFO   "
@@ -1077,16 +716,432 @@ __growltermDefaultTheme(){
 
 __growltermTest(){
 
-growlterm -p 10 -i 0 -m "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." --from "GIT IS MY BEST FUCKING FRIEND"
+growlterm -p 10 -i 0 -f "GIT is not a GIT" -u -m "COOL ! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 sleep .5
-growlterm -p 10 -i 1 -m "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." --from "GIT IS MY BEST FUCKING FRIEND"
+growlterm -p 10 -i 1 -f "GIT is nota  GIT" -u -m "OH !   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 sleep .5
-growlterm -p 10 -i 2 -m "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." --from "GIT IS MY BEST FUCKING FRIEND"
+growlterm -p 10 -i 2 -f "GIT isnot  a GIT" -u -m "AHH ?  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 sleep .5
-growlterm -p 10 -i 3 -m "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." --from "GIT IS MY BEST FUCKING FRIEND"
+growlterm -p 10 -i 3 -f "GITis  not a GIT" -u -m "HMMM ! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 sleep .5
-growlterm -p 10 -i 4 -m "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." --from "GIT IS MY BEST FUCKING FRIEND"
+growlterm -p 10 -i 4 -f "GITis  not  aGIT" -u -m "ARGHH !Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 sleep .5
 
 }
 
+growlterm ()
+{
+
+  [[ $@ == "" ]] && __growltermVersion
+
+  # Our main variables : declare them so that __growltermParseOpts() has
+  # them in it's dynamic scope
+  local __menupos=""
+  local __mystring=""
+  local __oneliner=""
+  local __from=""
+  local __importance=""
+
+  # $@ MUST BE QUOTED !!
+  __growltermParseOpts "$@" || return 1
+
+
+  # ================================================================== #
+  #                                                                    #
+  #               DECLARE LOCAL  PARAMETERS                            #
+  #                                                                    #
+  # ================================================================== #
+
+
+
+
+  # RESET ALL STYLES
+  local __NN_=
+
+  #---------------------------------------------------------------
+  #             FANCY MENU VARS (see THEMES for info)
+  #---------------------------------------------------------------
+
+  local __colBGleft1=
+  local __colBGleft2=
+  local __colFGleft1=
+  local __colFGleft2=
+  local __colFGleftFromDelim=
+  local __colFGleftDelim=
+
+
+  local __colBGcenterInfo=
+  local __colBGcenterRemark=
+  local __colBGcenterWarn=
+  local __colBGcenterErr=
+  local __colBGcenterFatal=
+
+  local __colFGcenter=
+  local __colBGcenter=
+
+
+  local __colFGcenterInfo=
+  local __colFGcenterRemark=
+  local __colFGcenterWarn=
+  local __colFGcenterErr=
+  local __colFGcenterFatal=
+
+
+  local __colBGright1=
+  local __colBGright2=
+  local __colFGright1=
+  local __colFGright2=
+  local __colFGrightTypeDelim=
+  local __colFGrightDelim=
+
+  local __importanceMSG=
+
+  local __colUnderlineFG=
+  local __colUnderlineBG=
+
+
+  local __LEFTHEADER_FROM=
+  local __LEFTHEADER_FROM_SEP=
+  local __LEFTHEADER_SEP=
+
+  local __RIGHTHEADER_TYPE=
+  local __RIGHTHEADER_TYPE_SEP=
+  local __RIGHTHEADER_SEP=
+
+  local __TYPEMSG_IMPORT_0=
+  local __TYPEMSG_IMPORT_1=
+  local __TYPEMSG_IMPORT_2=
+  local __TYPEMSG_IMPORT_3=
+  local __TYPEMSG_IMPORT_4=
+
+  local __TRUNCATED=
+  local __CENTER_MSG_PADDING=
+
+  #---------------------------------------------------------------
+  #             BOX MENU VARS (see THEMES for info)
+  #---------------------------------------------------------------
+
+  local __colBoxMenuBorder=
+  local __colTextMenu=
+
+  #---------------------------------------------------------------
+  #             MISC VARS
+  #---------------------------------------------------------------
+
+  # DISABLING of the ANSI stripping function
+  local __nostripansi=
+
+  # TERM capacity detection variables
+  local __supports8=
+  local __colorPrefix=
+  local __UTFprefix=
+
+  # ================================================================== #
+  #                                                                    #
+  #                    MAIN FUNCTION                                   #
+  #                                                                    #
+  # ================================================================== #
+
+
+
+  #---------------------------------------------------------------------
+  # take care of non UTF-8 terminals
+  locale >/dev/null 2>&1
+  [ $? = 0 ] && locale | grep -i utf-8 >/dev/null 2>&1 && __supports8="true"
+
+  #---------------------------------------------------------------------
+  # don't load default theme in case a user defined theme is already loaded
+  [ -n "$__customGrowltermThemeSet" ] || __growltermDefaultTheme
+
+
+  #---------------------------------------------------------------------
+  # DETERMINE VARIABLE PREFIXES
+  [ 256 = "$(tput colors)" ]  || __colorPrefix="NO256"
+  [ "true" = "$__supports8" ] || __UTFprefix="NO8"
+
+  #---------------------------------------------------------------------
+  # DYNAMICALLY COMPUTE COLOR VALUES according to those present in the
+  # environment (either DEFAULT THEME or user-defined THEME)
+  #---------------------------------------------------------------------
+
+  # ....................................................................
+  #
+  # FANCY MENU
+  #
+  # ....................................................................
+
+  # COLORS
+  __colBGleft1=$(eval               "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_BG_FROM""                   )
+  __colBGleft2=$(eval               "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_BG_FROMTEXT""               )
+  __colFGleft1=$(eval               "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_FROM""                   )
+  __colFGleft2=$(eval               "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_FROMTEXT""               )
+  __colFGleftFromDelim=$(eval       "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_FROMSEP""                )
+  __colFGleftDelim=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_LEFTHEADER_FG_SEP""                    )
+
+
+
+  __colBGcenter=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_BG_CENTERZONE_IMPORT_${__importance}"" )
+  __colFGcenter=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_FG_CENTERZONE_IMPORT_${__importance}"" )
+
+
+  __colBGright1=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_BG_TYPE""                  )
+  __colBGright2=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_BG_TYPETEXT""              )
+  __colFGright1=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_TYPE""                  )
+  __colFGright2=$(eval              "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_TYPETEXT""              )
+  __colFGrightTypeDelim=$(eval      "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_TYPESEP""               )
+  __colFGrightDelim=$(eval          "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_SEP""                   )
+
+
+  __colUnderlineFG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_FG_UNDERLINE""                         )
+  __colUnderlineBG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_BG_UNDERLINE""                         )
+
+  # MENU BORDERS & ELEMENTS
+
+  # Replace value of these VARS with non-utf8 variant if need be
+  [ "true" = "$__supports8" ] || {
+    __LEFTHEADER_FROM="$(eval       "printf "%s" "\$${__UTFprefix}__LEFTHEADER_FROM""                              ) "
+    __LEFTHEADER_FROM_SEP="$(eval   "printf "%s" "\$${__UTFprefix}__LEFTHEADER_FROM_SEP""                          ) "
+    __LEFTHEADER_SEP="$(eval        "printf "%s" "\$${__UTFprefix}__LEFTHEADER_SEP""                               ) "
+
+    __RIGHTHEADER_TYPE="$(eval      "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_TYPE""                             ) "
+    __RIGHTHEADER_TYPE_SEP="$(eval  "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_TYPE_SEP""                         ) "
+    __RIGHTHEADER_SEP="$(eval       "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_SEP""                              ) "
+
+    __importanceMSG="$(eval         "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_${__importance}""               ) "
+
+    __TRUNCATED="$(eval             "printf "%s" "\$${__UTFprefix}__TRUNCATED""                                    ) "
+
+  }
+
+
+  # ....................................................................
+  #
+  # BOX MENU
+  #
+  # ....................................................................
+
+  # COLORS
+  __colBoxMenuBorder=$(eval "printf "%s" "\$${__colorPrefix}__COLOR_BOX_IMPORT_${__importance}""     )
+  __colTextMenu=$(eval      "printf "%s" "\$${__colorPrefix}__COLOR_BOXTEXT_IMPORT_${__importance}"" )
+
+
+
+  # MENU BORDERS & ELEMENTS
+
+  # Replace value of these VARS with non-utf8 variant if need be
+  [ "true" = "$__supports8" ] || {
+    __BOX_MENU_TOPLEFT="$(eval     "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOPLEFT""     )"
+    __BOX_MENU_TOP="$(eval         "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOP""         )"
+    __BOX_MENU_TOPRIGHT="$(eval    "printf "%s" "\$${__UTFprefix}__BOX_MENU_TOPRIGHT""    )"
+    __BOX_MENU_LEFT="$(eval        "printf "%s" "\$${__UTFprefix}__BOX_MENU_LEFT""        )"
+    __BOX_MENU_RIGHT="$(eval       "printf "%s" "\$${__UTFprefix}__BOX_MENU_RIGHT""       )"
+    __BOX_MENU_BOTTOMLEFT="$(eval  "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOMLEFT""  )"
+    __BOX_MENU_BOTTOM="$(eval      "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOM""      )"
+    __BOX_MENU_BOTTOMRIGHT="$(eval "printf "%s" "\$${__UTFprefix}__BOX_MENU_BOTTOMRIGHT"" )"
+
+    __ONELINER_MENU_LEFT="$(eval   "printf "%s" "\$${__UTFprefix}__ONELINER_MENU_LEFT""   )"
+    __ONELINER_MENU_RIGHT="$(eval  "printf "%s" "\$${__UTFprefix}__ONELINER_MENU_RIGHT""  )"
+  }
+
+
+  if [ -z "$__mystring" ]; then
+    :;
+  else
+    local stripansi="$__mystring"
+    [ -z "$__nostripansi" ] && stripansi=$(printf "%s" "$__mystring" | perl -pe 's/\e\[?.*?[\@-~]//g');
+    local resLength=$((${#stripansi} + 4));
+
+    local blankLine=$(printf "%s" "$stripansi""####")
+    blankLine=$(printf "%${#blankLine}s")
+    ##much slower alternative :
+    #local blankLine=$(printf "%s" $stripansi"    " | tr "[:print:]" ' ');
+
+    local firstC=
+    local firstL=
+    local oneliner=
+    [ "TRUE" = "$__oneliner" ] || [ "true" = "$__oneliner" ] && oneliner="$__oneliner"
+    local sttysize=
+    local nlines=
+    local ncol=
+    local additLines=
+    local screenwidemenu=
+    local __strlen=
+    local __remainmain=
+    local __filler1=
+    local __filler2=
+
+    sttysize=$(stty size 2>/dev/null)
+    [ $? -eq 0 ]  && {
+      nlines=${sttysize%% *}
+      ncol=${sttysize##* }
+    } || {
+      nlines=$(tput lines);
+      ncol=$(tput cols);
+    }
+
+
+
+    case $__menupos in
+
+      10) firstL=0                ; firstC=0                            ;                screenwidemenu="true" ;;
+      1) firstL=0                 ; firstC=0                                                                   ;;
+      2) firstL=0                 ; firstC=$(( ($ncol - $resLength)/2 ))                                       ;;
+      3) firstL=0                 ; firstC=$((  $ncol - $resLength ))                                          ;;
+      4) firstL=1                 ; firstC=0                            ; additLines=1                         ;;
+      5) firstL=1                 ; firstC=$(( ($ncol - $resLength)/2 )); additLines=1                         ;;
+      6) firstL=1                 ; firstC=$((  $ncol - $resLength ))   ; additLines=1                         ;;
+      7) firstL=2                 ; firstC=0                            ; additLines=2                         ;;
+      8) firstL=2                 ; firstC=$(( ($ncol - $resLength)/2 )); additLines=2                         ;;
+      9) firstL=2                 ; firstC=$((  $ncol - $resLength ))   ; additLines=2                         ;;
+      0) firstL=$(( $nlines - 1 )); firstC=$((  $ncol - $resLength ))   ; additLines=2 ; oneliner="true"       ;;
+      #NEW : one line filling top of screen
+
+    esac
+
+
+    if [ -z "$oneliner" ] && [ -z "$screenwidemenu" ]; then
+    # ___________________________________
+    # NORMAL MENU WITH UPPER/LOWER BORDER
+    #   ┌───────────────┐
+    #   │  message      │
+    #   └───────────────┘
+    #
+      local menuBorderTop=$(printf "%s" "$stripansi""##" | tr "[:print:]" $__BOX_MENU_TOP);
+      local menuBorderBottom=$(printf "%s" "$stripansi""##" | tr "[:print:]" $__BOX_MENU_BOTTOM);
+
+      tput sc; # Save current cursor position
+      __growltermAdditLines
+      tput cup $firstL $firstC;
+      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_TOPLEFT$menuBorderTop$__BOX_MENU_TOPRIGHT$__NN_";
+      tput cup $(($firstL + 1)) $firstC;
+      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_LEFT$__NN_" "$__colTextMenu$__mystring$__NN_" "$__colBoxMenuBorder$__BOX_MENU_RIGHT$__NN_";
+      tput cup $(($firstL + 2)) $firstC;
+      printf "%s" "$__colBoxMenuBorder$__BOX_MENU_BOTTOMLEFT$menuBorderBottom$__BOX_MENU_BOTTOMRIGHT$__NN_";
+      tput rc;
+
+    elif [ -z "$screenwidemenu" ]; then
+
+      # _________________________________
+      # ONE LINER MENU
+      #
+      #   │  message      │
+      #
+      tput sc; # Save current cursor position
+      __growltermAdditLines
+      tput cup $(($firstL )) $(($firstC + 4));
+      printf "%s" "$__NN_$__ONELINER_MENU_LEFT$__mystring$__ONELINER_MENU_RIGHT$__NN_";
+      tput rc;
+    else
+
+      # _________________________________
+      # SCREEN WIDE MENU
+      #   ┌────────────────────────────────────────────────┐
+      #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
+      #   └────────────────────────────────────────────────┘
+      #
+
+
+
+      # ==============================================================
+      #                      Zone COMPUTATION
+      #
+      # ==============================================================
+
+      # --------------------------------------------------------------
+      # compute zone1 : LEFT
+      # --------------------------------------------------------------
+
+      #Keep it simple : we don't compute nothing : the center field adapts
+      __leftstrWithoutEscapes="${__LEFTHEADER_FROM}${__LEFTHEADER_FROM_SEP} ${__from} ${__LEFTHEADER_SEP}"
+      __leftStrLen=${#__leftstrWithoutEscapes}
+
+      __leftstr="${__NN_}${__colBGleft1}${__colFGleft1}${__LEFTHEADER_FROM}${__colBGleft2}${__colFGleftFromDelim}${__LEFTHEADER_FROM_SEP}${__colFGleft2} ${__from} ${__colBGcenter}${__colFGleftDelim}${__LEFTHEADER_SEP}${__NN_}"
+
+
+      # --------------------------------------------------------------
+      # compute zone3 : RIGHT
+      # --------------------------------------------------------------
+
+      #Keep it simple : we don't compute nothing : the center field adapts
+      __rightstrWithoutEscapes="${__RIGHTHEADER_SEP} ${__importanceMSG} ${__RIGHTHEADER_TYPE_SEP}${__RIGHTHEADER_TYPE}"
+      __rightStrLen=${#__rightstrWithoutEscapes}
+
+      __rightstr="${__NN_}${__colBGcenter}${__colFGrightDelim}${__RIGHTHEADER_SEP}${__colBGright2}${__colFGright2} ${__importanceMSG} ${__colFGrightTypeDelim}${__RIGHTHEADER_TYPE_SEP}${__colBGright1}${__colFGright1}${__RIGHTHEADER_TYPE}${__NN_}"
+
+      # --------------------------------------------------------------
+      # compute fillers for zone2 : CENTER
+      #
+      # (obviously we do that after computing the other two)
+      # --------------------------------------------------------------
+
+      #__strlen="${#__mystring}"
+      #__remainmain=$(($ncol - $__strlen))
+
+      # how much space left do we have
+      [ -z "$__CENTER_MSG_PADDING" ] && __CENTER_MSG_PADDING=4; #DEFAULT, don't bug the user if his theme is faulty
+      __remainmain=$ncol
+      __remainmain=$(($__remainmain - $__leftStrLen - $__rightStrLen))
+      __remainmain=$(( $__remainmain - $((2 * $__CENTER_MSG_PADDING)) ))
+
+      # ..............................................................
+      # compute left, right and padding fillers for CENTER zone
+      # (in case message is short)
+      # ..............................................................
+
+      # generate a '$__CENTER_MSG_PADDING' long empty string
+      __paddingcenter="$(head -c $__CENTER_MSG_PADDING < /dev/zero | tr '\0' ' ')"
+
+
+      __msg="$__mystring"
+      __strlen="${#__mystring}"
+
+      if [ $__strlen -gt $__remainmain ]; then
+      # STRING TOO LONG ?
+
+        # TRIM IT !
+        __lenTrunc=${#__TRUNCATED}
+        __msg="${__msg:0:$(($__remainmain - 1 - $__lenTrunc))}""$__TRUNCATED"
+
+      else
+      # STRING TOO SHORT ?
+
+        # ELONGATE IT !
+
+        # compute the half of space left to fill
+        __strlendiv2="$(printf "%0.f\n" $((  $(($__remainmain - ${#__msg} )) / 2  )) )"; # rounded to inferior
+        # and the remainder if ODD result
+        __strlenremain="$((  $(($__remainmain - ${#__msg} )) % 2))"; # remainder : 0 or 1
+
+        [ $__strlendiv2 -gt 0 ] && {
+          __filler="$(head -c $__strlendiv2 < /dev/zero | tr '\0' ' ')"
+          __msg="$__filler$__msg$__filler"
+        }
+
+        [ $__strlenremain = 1 ] && {
+          # add one space
+          __msg="$__msg"" "
+        }
+
+      fi
+
+
+      __centerstr="${__NN_}${__colBGcenter}${__colFGcenter}${__paddingcenter}${__msg}${__paddingcenter}${__NN_}"
+
+
+
+
+      # ==============================================================
+      # display infobar
+      #
+      # ==============================================================
+
+      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' '▔')"
+
+      tput sc; # Save current cursor position
+      tput cup $(($firstL )) $(($firstC ));
+      printf "%s" "${__NN_}${__leftstr}${__centerstr}${__rightstr}${__NN_}";
+      [ -n "$__underline" ] && printf "\n%s" "${__NN_}${__colUnderlineFG}${__colUnderlineBG}${__underLiner}${__NN_}";
+      tput rc;
+    fi
+  fi;
+}
