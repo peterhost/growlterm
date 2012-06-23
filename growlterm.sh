@@ -335,7 +335,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #   ^^^^^
       NO256__COLOR_LEFTHEADER_BG_FROM=$( tput setb 7   || tput setab 7   || : 2>/dev/null )     ; # WHITE     (7)
-           __COLOR_LEFTHEADER_BG_FROM=$( tput setb 248 || tput setab 248 || : 2>/dev/null )     ; # Grey82    (252)
+           __COLOR_LEFTHEADER_BG_FROM=$( tput setb 255 || tput setab 255 || : 2>/dev/null )     ; # Grey82    (252)
 
   #  BACKGROUND color for CONTENTS of FROM field
   #   ┌────────────────────────────────────────────────┐
@@ -354,7 +354,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #   ^^^^^
       NO256__COLOR_LEFTHEADER_FG_FROM=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
-           __COLOR_LEFTHEADER_FG_FROM=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+           __COLOR_LEFTHEADER_FG_FROM=$( tput setf 33  || tput setaf 33  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
   #  FOREGROUND color for CONTENTS of FROM field
   #   ┌────────────────────────────────────────────────┐
@@ -362,7 +362,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #           ^^^^^^^
   NO256__COLOR_LEFTHEADER_FG_FROMTEXT=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
-       __COLOR_LEFTHEADER_FG_FROMTEXT=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+       __COLOR_LEFTHEADER_FG_FROMTEXT=$( tput setf 31  || tput setaf 31  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
   #  FOREGROUND color for LEFT HEADER SEPARATOR ($__LEFTHEADER_SEP see below)
   #
@@ -379,7 +379,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #         ^
   NO256__COLOR_LEFTHEADER_FG_FROMSEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
-       __COLOR_LEFTHEADER_FG_FROMSEP=$( tput setf 244 || tput setaf 244 || : 2>/dev/null )      ; # Grey93    (255)
+       __COLOR_LEFTHEADER_FG_FROMSEP=$( tput setf 69  || tput setaf 69  || : 2>/dev/null )      ; # Grey93    (255)
 
   #   ┌────────────────────────────────────────────────┐
   #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
@@ -413,11 +413,12 @@ __growltermDefaultTheme(){
   N0256__COLOR_BG_CENTERZONE_IMPORT_3=$( tput setb 1 || tput setab 1 || : 2>/dev/null ) ; # ERROR   -> RED
   N0256__COLOR_BG_CENTERZONE_IMPORT_4=$( tput setb 1 || tput setab 1 || : 2>/dev/null ) ; # FATAL   -> RED !
 
-  __COLOR_BG_CENTERZONE_IMPORT_0=$( tput setb 78  || tput setab 78  || : 2>/dev/null )  ; # INFO    -> DarkSeaGreen3 (78)
-  __COLOR_BG_CENTERZONE_IMPORT_1=$( tput setb 64  || tput setab 64  || : 2>/dev/null )  ; # REMARK  -> Chartreuse4 (64)
+  __COLOR_BG_CENTERZONE_IMPORT_0=$( tput setb 26  || tput setab 26  || : 2>/dev/null )  ; # INFO    -> DarkSeaGreen3 (78)
+  __COLOR_BG_CENTERZONE_IMPORT_1=$( tput setb 78  || tput setab 78  || : 2>/dev/null )  ; # REMARK  -> Chartreuse4 (64)
   __COLOR_BG_CENTERZONE_IMPORT_2=$( tput setb 172 || tput setab 172 || : 2>/dev/null )  ; # WARNING -> Orange3 (172)
-  __COLOR_BG_CENTERZONE_IMPORT_3=$( tput setb 196 || tput setab 196 || : 2>/dev/null )  ; # ERROR   -> Red1 (196)
-  __COLOR_BG_CENTERZONE_IMPORT_4=$( tput setb 52  || tput setab 52  || : 2>/dev/null )  ; # FATAL   -> DarkRed (52) !
+  __COLOR_BG_CENTERZONE_IMPORT_3=$( tput setb 88  || tput setab 88  || : 2>/dev/null )  ; # ERROR   -> Red1 (196)
+  #__COLOR_BG_CENTERZONE_IMPORT_3=$( tput setb 196 || tput setab 196 || : 2>/dev/null )  ; # ERROR   -> Red1 (196)
+  __COLOR_BG_CENTERZONE_IMPORT_4=$( tput setb 124 || tput setab 124 || : 2>/dev/null )  ; # FATAL   -> DarkRed (52) !
 
 
 
@@ -432,13 +433,13 @@ __growltermDefaultTheme(){
   N0256__COLOR_FG_CENTERZONE_IMPORT_4=$N0256__COLOR_FG_CENTERZONE_IMPORT_4$( tput bold    || : 2>/dev/null )                ; # FATAL   -> BOLD...
   N0256__COLOR_FG_CENTERZONE_IMPORT_4=$N0256__COLOR_FG_CENTERZONE_IMPORT_4$( tput setf 7 || tput setaf 7 || : 2>/dev/null ) ; # FATAL   -> WHITE !
 
-  __COLOR_FG_CENTERZONE_IMPORT_0=$( tput setf 236 || tput setaf 236 || : 2>/dev/null )                                      ; # INFO    -> Grey19 (236)
+  __COLOR_FG_CENTERZONE_IMPORT_0=$( tput setf 255 || tput setaf 255 || : 2>/dev/null )                                      ; # INFO    -> Grey19 (236)
   __COLOR_FG_CENTERZONE_IMPORT_1=$( tput setf 236 || tput setaf 236 || : 2>/dev/null )                                      ; # INFO    -> Grey19 (236)
   __COLOR_FG_CENTERZONE_IMPORT_2=$( tput setf 17  || tput setaf 17  || : 2>/dev/null )                                      ; # WARNING -> NavyBlue (17)
-  __COLOR_FG_CENTERZONE_IMPORT_3=$( tput setf 255 || tput setaf 255 || : 2>/dev/null )                                      ; # ERROR   -> Grey93 (255)
+  __COLOR_FG_CENTERZONE_IMPORT_3=$( tput setf 229 || tput setaf 229 || : 2>/dev/null )                                      ; # ERROR   -> Grey93 (255)
   __COLOR_FG_CENTERZONE_IMPORT_4=$( tput blink    || : 2>/dev/null )                                                        ; # FATAL   -> BLINKING...
-  __COLOR_FG_CENTERZONE_IMPORT_4=$__COLOR_FG_CENTERZONE_IMPORT_4$( tput bold    || : 2>/dev/null )                          ; # FATAL   -> BOLD...
-  __COLOR_FG_CENTERZONE_IMPORT_4=$__COLOR_FG_CENTERZONE_IMPORT_4$( tput setf 22 || tput setaf 22 || : 2>/dev/null )         ; # FATAL   -> DarkGreen (22) !
+  __COLOR_FG_CENTERZONE_IMPORT_4=$__COLOR_FG_CENTERZONE_IMPORT_4$( tput bold     || : 2>/dev/null )                         ; # FATAL   -> BOLD...
+  __COLOR_FG_CENTERZONE_IMPORT_4=$__COLOR_FG_CENTERZONE_IMPORT_4$( tput setf 255 || tput setaf 255 || : 2>/dev/null )       ; # FATAL   -> DarkGreen (22) !
 
 
 
@@ -473,7 +474,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #                                        ^^^^^
   NO256__COLOR_RIGHTHEADER_BG_TYPETEXT=$( tput setb 7   || tput setab 7   || : 2>/dev/null ) ; # WHITE     (7)
-       __COLOR_RIGHTHEADER_BG_TYPETEXT=$( tput setb 255 || tput setab 255 || : 2>/dev/null ) ; # Grey93    (255)
+       __COLOR_RIGHTHEADER_BG_TYPETEXT=$( tput setb 252 || tput setab 252 || : 2>/dev/null ) ; # Grey93    (255)
 
 
   # ______________________FOREGROUND COLORS_______________________
@@ -484,7 +485,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #                                                ^^^^
       NO256__COLOR_RIGHTHEADER_FG_TYPE=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
-           __COLOR_RIGHTHEADER_FG_TYPE=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+           __COLOR_RIGHTHEADER_FG_TYPE=$( tput setf 88  || tput setaf 88  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
   #  FOREGROUND color for CONTENTS of TYPE field
   #   ┌────────────────────────────────────────────────┐
@@ -492,7 +493,7 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #                                        ^^^^^
   NO256__COLOR_RIGHTHEADER_FG_TYPETEXT=$( tput setf 0   || tput setaf 0   || : 2>/dev/null ) ; # BLACK     (0)
-       __COLOR_RIGHTHEADER_FG_TYPETEXT=$( tput setf 60  || tput setaf 60  || : 2>/dev/null ) ; # MediumPurple4 (60)
+       __COLOR_RIGHTHEADER_FG_TYPETEXT=$( tput setf 52  || tput setaf 52  || : 2>/dev/null ) ; # MediumPurple4 (60)
 
   #  FOREGROUND color for RIGHT HEADER SEPARATOR ($__RIGHTHEADER_SEP see below)
   #
@@ -509,14 +510,14 @@ __growltermDefaultTheme(){
   #   └────────────────────────────────────────────────┘
   #                                              ^
   NO256__COLOR_RIGHTHEADER_FG_TYPESEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )  ; # WHITE     (7)
-       __COLOR_RIGHTHEADER_FG_TYPESEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )  ; # Grey93    (255)
+       __COLOR_RIGHTHEADER_FG_TYPESEP=$( tput setf 52  || tput setaf 52  || : 2>/dev/null )  ; # Grey93    (255)
 
   #   ┌────────────────────────────────────────────────┐
   #   │FROM ⮁ SOMEONE ⮀    message...    ⮂ fatal ⮃ TYPE│
   #   └────────────────────────────────────────────────┘
   #                                      ^
       NO256__COLOR_RIGHTHEADER_FG_SEP=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )  ; # WHITE     (7)
-           __COLOR_RIGHTHEADER_FG_SEP=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )  ; # Grey93    (255)
+           __COLOR_RIGHTHEADER_FG_SEP=$( tput setf 252 || tput setaf 252 || : 2>/dev/null )  ; # Grey93    (255)
 
 
 
@@ -528,14 +529,42 @@ __growltermDefaultTheme(){
   # ..............................................................
 
 
-  NO256__COLOR_FG_UNDERLINE=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
-       __COLOR_FG_UNDERLINE=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )      ; # Grey93    (255)
+  # ______________________FOREGROUND COLORS_______________________
 
-  NO256__COLOR_BG_UNDERLINE=                                                           ; # UNSET
-       __COLOR_BG_UNDERLINE=                                                           ; # UNSET
+  # FOREGROUND color for OPTIONNAL UNDERLINE BAR : ONE COLOR per level of IMPORTANCE
+  NO256__COLOR_FG_UNDERLINE_IMPORT_0=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+  NO256__COLOR_FG_UNDERLINE_IMPORT_1=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+  NO256__COLOR_FG_UNDERLINE_IMPORT_2=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+  NO256__COLOR_FG_UNDERLINE_IMPORT_3=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+  NO256__COLOR_FG_UNDERLINE_IMPORT_4=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ; # WHITE     (7)
+
+       __COLOR_FG_UNDERLINE_IMPORT_0=$( tput setf 58  || tput setaf 58  || : 2>/dev/null )      ; # Grey93    (255)
+       __COLOR_FG_UNDERLINE_IMPORT_1=$( tput setf 236 || tput setaf 236 || : 2>/dev/null )      ; # Grey93    (255)
+       __COLOR_FG_UNDERLINE_IMPORT_2=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )      ; # Grey93    (255)
+       __COLOR_FG_UNDERLINE_IMPORT_3=$( tput setf 58  || tput setaf 58  || : 2>/dev/null )      ; # Grey93    (255)
+       __COLOR_FG_UNDERLINE_IMPORT_4=$( tput setf 124 || tput setaf 124 || : 2>/dev/null )      ; # Grey93    (255)
+
+  # ______________________BACKGROUND COLORS_______________________
+
+  # FOREGROUND color for OPTIONNAL UNDERLINE BAR : ONE COLOR per level of IMPORTANCE
+  NO256__COLOR_BG_UNDERLINE_IMPORT_0=                                                           ; # UNSET
+  NO256__COLOR_BG_UNDERLINE_IMPORT_1=                                                           ; # UNSET
+  NO256__COLOR_BG_UNDERLINE_IMPORT_2=                                                           ; # UNSET
+  NO256__COLOR_BG_UNDERLINE_IMPORT_3=                                                           ; # UNSET
+  NO256__COLOR_BG_UNDERLINE_IMPORT_4=                                                           ; # UNSET
+
+       __COLOR_BG_UNDERLINE_IMPORT_0=                                                           ; # UNSET
+       __COLOR_BG_UNDERLINE_IMPORT_1=                                                           ; # UNSET
+       __COLOR_BG_UNDERLINE_IMPORT_2=                                                           ; # UNSET
+       __COLOR_BG_UNDERLINE_IMPORT_3=                                                           ; # UNSET
+       __COLOR_BG_UNDERLINE_IMPORT_4=                                                           ; # UNSET
 
 
+  # ______________________UNDERLINE CHARACTER_____________________
 
+
+     __UNDERLINE_CHAR="▔"
+  NO8__UNDERLINE_CHAR="-"
 
   # --------------------------------------------------------------
   #              1.2 - CUSTOM UI ELEMENTS
@@ -544,36 +573,35 @@ __growltermDefaultTheme(){
 
   # LEFT HEADER : shows the contents of the string passed with the
   #               --from option
-     #__LEFTHEADER_FROM="FROM ⮁ "
-     __LEFTHEADER_FROM="FROM "
-  NO8__LEFTHEADER_FROM="FROM "
+     __LEFTHEADER_FROM=" FROM "
+  NO8__LEFTHEADER_FROM=" FROM "
     # Following 4 nedd to be 1 character long !
-     __LEFTHEADER_FROM_SEP="⮀"
-  NO8__LEFTHEADER_FROM_SEP="|"
+     __LEFTHEADER_FROM_SEP="⮁"
+  NO8__LEFTHEADER_FROM_SEP=" "
   __LEFTHEADER_SEP="⮀"
-  NO8__LEFTHEADER_SEP="|"
+  NO8__LEFTHEADER_SEP=" "
 
   # RIGHT HEADER : shows the TYPE of message (see below)
-     __RIGHTHEADER_TYPE=" TYPE"
-  NO8__RIGHTHEADER_TYPE=" TYPE"
+     __RIGHTHEADER_TYPE=" TYPE "
+  NO8__RIGHTHEADER_TYPE=" TYPE "
     # Following 4 nedd to be 1 character long !
-     __RIGHTHEADER_TYPE_SEP="⮂"
+     __RIGHTHEADER_TYPE_SEP="⮃"
   NO8__RIGHTHEADER_TYPE_SEP=" "
   __RIGHTHEADER_SEP="⮂"
   NO8__RIGHTHEADER_SEP=" "
 
   # TYPES OF MESSAGES (one per level of importance)
-  NO8__TYPEMSG_IMPORT_0="  INFO   "
-  NO8__TYPEMSG_IMPORT_1=" REMARK  "
-  NO8__TYPEMSG_IMPORT_2=" WARNING "
-  NO8__TYPEMSG_IMPORT_3="  ERROR  "
-  NO8__TYPEMSG_IMPORT_4="  FATAL  "
+  NO8__TYPEMSG_IMPORT_0="  INFO   "
+  NO8__TYPEMSG_IMPORT_1=" REMARK  "
+  NO8__TYPEMSG_IMPORT_2=" WARNING "
+  NO8__TYPEMSG_IMPORT_3="  ERROR  "
+  NO8__TYPEMSG_IMPORT_4="  FATAL  "
 
-     __TYPEMSG_IMPORT_0="   INFO ♫  "
-     __TYPEMSG_IMPORT_1="  REMARK ★ "
-     __TYPEMSG_IMPORT_2=" WARNING ⚡ "
-     __TYPEMSG_IMPORT_3="  ERROR ✖  "
-     __TYPEMSG_IMPORT_4="  FATAL ☠  "
+     __TYPEMSG_IMPORT_0="   ♫ INFO  "
+     __TYPEMSG_IMPORT_1="  ★ REMARK "
+     __TYPEMSG_IMPORT_2=" ⚡ WARNING "
+     __TYPEMSG_IMPORT_3="  ✖ ERROR  "
+     __TYPEMSG_IMPORT_4="  ☠ FATAL  "
 
   # STRING USED TO TRUNCATE LONG MESSAGES
   __TRUNCATED="…"
@@ -717,15 +745,14 @@ __growltermDefaultTheme(){
 __growltermTest(){
 
 growlterm -p 10 -i 0 -f "GIT is not a GIT" -u -m "COOL ! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-sleep .5
+sleep 1.5
 growlterm -p 10 -i 1 -f "GIT is nota  GIT" -u -m "OH !   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-sleep .5
+sleep 1.5
 growlterm -p 10 -i 2 -f "GIT isnot  a GIT" -u -m "AHH ?  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-sleep .5
+sleep 1.5
 growlterm -p 10 -i 3 -f "GITis  not a GIT" -u -m "HMMM ! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-sleep .5
+sleep 1.5
 growlterm -p 10 -i 4 -f "GITis  not  aGIT" -u -m "ARGHH !Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-sleep .5
 
 }
 
@@ -892,8 +919,9 @@ growlterm ()
   __colFGrightDelim=$(eval          "printf "%s" "\$${__colorPrefix}__COLOR_RIGHTHEADER_FG_SEP""                   )
 
 
-  __colUnderlineFG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_FG_UNDERLINE""                         )
-  __colUnderlineBG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_BG_UNDERLINE""                         )
+  __colUnderlineFG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_FG_UNDERLINE_IMPORT_${__importance}""  )
+  __colUnderlineBG=$(eval           "printf "%s" "\$${__colorPrefix}__COLOR_BG_UNDERLINE_IMPORT_${__importance}""  )
+  __underlineChar=$(eval            "printf "%s" "\$${__colorPrefix}__UNDERLINE_CHAR""                             )
 
   # MENU BORDERS & ELEMENTS
 
@@ -907,12 +935,12 @@ growlterm ()
     __RIGHTHEADER_TYPE_SEP="$(eval  "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_TYPE_SEP""                         ) "
     __RIGHTHEADER_SEP="$(eval       "printf "%s" "\$${__UTFprefix}__RIGHTHEADER_SEP""                              ) "
 
-    __importanceMSG="$(eval         "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_${__importance}""               ) "
 
     __TRUNCATED="$(eval             "printf "%s" "\$${__UTFprefix}__TRUNCATED""                                    ) "
 
   }
 
+    __importanceMSG="$(eval         "printf "%s" "\$${__UTFprefix}__TYPEMSG_IMPORT_${__importance}""               ) "
 
   # ....................................................................
   #
@@ -1100,7 +1128,7 @@ growlterm ()
 
         # TRIM IT !
         __lenTrunc=${#__TRUNCATED}
-        __msg="${__msg:0:$(($__remainmain - 1 - $__lenTrunc))}""$__TRUNCATED"
+        __msg="${__msg:0:$(($__remainmain  - $__lenTrunc))}""$__TRUNCATED"
 
       else
       # STRING TOO SHORT ?
@@ -1135,7 +1163,7 @@ growlterm ()
       #
       # ==============================================================
 
-      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' '▔')"
+      __underLiner="$(head -c $ncol < /dev/zero | tr '\0' "$__underlineChar")"
 
       tput sc; # Save current cursor position
       tput cup $(($firstL )) $(($firstC ));
