@@ -81,8 +81,8 @@ background job on error. Result is, some time later...
     [1]+ Done rvm rubygems current > /dev/null 2>&1
     README.md colorscripts growlterm.sh img themes
 
-1. It does only quiet down STDIN/STDOUT output for background job
-2. You still get these notifications amidst your prompt when job
+* It does only quiet down STDIN/STDOUT output for background job
+* You still get these notifications amidst your prompt when job
 terminates
 
 ####2. Entomb/Burry it all
@@ -102,7 +102,7 @@ terminates
     $ ls
     README.md colorscripts growlterm.sh img themes
 
-1. No notification at all AT ALL
+* No notification at all AT ALL
 
 ####3. New Way
 
@@ -127,13 +127,15 @@ terminates
     )
 
 
-1. you still get notified
-2. but not under your cursor
-3. It's so Geeky it almost makes you cry
+* you still get notified
+* but not under your cursor
+* It's so Geeky it almost makes you cry
 
-###Inception : background Job inside your scripts (IE : subshell inside a subshell inside a ....)
+###Inception : subshell inside a subshell inside a ...
 
-Replace in your Bashrc
+> If you wish to use `growlterm` for background Job notifications inside your
+> own scripts, either `source` growlterm inside your script, or in your
+> `.bashrc`, replace :
 
     . mytheme
     . growlterm
@@ -199,7 +201,9 @@ you're certain your `--message` does not contain any of these, you can
 safely use the `--nostripansi` switch.
 
 
+##TODO
 
+* make it ZSH compliant (be my guest !)
 
 # Additional scripts (you could even use them!)
 
@@ -275,10 +279,10 @@ so that you can check later on that it's already done
                                                                      # <attr> <fg>  <bg>
 ### variable list
 
-| ALL 8-COLOR COMPATIBLE VARIABLES DEFINED |
-| :--------------------------------------- | ---------------------- | ------------------------------------: |
-| MODIFIERS                                |
+**ALL 8-COLOR COMPATIBLE VARIABLES DEFINED**
+
 | Variable NAME                            | equivalent ANSI escape | Description                           |
+| :--------------------------------------- | ---------------------- | ------------------------------------: |
 |                                          | ATTR   FG   BG         |                                       |
 | \_\_NN\_                                 | \[ 0m                  | RESET ALL attributes                  |
 | STYLES                                   |
