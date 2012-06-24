@@ -210,11 +210,12 @@ safely use the `--nostripansi` switch.
 add 2 scripts to define TERM safe color variables : `safetermcolors8.sh`
 and `safetermcolors-addit-256.sh`
 
-Source them before yout `thme`file and use fancy variable names for
+Source them before yout `theme`file and use fancy variable names for
 colors
 
+    . safetermcolors8.sh
     . safetermcolors-addit-256.sh
-    . theme
+    . myTheme
     . growlterm
 
 Then you can define colors in your theme with :
