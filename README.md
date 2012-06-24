@@ -4,6 +4,11 @@ growlterm
 growl-like notifications for your terminal
 
 ![Growl-like notifications for your Terminal](https://github.com/peterhost/growlterm/raw/master/img/growl-terminal.png)
+![Growl-like notifications for your Terminal](https://github.com/peterhost/growlterm/raw/master/img/growlterm-info.png)
+![Growl-like notifications for your Terminal](https://github.com/peterhost/growlterm/raw/master/img/growlterm-warning.png)
+![Growl-like notifications for your Terminal](https://github.com/peterhost/growlterm/raw/master/img/growlterm-error.png)
+
+
 
 ##Installation
 
@@ -58,6 +63,7 @@ safely use the `--nostripansi` switch.
 
 add 2 scripts to define TERM safe color variables : `safetermcolors8.sh`
 and `safetermcolors-addit-256.sh`
+
 
 ##`safetermcolors-addit-256.sh`
 
