@@ -373,4 +373,4 @@ so that you can check later on that it's already done
 
 | Variable NAME  | tput           | Description                           |
 | -------------- | -------------- | ------------------------------------- |
-| \_\_NL\_       | tput           | most compatible NEWLINE ever          |
+| \_\_NL\_       | tput cud1      | most compatible NEWLINE ever          |
