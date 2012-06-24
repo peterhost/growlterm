@@ -124,3 +124,5 @@ __define_colors8_TPUT() {
   ##INFO for other scripts of mine which would redefine these
   export __TPUT_COLORS_DEFINED="true"
 }
+
+__define_colors8_TPUT
