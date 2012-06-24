@@ -274,6 +274,15 @@ Access a color with the following naming convention :
     #  for BACKGROUND COLOR 123
     echo $__BG123_"my message"
 
+####Nota Bene
+
+sourcing this script exports the aditional variable
+
+    export __TPUT_256COLORS_DEFINED="true"
+
+so that you can check later on that it's already done
+
+
 ###`safetermcolors8.sh`
 
 safely (*in terms on `terminfo`*) defines the 001-015 color range, which
@@ -282,7 +291,7 @@ exist on any TERM which has more than 2 colors capacity, plus modifiers
 degrading quietly and still provide modifier styles (underline & such)
 
 
-####NOta Bene
+####Nota Bene
 
 sourcing this script exports the aditional variable
 
