@@ -4,8 +4,10 @@ function __define_tput_colors_additional_256terms() {
 
  #-------------------------------
  #
- # color DEC number matches script
- #  line number
+ # HANDY COLOR VARS
+ #
+ # SAFE to use in the oldests of
+ # TERMS
  #
  #-------------------------------
 
@@ -13,246 +15,262 @@ function __define_tput_colors_additional_256terms() {
 
 
   #FOREGROUND COLORS
-  export __Grey0_=$(             tput setb 16 ||  tput setab 16 || : 2>/dev/null  )  export __16_=$__Grey0_             ;     # SET FG color to Grey0
-  export __NavyBlue_=$(          tput setf 17 ||  tput setaf 17 || : 2>/dev/null  ); export __17_=$__NavyBlue_          ;     # SET FG color to NavyBlue
-  export __DarkBlue_=$(          tput setf 18 ||  tput setaf 18 || : 2>/dev/null  ); export __18_=$__DarkBlue_          ;     # SET FG color to DarkBlue
-  export __Blue3_=$(             tput setf 19 ||  tput setaf 19 || : 2>/dev/null  ); export __19_=$__Blue3_             ;     # SET FG color to Blue3
-  export __Blue3_=$(             tput setf 20 ||  tput setaf 20 || : 2>/dev/null  ); export __20_=$__Blue3_             ;     # SET FG color to Blue3
-  export __Blue1_=$(             tput setf 21 ||  tput setaf 21 || : 2>/dev/null  ); export __21_=$__Blue1_             ;     # SET FG color to Blue1
-  export __DarkGreen_=$(         tput setf 22 ||  tput setaf 22 || : 2>/dev/null  ); export __22_=$__DarkGreen_         ;     # SET FG color to DarkGreen
-  export __DeepSkyBlue4_=$(      tput setf 23 ||  tput setaf 23 || : 2>/dev/null  ); export __23_=$__DeepSkyBlue4_      ;     # SET FG color to DeepSkyBlue4
-  export __DeepSkyBlue4_=$(      tput setf 24 ||  tput setaf 24 || : 2>/dev/null  ); export __24_=$__DeepSkyBlue4_      ;     # SET FG color to DeepSkyBlue4
-  export __DeepSkyBlue4_=$(      tput setf 25 ||  tput setaf 25 || : 2>/dev/null  ); export __25_=$__DeepSkyBlue4_      ;     # SET FG color to DeepSkyBlue4
-  export __DodgerBlue3_=$(       tput setf 26 ||  tput setaf 26 || : 2>/dev/null  ); export __26_=$__DodgerBlue3_       ;     # SET FG color to DodgerBlue3
-  export __DodgerBlue2_=$(       tput setf 27 ||  tput setaf 27 || : 2>/dev/null  ); export __27_=$__DodgerBlue2_       ;     # SET FG color to DodgerBlue2
-  export __Green4_=$(            tput setf 28 ||  tput setaf 28 || : 2>/dev/null  ); export __28_=$__Green4_            ;     # SET FG color to Green4
-  export __SpringGreen4_=$(      tput setf 29 ||  tput setaf 29 || : 2>/dev/null  ); export __29_=$__SpringGreen4_      ;     # SET FG color to SpringGreen4
-  export __Turquoise4_=$(        tput setf 30 ||  tput setaf 30 || : 2>/dev/null  ); export __30_=$__Turquoise4_        ;     # SET FG color to Turquoise4
-  export __DeepSkyBlue3_=$(      tput setf 31 ||  tput setaf 31 || : 2>/dev/null  ); export __31_=$__DeepSkyBlue3_      ;     # SET FG color to DeepSkyBlue3
-  export __DeepSkyBlue3_=$(      tput setf 32 ||  tput setaf 32 || : 2>/dev/null  ); export __32_=$__DeepSkyBlue3_      ;     # SET FG color to DeepSkyBlue3
-  export __DodgerBlue1_=$(       tput setf 33 ||  tput setaf 33 || : 2>/dev/null  ); export __33_=$__DodgerBlue1_       ;     # SET FG color to DodgerBlue1
-  export __Green3_=$(            tput setf 34 ||  tput setaf 34 || : 2>/dev/null  ); export __34_=$__Green3_            ;     # SET FG color to Green3
-  export __SpringGreen3_=$(      tput setf 35 ||  tput setaf 35 || : 2>/dev/null  ); export __35_=$__SpringGreen3_      ;     # SET FG color to SpringGreen3
-  export __DarkCyan_=$(          tput setf 36 ||  tput setaf 36 || : 2>/dev/null  ); export __36_=$__DarkCyan_          ;     # SET FG color to DarkCyan
-  export __LightSeaGreen_=$(     tput setf 37 ||  tput setaf 37 || : 2>/dev/null  ); export __37_=$__LightSeaGreen_     ;     # SET FG color to LightSeaGreen
-  export __DeepSkyBlue2_=$(      tput setf 38 ||  tput setaf 38 || : 2>/dev/null  ); export __38_=$__DeepSkyBlue2_      ;     # SET FG color to DeepSkyBlue2
-  export __DeepSkyBlue1_=$(      tput setf 39 ||  tput setaf 39 || : 2>/dev/null  ); export __39_=$__DeepSkyBlue1_      ;     # SET FG color to DeepSkyBlue1
-  export __Green3_=$(            tput setf 40 ||  tput setaf 40 || : 2>/dev/null  ); export __40_=$__Green3_            ;     # SET FG color to Green3
-  export __SpringGreen3_=$(      tput setf 41 ||  tput setaf 41 || : 2>/dev/null  ); export __41_=$__SpringGreen3_      ;     # SET FG color to SpringGreen3
-  export __SpringGreen2_=$(      tput setf 42 ||  tput setaf 42 || : 2>/dev/null  ); export __42_=$__SpringGreen2_      ;     # SET FG color to SpringGreen2
-  export __Cyan3_=$(             tput setf 43 ||  tput setaf 43 || : 2>/dev/null  ); export __43_=$__Cyan3_             ;     # SET FG color to Cyan3
-  export __DarkTurquoise_=$(     tput setf 44 ||  tput setaf 44 || : 2>/dev/null  ); export __44_=$__DarkTurquoise_     ;     # SET FG color to DarkTurquoise
-  export __Turquoise2_=$(        tput setf 45 ||  tput setaf 45 || : 2>/dev/null  ); export __45_=$__Turquoise2_        ;     # SET FG color to Turquoise2
-  export __Green1_=$(            tput setf 46 ||  tput setaf 46 || : 2>/dev/null  ); export __46_=$__Green1_            ;     # SET FG color to Green1
-  export __SpringGreen2_=$(      tput setf 47 ||  tput setaf 47 || : 2>/dev/null  ); export __47_=$__SpringGreen2_      ;     # SET FG color to SpringGreen2
-  export __SpringGreen1_=$(      tput setf 48 ||  tput setaf 48 || : 2>/dev/null  ); export __48_=$__SpringGreen1_      ;     # SET FG color to SpringGreen1
-  export __MediumSpringGreen_=$( tput setf 49 ||  tput setaf 49 || : 2>/dev/null  ); export __49_=$__MediumSpringGreen_ ;     # SET FG color to MediumSpringGreen
-  export __Cyan2_=$(             tput setf 50 ||  tput setaf 50 || : 2>/dev/null  ); export __50_=$__Cyan2_             ;     # SET FG color to Cyan2
-  export __Cyan1_=$(             tput setf 51 ||  tput setaf 51 || : 2>/dev/null  ); export __51_=$__Cyan1_             ;     # SET FG color to Cyan1
-  export __DarkRed_=$(           tput setf 52 ||  tput setaf 52 || : 2>/dev/null  ); export __52_=$__DarkRed_           ;     # SET FG color to DarkRed
-  export __DeepPink4_=$(         tput setf 53 ||  tput setaf 53 || : 2>/dev/null  ); export __53_=$__DeepPink4_         ;     # SET FG color to DeepPink4
-  export __Purple4_=$(           tput setf 54 ||  tput setaf 54 || : 2>/dev/null  ); export __54_=$__Purple4_           ;     # SET FG color to Purple4
-  export __Purple4_=$(           tput setf 55 ||  tput setaf 55 || : 2>/dev/null  ); export __55_=$__Purple4_           ;     # SET FG color to Purple4
-  export __Purple3_=$(           tput setf 56 ||  tput setaf 56 || : 2>/dev/null  ); export __56_=$__Purple3_           ;     # SET FG color to Purple3
-  export __BlueViolet_=$(        tput setf 57 ||  tput setaf 57 || : 2>/dev/null  ); export __57_=$__BlueViolet_        ;     # SET FG color to BlueViolet
-  export __Orange4_=$(           tput setf 58 ||  tput setaf 58 || : 2>/dev/null  ); export __58_=$__Orange4_           ;     # SET FG color to Orange4
-  export __Grey37_=$(            tput setf 59 ||  tput setaf 59 || : 2>/dev/null  ); export __59_=$__Grey37_            ;     # SET FG color to Grey37
-  export __MediumPurple4_=$(     tput setf 60 ||  tput setaf 60 || : 2>/dev/null  ); export __60_=$__MediumPurple4_     ;     # SET FG color to MediumPurple4
-  export __SlateBlue3_=$(        tput setf 61 ||  tput setaf 61 || : 2>/dev/null  ); export __61_=$__SlateBlue3_        ;     # SET FG color to SlateBlue3
-  export __SlateBlue3_=$(        tput setf 62 ||  tput setaf 62 || : 2>/dev/null  ); export __62_=$__SlateBlue3_        ;     # SET FG color to SlateBlue3
-  export __RoyalBlue1_=$(        tput setf 63 ||  tput setaf 63 || : 2>/dev/null  ); export __63_=$__RoyalBlue1_        ;     # SET FG color to RoyalBlue1
-  export __Chartreuse4_=$(       tput setf 64 ||  tput setaf 64 || : 2>/dev/null  ); export __64_=$__Chartreuse4_       ;     # SET FG color to Chartreuse4
-  export __DarkSeaGreen4_=$(     tput setf 65 ||  tput setaf 65 || : 2>/dev/null  ); export __65_=$__DarkSeaGreen4_     ;     # SET FG color to DarkSeaGreen4
-  export __PaleTurquoise4_=$(    tput setf 66 ||  tput setaf 66 || : 2>/dev/null  ); export __66_=$__PaleTurquoise4_    ;     # SET FG color to PaleTurquoise4
-  export __SteelBlue_=$(         tput setf 67 ||  tput setaf 67 || : 2>/dev/null  ); export __67_=$__SteelBlue_         ;     # SET FG color to SteelBlue
-  export __SteelBlue3_=$(        tput setf 68 ||  tput setaf 68 || : 2>/dev/null  ); export __68_=$__SteelBlue3_        ;     # SET FG color to SteelBlue3
-  export __CornflowerBlue_=$(    tput setf 69 ||  tput setaf 69 || : 2>/dev/null  ); export __69_=$__CornflowerBlue_    ;     # SET FG color to CornflowerBlue
-  export __Chartreuse3_=$(       tput setf 70 ||  tput setaf 70 || : 2>/dev/null  ); export __70_=$__Chartreuse3_       ;     # SET FG color to Chartreuse3
-  export __DarkSeaGreen4_=$(     tput setf 71 ||  tput setaf 71 || : 2>/dev/null  ); export __71_=$__DarkSeaGreen4_     ;     # SET FG color to DarkSeaGreen4
-  export __CadetBlue_=$(         tput setf 72 ||  tput setaf 72 || : 2>/dev/null  ); export __72_=$__CadetBlue_         ;     # SET FG color to CadetBlue
-  export __CadetBlue_=$(         tput setf 73 ||  tput setaf 73 || : 2>/dev/null  ); export __73_=$__CadetBlue_         ;     # SET FG color to CadetBlue
-  export __SkyBlue3_=$(          tput setf 74 ||  tput setaf 74 || : 2>/dev/null  ); export __74_=$__SkyBlue3_          ;     # SET FG color to SkyBlue3
-  export __SteelBlue1_=$(        tput setf 75 ||  tput setaf 75 || : 2>/dev/null  ); export __75_=$__SteelBlue1_        ;     # SET FG color to SteelBlue1
-  export __Chartreuse3_=$(       tput setf 76 ||  tput setaf 76 || : 2>/dev/null  ); export __76_=$__Chartreuse3_       ;     # SET FG color to Chartreuse3
-  export __PaleGreen3_=$(        tput setf 77 ||  tput setaf 77 || : 2>/dev/null  ); export __77_=$__PaleGreen3_        ;     # SET FG color to PaleGreen3
-  export __SeaGreen3_=$(         tput setf 78 ||  tput setaf 78 || : 2>/dev/null  ); export __78_=$__SeaGreen3_         ;     # SET FG color to SeaGreen3
-  export __Aquamarine3_=$(       tput setf 79 ||  tput setaf 79 || : 2>/dev/null  ); export __79_=$__Aquamarine3_       ;     # SET FG color to Aquamarine3
-  export __MediumTurquoise_=$(   tput setf 80 ||  tput setaf 80 || : 2>/dev/null  ); export __80_=$__MediumTurquoise_   ;     # SET FG color to MediumTurquoise
-  export __SteelBlue1_=$(        tput setf 81 ||  tput setaf 81 || : 2>/dev/null  ); export __81_=$__SteelBlue1_        ;     # SET FG color to SteelBlue1
-  export __Chartreuse2_=$(       tput setf 82 ||  tput setaf 82 || : 2>/dev/null  ); export __82_=$__Chartreuse2_       ;     # SET FG color to Chartreuse2
-  export __SeaGreen2_=$(         tput setf 83 ||  tput setaf 83 || : 2>/dev/null  ); export __83_=$__SeaGreen2_         ;     # SET FG color to SeaGreen2
-  export __SeaGreen1_=$(         tput setf 84 ||  tput setaf 84 || : 2>/dev/null  ); export __84_=$__SeaGreen1_         ;     # SET FG color to SeaGreen1
-  export __SeaGreen1_=$(         tput setf 85 ||  tput setaf 85 || : 2>/dev/null  ); export __85_=$__SeaGreen1_         ;     # SET FG color to SeaGreen1
-  export __Aquamarine1_=$(       tput setf 86 ||  tput setaf 86 || : 2>/dev/null  ); export __86_=$__Aquamarine1_       ;     # SET FG color to Aquamarine1
-  export __DarkSlateGray2_=$(    tput setf 87 ||  tput setaf 87 || : 2>/dev/null  ); export __87_=$__DarkSlateGray2_    ;     # SET FG color to DarkSlateGray2
-  export __DarkRed_=$(           tput setf 88 ||  tput setaf 88 || : 2>/dev/null  ); export __88_=$__DarkRed_           ;     # SET FG color to DarkRed
-  export __DeepPink4_=$(         tput setf 89 ||  tput setaf 89 || : 2>/dev/null  ); export __89_=$__DeepPink4_         ;     # SET FG color to DeepPink4
-  export __DarkMagenta_=$(       tput setf 90 ||  tput setaf 90 || : 2>/dev/null  ); export __90_=$__DarkMagenta_       ;     # SET FG color to DarkMagenta
-  export __DarkMagenta_=$(       tput setf 91 ||  tput setaf 91 || : 2>/dev/null  ); export __91_=$__DarkMagenta_       ;     # SET FG color to DarkMagenta
-  export __DarkViolet_=$(        tput setf 92 ||  tput setaf 92 || : 2>/dev/null  ); export __92_=$__DarkViolet_        ;     # SET FG color to DarkViolet
-  export __Purple_=$(            tput setf 93 ||  tput setaf 93 || : 2>/dev/null  ); export __93_=$__Purple_            ;     # SET FG color to Purple
-  export __Orange4_=$(           tput setf 94 ||  tput setaf 94 || : 2>/dev/null  ); export __94_=$__Orange4_           ;     # SET FG color to Orange4
-  export __LightPink4_=$(        tput setf 95 ||  tput setaf 95 || : 2>/dev/null  ); export __95_=$__LightPink4_        ;     # SET FG color to LightPink4
-  export __Plum4_=$(             tput setf 96 ||  tput setaf 96 || : 2>/dev/null  ); export __96_=$__Plum4_             ;     # SET FG color to Plum4
-  export __MediumPurple3_=$(     tput setf 97 ||  tput setaf 97 || : 2>/dev/null  ); export __97_=$__MediumPurple3_     ;     # SET FG color to MediumPurple3
-  export __MediumPurple3_=$(     tput setf 98 ||  tput setaf 98 || : 2>/dev/null  ); export __98_=$__MediumPurple3_     ;     # SET FG color to MediumPurple3
-  export __SlateBlue1_=$(        tput setf 99 ||  tput setaf 99 || : 2>/dev/null  ); export __99_=$__SlateBlue1_        ;     # SET FG color to SlateBlue1
-  export __Yellow4_=$(           tput setf 100 || tput setaf 100 || : 2>/dev/null ); export __100_=$__Yellow4_          ;     # SET FG color to Yellow4
-  export __Wheat4_=$(            tput setf 101 || tput setaf 101 || : 2>/dev/null ); export __101_=$__Wheat4_           ;     # SET FG color to Wheat4
-  export __Grey53_=$(            tput setf 102 || tput setaf 102 || : 2>/dev/null ); export __102_=$__Grey53_           ;     # SET FG color to Grey53
-  export __LightSlateGrey_=$(    tput setf 103 || tput setaf 103 || : 2>/dev/null ); export __103_=$__LightSlateGrey_   ;     # SET FG color to LightSlateGrey
-  export __MediumPurple_=$(      tput setf 104 || tput setaf 104 || : 2>/dev/null ); export __104_=$__MediumPurple_     ;     # SET FG color to MediumPurple
-  export __LightSlateBlue_=$(    tput setf 105 || tput setaf 105 || : 2>/dev/null ); export __105_=$__LightSlateBlue_   ;     # SET FG color to LightSlateBlue
-  export __Yellow4_=$(           tput setf 106 || tput setaf 106 || : 2>/dev/null ); export __106_=$__Yellow4_          ;     # SET FG color to Yellow4
-  export __DarkOliveGreen3_=$(   tput setf 107 || tput setaf 107 || : 2>/dev/null ); export __107_=$__DarkOliveGreen3_  ;     # SET FG color to DarkOliveGreen3
-  export __DarkSeaGreen_=$(      tput setf 108 || tput setaf 108 || : 2>/dev/null ); export __108_=$__DarkSeaGreen_     ;     # SET FG color to DarkSeaGreen
-  export __LightSkyBlue3_=$(     tput setf 109 || tput setaf 109 || : 2>/dev/null ); export __109_=$__LightSkyBlue3_    ;     # SET FG color to LightSkyBlue3
-  export __LightSkyBlue3_=$(     tput setf 110 || tput setaf 110 || : 2>/dev/null ); export __110_=$__LightSkyBlue3_    ;     # SET FG color to LightSkyBlue3
-  export __SkyBlue2_=$(          tput setf 111 || tput setaf 111 || : 2>/dev/null ); export __111_=$__SkyBlue2_         ;     # SET FG color to SkyBlue2
-  export __Chartreuse2_=$(       tput setf 112 || tput setaf 112 || : 2>/dev/null ); export __112_=$__Chartreuse2_      ;     # SET FG color to Chartreuse2
-  export __DarkOliveGreen3_=$(   tput setf 113 || tput setaf 113 || : 2>/dev/null ); export __113_=$__DarkOliveGreen3_  ;     # SET FG color to DarkOliveGreen3
-  export __PaleGreen3_=$(        tput setf 114 || tput setaf 114 || : 2>/dev/null ); export __114_=$__PaleGreen3_       ;     # SET FG color to PaleGreen3
-  export __DarkSeaGreen3_=$(     tput setf 115 || tput setaf 115 || : 2>/dev/null ); export __115_=$__DarkSeaGreen3_    ;     # SET FG color to DarkSeaGreen3
-  export __DarkSlateGray3_=$(    tput setf 116 || tput setaf 116 || : 2>/dev/null ); export __116_=$__DarkSlateGray3_   ;     # SET FG color to DarkSlateGray3
-  export __SkyBlue1_=$(          tput setf 117 || tput setaf 117 || : 2>/dev/null ); export __117_=$__SkyBlue1_         ;     # SET FG color to SkyBlue1
-  export __Chartreuse1_=$(       tput setf 118 || tput setaf 118 || : 2>/dev/null ); export __118_=$__Chartreuse1_      ;     # SET FG color to Chartreuse1
-  export __LightGreen_=$(        tput setf 119 || tput setaf 119 || : 2>/dev/null ); export __119_=$__LightGreen_       ;     # SET FG color to LightGreen
-  export __LightGreen_=$(        tput setf 120 || tput setaf 120 || : 2>/dev/null ); export __120_=$__LightGreen_       ;     # SET FG color to LightGreen
-  export __PaleGreen1_=$(        tput setf 121 || tput setaf 121 || : 2>/dev/null ); export __121_=$__PaleGreen1_       ;     # SET FG color to PaleGreen1
-  export __Aquamarine1_=$(       tput setf 122 || tput setaf 122 || : 2>/dev/null ); export __122_=$__Aquamarine1_      ;     # SET FG color to Aquamarine1
-  export __DarkSlateGray1_=$(    tput setf 123 || tput setaf 123 || : 2>/dev/null ); export __123_=$__DarkSlateGray1_   ;     # SET FG color to DarkSlateGray1
-  export __Red3_=$(              tput setf 124 || tput setaf 124 || : 2>/dev/null ); export __124_=$__Red3_             ;     # SET FG color to Red3
-  export __DeepPink4_=$(         tput setf 125 || tput setaf 125 || : 2>/dev/null ); export __125_=$__DeepPink4_        ;     # SET FG color to DeepPink4
-  export __MediumVioletRed_=$(   tput setf 126 || tput setaf 126 || : 2>/dev/null ); export __126_=$__MediumVioletRed_  ;     # SET FG color to MediumVioletRed
-  export __Magenta3_=$(          tput setf 127 || tput setaf 127 || : 2>/dev/null ); export __127_=$__Magenta3_         ;     # SET FG color to Magenta3
-  export __DarkViolet_=$(        tput setf 128 || tput setaf 128 || : 2>/dev/null ); export __128_=$__DarkViolet_       ;     # SET FG color to DarkViolet
-  export __Purple_=$(            tput setf 129 || tput setaf 129 || : 2>/dev/null ); export __129_=$__Purple_           ;     # SET FG color to Purple
-  export __DarkOrange3_=$(       tput setf 130 || tput setaf 130 || : 2>/dev/null ); export __130_=$__DarkOrange3_      ;     # SET FG color to DarkOrange3
-  export __IndianRed_=$(         tput setf 131 || tput setaf 131 || : 2>/dev/null ); export __131_=$__IndianRed_        ;     # SET FG color to IndianRed
-  export __HotPink3_=$(          tput setf 132 || tput setaf 132 || : 2>/dev/null ); export __132_=$__HotPink3_         ;     # SET FG color to HotPink3
-  export __MediumOrchid3_=$(     tput setf 133 || tput setaf 133 || : 2>/dev/null ); export __133_=$__MediumOrchid3_    ;     # SET FG color to MediumOrchid3
-  export __MediumOrchid_=$(      tput setf 134 || tput setaf 134 || : 2>/dev/null ); export __134_=$__MediumOrchid_     ;     # SET FG color to MediumOrchid
-  export __MediumPurple2_=$(     tput setf 135 || tput setaf 135 || : 2>/dev/null ); export __135_=$__MediumPurple2_    ;     # SET FG color to MediumPurple2
-  export __DarkGoldenrod_=$(     tput setf 136 || tput setaf 136 || : 2>/dev/null ); export __136_=$__DarkGoldenrod_    ;     # SET FG color to DarkGoldenrod
-  export __LightSalmon3_=$(      tput setf 137 || tput setaf 137 || : 2>/dev/null ); export __137_=$__LightSalmon3_     ;     # SET FG color to LightSalmon3
-  export __RosyBrown_=$(         tput setf 138 || tput setaf 138 || : 2>/dev/null ); export __138_=$__RosyBrown_        ;     # SET FG color to RosyBrown
-  export __Grey63_=$(            tput setf 139 || tput setaf 139 || : 2>/dev/null ); export __139_=$__Grey63_           ;     # SET FG color to Grey63
-  export __MediumPurple2_=$(     tput setf 140 || tput setaf 140 || : 2>/dev/null ); export __140_=$__MediumPurple2_    ;     # SET FG color to MediumPurple2
-  export __MediumPurple1_=$(     tput setf 141 || tput setaf 141 || : 2>/dev/null ); export __141_=$__MediumPurple1_    ;     # SET FG color to MediumPurple1
-  export __Gold3_=$(             tput setf 142 || tput setaf 142 || : 2>/dev/null ); export __142_=$__Gold3_            ;     # SET FG color to Gold3
-  export __DarkKhaki_=$(         tput setf 143 || tput setaf 143 || : 2>/dev/null ); export __143_=$__DarkKhaki_        ;     # SET FG color to DarkKhaki
-  export __NavajoWhite3_=$(      tput setf 144 || tput setaf 144 || : 2>/dev/null ); export __144_=$__NavajoWhite3_     ;     # SET FG color to NavajoWhite3
-  export __Grey69_=$(            tput setf 145 || tput setaf 145 || : 2>/dev/null ); export __145_=$__Grey69_           ;     # SET FG color to Grey69
-  export __LightSteelBlue3_=$(   tput setf 146 || tput setaf 146 || : 2>/dev/null ); export __146_=$__LightSteelBlue3_  ;     # SET FG color to LightSteelBlue3
-  export __LightSteelBlue_=$(    tput setf 147 || tput setaf 147 || : 2>/dev/null ); export __147_=$__LightSteelBlue_   ;     # SET FG color to LightSteelBlue
-  export __Yellow3_=$(           tput setf 148 || tput setaf 148 || : 2>/dev/null ); export __148_=$__Yellow3_          ;     # SET FG color to Yellow3
-  export __DarkOliveGreen3_=$(   tput setf 149 || tput setaf 149 || : 2>/dev/null ); export __149_=$__DarkOliveGreen3_  ;     # SET FG color to DarkOliveGreen3
-  export __DarkSeaGreen3_=$(     tput setf 150 || tput setaf 150 || : 2>/dev/null ); export __150_=$__DarkSeaGreen3_    ;     # SET FG color to DarkSeaGreen3
-  export __DarkSeaGreen2_=$(     tput setf 151 || tput setaf 151 || : 2>/dev/null ); export __151_=$__DarkSeaGreen2_    ;     # SET FG color to DarkSeaGreen2
-  export __LightCyan3_=$(        tput setf 152 || tput setaf 152 || : 2>/dev/null ); export __152_=$__LightCyan3_       ;     # SET FG color to LightCyan3
-  export __LightSkyBlue1_=$(     tput setf 153 || tput setaf 153 || : 2>/dev/null ); export __153_=$__LightSkyBlue1_    ;     # SET FG color to LightSkyBlue1
-  export __GreenYellow_=$(       tput setf 154 || tput setaf 154 || : 2>/dev/null ); export __154_=$__GreenYellow_      ;     # SET FG color to GreenYellow
-  export __DarkOliveGreen2_=$(   tput setf 155 || tput setaf 155 || : 2>/dev/null ); export __155_=$__DarkOliveGreen2_  ;     # SET FG color to DarkOliveGreen2
-  export __PaleGreen1_=$(        tput setf 156 || tput setaf 156 || : 2>/dev/null ); export __156_=$__PaleGreen1_       ;     # SET FG color to PaleGreen1
-  export __DarkSeaGreen2_=$(     tput setf 157 || tput setaf 157 || : 2>/dev/null ); export __157_=$__DarkSeaGreen2_    ;     # SET FG color to DarkSeaGreen2
-  export __DarkSeaGreen1_=$(     tput setf 158 || tput setaf 158 || : 2>/dev/null ); export __158_=$__DarkSeaGreen1_    ;     # SET FG color to DarkSeaGreen1
-  export __PaleTurquoise1_=$(    tput setf 159 || tput setaf 159 || : 2>/dev/null ); export __159_=$__PaleTurquoise1_   ;     # SET FG color to PaleTurquoise1
-  export __Red3_=$(              tput setf 160 || tput setaf 160 || : 2>/dev/null ); export __160_=$__Red3_             ;     # SET FG color to Red3
-  export __DeepPink3_=$(         tput setf 161 || tput setaf 161 || : 2>/dev/null ); export __161_=$__DeepPink3_        ;     # SET FG color to DeepPink3
-  export __DeepPink3_=$(         tput setf 162 || tput setaf 162 || : 2>/dev/null ); export __162_=$__DeepPink3_        ;     # SET FG color to DeepPink3
-  export __Magenta3_=$(          tput setf 163 || tput setaf 163 || : 2>/dev/null ); export __163_=$__Magenta3_         ;     # SET FG color to Magenta3
-  export __Magenta3_=$(          tput setf 164 || tput setaf 164 || : 2>/dev/null ); export __164_=$__Magenta3_         ;     # SET FG color to Magenta3
-  export __Magenta2_=$(          tput setf 165 || tput setaf 165 || : 2>/dev/null ); export __165_=$__Magenta2_         ;     # SET FG color to Magenta2
-  export __DarkOrange3_=$(       tput setf 166 || tput setaf 166 || : 2>/dev/null ); export __166_=$__DarkOrange3_      ;     # SET FG color to DarkOrange3
-  export __IndianRed_=$(         tput setf 167 || tput setaf 167 || : 2>/dev/null ); export __167_=$__IndianRed_        ;     # SET FG color to IndianRed
-  export __HotPink3_=$(          tput setf 168 || tput setaf 168 || : 2>/dev/null ); export __168_=$__HotPink3_         ;     # SET FG color to HotPink3
-  export __HotPink2_=$(          tput setf 169 || tput setaf 169 || : 2>/dev/null ); export __169_=$__HotPink2_         ;     # SET FG color to HotPink2
-  export __Orchid_=$(            tput setf 170 || tput setaf 170 || : 2>/dev/null ); export __170_=$__Orchid_           ;     # SET FG color to Orchid
-  export __MediumOrchid1_=$(     tput setf 171 || tput setaf 171 || : 2>/dev/null ); export __171_=$__MediumOrchid1_    ;     # SET FG color to MediumOrchid1
-  export __Orange3_=$(           tput setf 172 || tput setaf 172 || : 2>/dev/null ); export __172_=$__Orange3_          ;     # SET FG color to Orange3
-  export __LightSalmon3_=$(      tput setf 173 || tput setaf 173 || : 2>/dev/null ); export __173_=$__LightSalmon3_     ;     # SET FG color to LightSalmon3
-  export __LightPink3_=$(        tput setf 174 || tput setaf 174 || : 2>/dev/null ); export __174_=$__LightPink3_       ;     # SET FG color to LightPink3
-  export __Pink3_=$(             tput setf 175 || tput setaf 175 || : 2>/dev/null ); export __175_=$__Pink3_            ;     # SET FG color to Pink3
-  export __Plum3_=$(             tput setf 176 || tput setaf 176 || : 2>/dev/null ); export __176_=$__Plum3_            ;     # SET FG color to Plum3
-  export __Violet_=$(            tput setf 177 || tput setaf 177 || : 2>/dev/null ); export __177_=$__Violet_           ;     # SET FG color to Violet
-  export __Gold3_=$(             tput setf 178 || tput setaf 178 || : 2>/dev/null ); export __178_=$__Gold3_            ;     # SET FG color to Gold3
-  export __LightGoldenrod3_=$(   tput setf 179 || tput setaf 179 || : 2>/dev/null ); export __179_=$__LightGoldenrod3_  ;     # SET FG color to LightGoldenrod3
-  export __Tan_=$(               tput setf 180 || tput setaf 180 || : 2>/dev/null ); export __180_=$__Tan_              ;     # SET FG color to Tan
-  export __MistyRose3_=$(        tput setf 181 || tput setaf 181 || : 2>/dev/null ); export __181_=$__MistyRose3_       ;     # SET FG color to MistyRose3
-  export __Thistle3_=$(          tput setf 182 || tput setaf 182 || : 2>/dev/null ); export __182_=$__Thistle3_         ;     # SET FG color to Thistle3
-  export __Plum2_=$(             tput setf 183 || tput setaf 183 || : 2>/dev/null ); export __183_=$__Plum2_            ;     # SET FG color to Plum2
-  export __Yellow3_=$(           tput setf 184 || tput setaf 184 || : 2>/dev/null ); export __184_=$__Yellow3_          ;     # SET FG color to Yellow3
-  export __Khaki3_=$(            tput setf 185 || tput setaf 185 || : 2>/dev/null ); export __185_=$__Khaki3_           ;     # SET FG color to Khaki3
-  export __LightGoldenrod2_=$(   tput setf 186 || tput setaf 186 || : 2>/dev/null ); export __186_=$__LightGoldenrod2_  ;     # SET FG color to LightGoldenrod2
-  export __LightYellow3_=$(      tput setf 187 || tput setaf 187 || : 2>/dev/null ); export __187_=$__LightYellow3_     ;     # SET FG color to LightYellow3
-  export __Grey84_=$(            tput setf 188 || tput setaf 188 || : 2>/dev/null ); export __188_=$__Grey84_           ;     # SET FG color to Grey84
-  export __LightSteelBlue1_=$(   tput setf 189 || tput setaf 189 || : 2>/dev/null ); export __189_=$__LightSteelBlue1_  ;     # SET FG color to LightSteelBlue1
-  export __Yellow2_=$(           tput setf 190 || tput setaf 190 || : 2>/dev/null ); export __190_=$__Yellow2_          ;     # SET FG color to Yellow2
-  export __DarkOliveGreen1_=$(   tput setf 191 || tput setaf 191 || : 2>/dev/null ); export __191_=$__DarkOliveGreen1_  ;     # SET FG color to DarkOliveGreen1
-  export __DarkOliveGreen1_=$(   tput setf 192 || tput setaf 192 || : 2>/dev/null ); export __192_=$__DarkOliveGreen1_  ;     # SET FG color to DarkOliveGreen1
-  export __DarkSeaGreen1_=$(     tput setf 193 || tput setaf 193 || : 2>/dev/null ); export __193_=$__DarkSeaGreen1_    ;     # SET FG color to DarkSeaGreen1
-  export __Honeydew2_=$(         tput setf 194 || tput setaf 194 || : 2>/dev/null ); export __194_=$__Honeydew2_        ;     # SET FG color to Honeydew2
-  export __LightCyan1_=$(        tput setf 195 || tput setaf 195 || : 2>/dev/null ); export __195_=$__LightCyan1_       ;     # SET FG color to LightCyan1
-  export __Red1_=$(              tput setf 196 || tput setaf 196 || : 2>/dev/null ); export __196_=$__Red1_             ;     # SET FG color to Red1
-  export __DeepPink2_=$(         tput setf 197 || tput setaf 197 || : 2>/dev/null ); export __197_=$__DeepPink2_        ;     # SET FG color to DeepPink2
-  export __DeepPink1_=$(         tput setf 198 || tput setaf 198 || : 2>/dev/null ); export __198_=$__DeepPink1_        ;     # SET FG color to DeepPink1
-  export __DeepPink1_=$(         tput setf 199 || tput setaf 199 || : 2>/dev/null ); export __199_=$__DeepPink1_        ;     # SET FG color to DeepPink1
-  export __Magenta2_=$(          tput setf 200 || tput setaf 200 || : 2>/dev/null ); export __200_=$__Magenta2_         ;     # SET FG color to Magenta2
-  export __Magenta1_=$(          tput setf 201 || tput setaf 201 || : 2>/dev/null ); export __201_=$__Magenta1_         ;     # SET FG color to Magenta1
-  export __OrangeRed1_=$(        tput setf 202 || tput setaf 202 || : 2>/dev/null ); export __202_=$__OrangeRed1_       ;     # SET FG color to OrangeRed1
-  export __IndianRed1_=$(        tput setf 203 || tput setaf 203 || : 2>/dev/null ); export __203_=$__IndianRed1_       ;     # SET FG color to IndianRed1
-  export __IndianRed1_=$(        tput setf 204 || tput setaf 204 || : 2>/dev/null ); export __204_=$__IndianRed1_       ;     # SET FG color to IndianRed1
-  export __HotPink_=$(           tput setf 205 || tput setaf 205 || : 2>/dev/null ); export __205_=$__HotPink_          ;     # SET FG color to HotPink
-  export __HotPink_=$(           tput setf 206 || tput setaf 206 || : 2>/dev/null ); export __206_=$__HotPink_          ;     # SET FG color to HotPink
-  export __MediumOrchid1_=$(     tput setf 207 || tput setaf 207 || : 2>/dev/null ); export __207_=$__MediumOrchid1_    ;     # SET FG color to MediumOrchid1
-  export __DarkOrange_=$(        tput setf 208 || tput setaf 208 || : 2>/dev/null ); export __208_=$__DarkOrange_       ;     # SET FG color to DarkOrange
-  export __Salmon1_=$(           tput setf 209 || tput setaf 209 || : 2>/dev/null ); export __209_=$__Salmon1_          ;     # SET FG color to Salmon1
-  export __LightCoral_=$(        tput setf 210 || tput setaf 210 || : 2>/dev/null ); export __210_=$__LightCoral_       ;     # SET FG color to LightCoral
-  export __PaleVioletRed1_=$(    tput setf 211 || tput setaf 211 || : 2>/dev/null ); export __211_=$__PaleVioletRed1_   ;     # SET FG color to PaleVioletRed1
-  export __Orchid2_=$(           tput setf 212 || tput setaf 212 || : 2>/dev/null ); export __212_=$__Orchid2_          ;     # SET FG color to Orchid2
-  export __Orchid1_=$(           tput setf 213 || tput setaf 213 || : 2>/dev/null ); export __213_=$__Orchid1_          ;     # SET FG color to Orchid1
-  export __Orange1_=$(           tput setf 214 || tput setaf 214 || : 2>/dev/null ); export __214_=$__Orange1_          ;     # SET FG color to Orange1
-  export __SandyBrown_=$(        tput setf 215 || tput setaf 215 || : 2>/dev/null ); export __215_=$__SandyBrown_       ;     # SET FG color to SandyBrown
-  export __LightSalmon1_=$(      tput setf 216 || tput setaf 216 || : 2>/dev/null ); export __216_=$__LightSalmon1_     ;     # SET FG color to LightSalmon1
-  export __LightPink1_=$(        tput setf 217 || tput setaf 217 || : 2>/dev/null ); export __217_=$__LightPink1_       ;     # SET FG color to LightPink1
-  export __Pink1_=$(             tput setf 218 || tput setaf 218 || : 2>/dev/null ); export __218_=$__Pink1_            ;     # SET FG color to Pink1
-  export __Plum1_=$(             tput setf 219 || tput setaf 219 || : 2>/dev/null ); export __219_=$__Plum1_            ;     # SET FG color to Plum1
-  export __Gold1_=$(             tput setf 220 || tput setaf 220 || : 2>/dev/null ); export __220_=$__Gold1_            ;     # SET FG color to Gold1
-  export __LightGoldenrod2_=$(   tput setf 221 || tput setaf 221 || : 2>/dev/null ); export __221_=$__LightGoldenrod2_  ;     # SET FG color to LightGoldenrod2
-  export __LightGoldenrod2_=$(   tput setf 222 || tput setaf 222 || : 2>/dev/null ); export __222_=$__LightGoldenrod2_  ;     # SET FG color to LightGoldenrod2
-  export __NavajoWhite1_=$(      tput setf 223 || tput setaf 223 || : 2>/dev/null ); export __223_=$__NavajoWhite1_     ;     # SET FG color to NavajoWhite1
-  export __MistyRose1_=$(        tput setf 224 || tput setaf 224 || : 2>/dev/null ); export __224_=$__MistyRose1_       ;     # SET FG color to MistyRose1
-  export __Thistle1_=$(          tput setf 225 || tput setaf 225 || : 2>/dev/null ); export __225_=$__Thistle1_         ;     # SET FG color to Thistle1
-  export __Yellow1_=$(           tput setf 226 || tput setaf 226 || : 2>/dev/null ); export __226_=$__Yellow1_          ;     # SET FG color to Yellow1
-  export __LightGoldenrod1_=$(   tput setf 227 || tput setaf 227 || : 2>/dev/null ); export __227_=$__LightGoldenrod1_  ;     # SET FG color to LightGoldenrod1
-  export __Khaki1_=$(            tput setf 228 || tput setaf 228 || : 2>/dev/null ); export __228_=$__Khaki1_           ;     # SET FG color to Khaki1
-  export __Wheat1_=$(            tput setf 229 || tput setaf 229 || : 2>/dev/null ); export __229_=$__Wheat1_           ;     # SET FG color to Wheat1
-  export __Cornsilk1_=$(         tput setf 230 || tput setaf 230 || : 2>/dev/null ); export __230_=$__Cornsilk1_        ;     # SET FG color to Cornsilk1
-  export __Grey100_=$(           tput setf 231 || tput setaf 231 || : 2>/dev/null ); export __231_=$__Grey100_          ;     # SET FG color to Grey100
-  export __Grey3_=$(             tput setf 232 || tput setaf 232 || : 2>/dev/null ); export __232_=$__Grey3_            ;     # SET FG color to Grey3
-  export __Grey7_=$(             tput setf 233 || tput setaf 233 || : 2>/dev/null ); export __233_=$__Grey7_            ;     # SET FG color to Grey7
-  export __Grey11_=$(            tput setf 234 || tput setaf 234 || : 2>/dev/null ); export __234_=$__Grey11_           ;     # SET FG color to Grey11
-  export __Grey15_=$(            tput setf 235 || tput setaf 235 || : 2>/dev/null ); export __235_=$__Grey15_           ;     # SET FG color to Grey15
-  export __Grey19_=$(            tput setf 236 || tput setaf 236 || : 2>/dev/null ); export __236_=$__Grey19_           ;     # SET FG color to Grey19
-  export __Grey23_=$(            tput setf 237 || tput setaf 237 || : 2>/dev/null ); export __237_=$__Grey23_           ;     # SET FG color to Grey23
-  export __Grey27_=$(            tput setf 238 || tput setaf 238 || : 2>/dev/null ); export __238_=$__Grey27_           ;     # SET FG color to Grey27
-  export __Grey30_=$(            tput setf 239 || tput setaf 239 || : 2>/dev/null ); export __239_=$__Grey30_           ;     # SET FG color to Grey30
-  export __Grey35_=$(            tput setf 240 || tput setaf 240 || : 2>/dev/null ); export __240_=$__Grey35_           ;     # SET FG color to Grey35
-  export __Grey39_=$(            tput setf 241 || tput setaf 241 || : 2>/dev/null ); export __241_=$__Grey39_           ;     # SET FG color to Grey39
-  export __Grey42_=$(            tput setf 242 || tput setaf 242 || : 2>/dev/null ); export __242_=$__Grey42_           ;     # SET FG color to Grey42
-  export __Grey46_=$(            tput setf 243 || tput setaf 243 || : 2>/dev/null ); export __243_=$__Grey46_           ;     # SET FG color to Grey46
-  export __Grey50_=$(            tput setf 244 || tput setaf 244 || : 2>/dev/null ); export __244_=$__Grey50_           ;     # SET FG color to Grey50
-  export __Grey54_=$(            tput setf 245 || tput setaf 245 || : 2>/dev/null ); export __245_=$__Grey54_           ;     # SET FG color to Grey54
-  export __Grey58_=$(            tput setf 246 || tput setaf 246 || : 2>/dev/null ); export __246_=$__Grey58_           ;     # SET FG color to Grey58
-  export __Grey62_=$(            tput setf 247 || tput setaf 247 || : 2>/dev/null ); export __247_=$__Grey62_           ;     # SET FG color to Grey62
-  export __Grey66_=$(            tput setf 248 || tput setaf 248 || : 2>/dev/null ); export __248_=$__Grey66_           ;     # SET FG color to Grey66
-  export __Grey70_=$(            tput setf 249 || tput setaf 249 || : 2>/dev/null ); export __249_=$__Grey70_           ;     # SET FG color to Grey70
-  export __Grey74_=$(            tput setf 250 || tput setaf 250 || : 2>/dev/null ); export __250_=$__Grey74_           ;     # SET FG color to Grey74
-  export __Grey78_=$(            tput setf 251 || tput setaf 251 || : 2>/dev/null ); export __251_=$__Grey78_           ;     # SET FG color to Grey78
-  export __Grey82_=$(            tput setf 252 || tput setaf 252 || : 2>/dev/null ); export __252_=$__Grey82_           ;     # SET FG color to Grey82
-  export __Grey85_=$(            tput setf 253 || tput setaf 253 || : 2>/dev/null ); export __253_=$__Grey85_           ;     # SET FG color to Grey85
-  export __Grey89_=$(            tput setf 254 || tput setaf 254 || : 2>/dev/null ); export __254_=$__Grey89_           ;     # SET FG color to Grey89
-  export __Grey93_=$(            tput setf 255 || tput setaf 255 || : 2>/dev/null ); export __255_=$__Grey93_           ;     # SET FG color to Grey93
+  __0_=$(   tput setf 0   || tput setaf 0   || : 2>/dev/null  );
+  __1_=$(   tput setf 1   || tput setaf 1   || : 2>/dev/null  );
+  __2_=$(   tput setf 2   || tput setaf 2   || : 2>/dev/null  );
+  __3_=$(   tput setf 3   || tput setaf 3   || : 2>/dev/null  );
+  __4_=$(   tput setf 4   || tput setaf 4   || : 2>/dev/null  );
+  __5_=$(   tput setf 5   || tput setaf 5   || : 2>/dev/null  );
+  __6_=$(   tput setf 6   || tput setaf 6   || : 2>/dev/null  );
+  __7_=$(   tput setf 7   || tput setaf 7   || : 2>/dev/null  );
+  __8_=$(   tput setf 8   || tput setaf 8   || : 2>/dev/null  );
+  __9_=$(   tput setf 9   || tput setaf 9   || : 2>/dev/null  );
+  __10_=$(  tput setf 10  || tput setaf 10  || : 2>/dev/null  );
+  __11_=$(  tput setf 11  || tput setaf 11  || : 2>/dev/null  );
+  __12_=$(  tput setf 12  || tput setaf 12  || : 2>/dev/null  );
+  __13_=$(  tput setf 13  || tput setaf 13  || : 2>/dev/null  );
+  __14_=$(  tput setf 14  || tput setaf 14  || : 2>/dev/null  );
+  __15_=$(  tput setf 15  || tput setaf 15  || : 2>/dev/null  );
+  __16_=$(  tput setf 16  || tput setaf 16  || : 2>/dev/null  );
+  __17_=$(  tput setf 17  || tput setaf 17  || : 2>/dev/null  ); # SET FG color to NavyBlue
+  __18_=$(  tput setf 18  || tput setaf 18  || : 2>/dev/null  ); # SET FG color to DarkBlue
+  __19_=$(  tput setf 19  || tput setaf 19  || : 2>/dev/null  ); # SET FG color to Blue3
+  __20_=$(  tput setf 20  || tput setaf 20  || : 2>/dev/null  ); # SET FG color to Blue3
+  __21_=$(  tput setf 21  || tput setaf 21  || : 2>/dev/null  ); # SET FG color to Blue1
+  __22_=$(  tput setf 22  || tput setaf 22  || : 2>/dev/null  ); # SET FG color to DarkGreen
+  __23_=$(  tput setf 23  || tput setaf 23  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue4
+  __24_=$(  tput setf 24  || tput setaf 24  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue4
+  __25_=$(  tput setf 25  || tput setaf 25  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue4
+  __26_=$(  tput setf 26  || tput setaf 26  || : 2>/dev/null  ); # SET FG color to DodgerBlue3
+  __27_=$(  tput setf 27  || tput setaf 27  || : 2>/dev/null  ); # SET FG color to DodgerBlue2
+  __28_=$(  tput setf 28  || tput setaf 28  || : 2>/dev/null  ); # SET FG color to Green4
+  __29_=$(  tput setf 29  || tput setaf 29  || : 2>/dev/null  ); # SET FG color to SpringGreen4
+  __30_=$(  tput setf 30  || tput setaf 30  || : 2>/dev/null  ); # SET FG color to Turquoise4
+  __31_=$(  tput setf 31  || tput setaf 31  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue3
+  __32_=$(  tput setf 32  || tput setaf 32  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue3
+  __33_=$(  tput setf 33  || tput setaf 33  || : 2>/dev/null  ); # SET FG color to DodgerBlue1
+  __34_=$(  tput setf 34  || tput setaf 34  || : 2>/dev/null  ); # SET FG color to Green3
+  __35_=$(  tput setf 35  || tput setaf 35  || : 2>/dev/null  ); # SET FG color to SpringGreen3
+  __36_=$(  tput setf 36  || tput setaf 36  || : 2>/dev/null  ); # SET FG color to DarkCyan
+  __37_=$(  tput setf 37  || tput setaf 37  || : 2>/dev/null  ); # SET FG color to LightSeaGreen
+  __38_=$(  tput setf 38  || tput setaf 38  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue2
+  __39_=$(  tput setf 39  || tput setaf 39  || : 2>/dev/null  ); # SET FG color to DeepSkyBlue1
+  __40_=$(  tput setf 40  || tput setaf 40  || : 2>/dev/null  ); # SET FG color to Green3
+  __41_=$(  tput setf 41  || tput setaf 41  || : 2>/dev/null  ); # SET FG color to SpringGreen3
+  __42_=$(  tput setf 42  || tput setaf 42  || : 2>/dev/null  ); # SET FG color to SpringGreen2
+  __43_=$(  tput setf 43  || tput setaf 43  || : 2>/dev/null  ); # SET FG color to Cyan3
+  __44_=$(  tput setf 44  || tput setaf 44  || : 2>/dev/null  ); # SET FG color to DarkTurquoise
+  __45_=$(  tput setf 45  || tput setaf 45  || : 2>/dev/null  ); # SET FG color to Turquoise2
+  __46_=$(  tput setf 46  || tput setaf 46  || : 2>/dev/null  ); # SET FG color to Green1
+  __47_=$(  tput setf 47  || tput setaf 47  || : 2>/dev/null  ); # SET FG color to SpringGreen2
+  __48_=$(  tput setf 48  || tput setaf 48  || : 2>/dev/null  ); # SET FG color to SpringGreen1
+  __49_=$(  tput setf 49  || tput setaf 49  || : 2>/dev/null  ); # SET FG color to MediumSpringGreen
+  __50_=$(  tput setf 50  || tput setaf 50  || : 2>/dev/null  ); # SET FG color to Cyan2
+  __51_=$(  tput setf 51  || tput setaf 51  || : 2>/dev/null  ); # SET FG color to Cyan1
+  __52_=$(  tput setf 52  || tput setaf 52  || : 2>/dev/null  ); # SET FG color to DarkRed
+  __53_=$(  tput setf 53  || tput setaf 53  || : 2>/dev/null  ); # SET FG color to DeepPink4
+  __54_=$(  tput setf 54  || tput setaf 54  || : 2>/dev/null  ); # SET FG color to Purple4
+  __55_=$(  tput setf 55  || tput setaf 55  || : 2>/dev/null  ); # SET FG color to Purple4
+  __56_=$(  tput setf 56  || tput setaf 56  || : 2>/dev/null  ); # SET FG color to Purple3
+  __57_=$(  tput setf 57  || tput setaf 57  || : 2>/dev/null  ); # SET FG color to BlueViolet
+  __58_=$(  tput setf 58  || tput setaf 58  || : 2>/dev/null  ); # SET FG color to Orange4
+  __59_=$(  tput setf 59  || tput setaf 59  || : 2>/dev/null  ); # SET FG color to Grey37
+  __60_=$(  tput setf 60  || tput setaf 60  || : 2>/dev/null  ); # SET FG color to MediumPurple4
+  __61_=$(  tput setf 61  || tput setaf 61  || : 2>/dev/null  ); # SET FG color to SlateBlue3
+  __62_=$(  tput setf 62  || tput setaf 62  || : 2>/dev/null  ); # SET FG color to SlateBlue3
+  __63_=$(  tput setf 63  || tput setaf 63  || : 2>/dev/null  ); # SET FG color to RoyalBlue1
+  __64_=$(  tput setf 64  || tput setaf 64  || : 2>/dev/null  ); # SET FG color to Chartreuse4
+  __65_=$(  tput setf 65  || tput setaf 65  || : 2>/dev/null  ); # SET FG color to DarkSeaGreen4
+  __66_=$(  tput setf 66  || tput setaf 66  || : 2>/dev/null  ); # SET FG color to PaleTurquoise4
+  __67_=$(  tput setf 67  || tput setaf 67  || : 2>/dev/null  ); # SET FG color to SteelBlue
+  __68_=$(  tput setf 68  || tput setaf 68  || : 2>/dev/null  ); # SET FG color to SteelBlue3
+  __69_=$(  tput setf 69  || tput setaf 69  || : 2>/dev/null  ); # SET FG color to CornflowerBlue
+  __70_=$(  tput setf 70  || tput setaf 70  || : 2>/dev/null  ); # SET FG color to Chartreuse3
+  __71_=$(  tput setf 71  || tput setaf 71  || : 2>/dev/null  ); # SET FG color to DarkSeaGreen4
+  __72_=$(  tput setf 72  || tput setaf 72  || : 2>/dev/null  ); # SET FG color to CadetBlue
+  __73_=$(  tput setf 73  || tput setaf 73  || : 2>/dev/null  ); # SET FG color to CadetBlue
+  __74_=$(  tput setf 74  || tput setaf 74  || : 2>/dev/null  ); # SET FG color to SkyBlue3
+  __75_=$(  tput setf 75  || tput setaf 75  || : 2>/dev/null  ); # SET FG color to SteelBlue1
+  __76_=$(  tput setf 76  || tput setaf 76  || : 2>/dev/null  ); # SET FG color to Chartreuse3
+  __77_=$(  tput setf 77  || tput setaf 77  || : 2>/dev/null  ); # SET FG color to PaleGreen3
+  __78_=$(  tput setf 78  || tput setaf 78  || : 2>/dev/null  ); # SET FG color to SeaGreen3
+  __79_=$(  tput setf 79  || tput setaf 79  || : 2>/dev/null  ); # SET FG color to Aquamarine3
+  __80_=$(  tput setf 80  || tput setaf 80  || : 2>/dev/null  ); # SET FG color to MediumTurquoise
+  __81_=$(  tput setf 81  || tput setaf 81  || : 2>/dev/null  ); # SET FG color to SteelBlue1
+  __82_=$(  tput setf 82  || tput setaf 82  || : 2>/dev/null  ); # SET FG color to Chartreuse2
+  __83_=$(  tput setf 83  || tput setaf 83  || : 2>/dev/null  ); # SET FG color to SeaGreen2
+  __84_=$(  tput setf 84  || tput setaf 84  || : 2>/dev/null  ); # SET FG color to SeaGreen1
+  __85_=$(  tput setf 85  || tput setaf 85  || : 2>/dev/null  ); # SET FG color to SeaGreen1
+  __86_=$(  tput setf 86  || tput setaf 86  || : 2>/dev/null  ); # SET FG color to Aquamarine1
+  __87_=$(  tput setf 87  || tput setaf 87  || : 2>/dev/null  ); # SET FG color to DarkSlateGray2
+  __88_=$(  tput setf 88  || tput setaf 88  || : 2>/dev/null  ); # SET FG color to DarkRed
+  __89_=$(  tput setf 89  || tput setaf 89  || : 2>/dev/null  ); # SET FG color to DeepPink4
+  __90_=$(  tput setf 90  || tput setaf 90  || : 2>/dev/null  ); # SET FG color to DarkMagenta
+  __91_=$(  tput setf 91  || tput setaf 91  || : 2>/dev/null  ); # SET FG color to DarkMagenta
+  __92_=$(  tput setf 92  || tput setaf 92  || : 2>/dev/null  ); # SET FG color to DarkViolet
+  __93_=$(  tput setf 93  || tput setaf 93  || : 2>/dev/null  ); # SET FG color to Purple
+  __94_=$(  tput setf 94  || tput setaf 94  || : 2>/dev/null  ); # SET FG color to Orange4
+  __95_=$(  tput setf 95  || tput setaf 95  || : 2>/dev/null  ); # SET FG color to LightPink4
+  __96_=$(  tput setf 96  || tput setaf 96  || : 2>/dev/null  ); # SET FG color to Plum4
+  __97_=$(  tput setf 97  || tput setaf 97  || : 2>/dev/null  ); # SET FG color to MediumPurple3
+  __98_=$(  tput setf 98  || tput setaf 98  || : 2>/dev/null  ); # SET FG color to MediumPurple3
+  __99_=$(  tput setf 99  || tput setaf 99  || : 2>/dev/null  ); # SET FG color to SlateBlue1
+  __100_=$( tput setf 100 || tput setaf 100 || : 2>/dev/null ); # SET FG color to Yellow4
+  __101_=$( tput setf 101 || tput setaf 101 || : 2>/dev/null ); # SET FG color to Wheat4
+  __102_=$( tput setf 102 || tput setaf 102 || : 2>/dev/null ); # SET FG color to Grey53
+  __103_=$( tput setf 103 || tput setaf 103 || : 2>/dev/null ); # SET FG color to LightSlateGrey
+  __104_=$( tput setf 104 || tput setaf 104 || : 2>/dev/null ); # SET FG color to MediumPurple
+  __105_=$( tput setf 105 || tput setaf 105 || : 2>/dev/null ); # SET FG color to LightSlateBlue
+  __106_=$( tput setf 106 || tput setaf 106 || : 2>/dev/null ); # SET FG color to Yellow4
+  __107_=$( tput setf 107 || tput setaf 107 || : 2>/dev/null ); # SET FG color to DarkOliveGreen3
+  __108_=$( tput setf 108 || tput setaf 108 || : 2>/dev/null ); # SET FG color to DarkSeaGreen
+  __109_=$( tput setf 109 || tput setaf 109 || : 2>/dev/null ); # SET FG color to LightSkyBlue3
+  __110_=$( tput setf 110 || tput setaf 110 || : 2>/dev/null ); # SET FG color to LightSkyBlue3
+  __111_=$( tput setf 111 || tput setaf 111 || : 2>/dev/null ); # SET FG color to SkyBlue2
+  __112_=$( tput setf 112 || tput setaf 112 || : 2>/dev/null ); # SET FG color to Chartreuse2
+  __113_=$( tput setf 113 || tput setaf 113 || : 2>/dev/null ); # SET FG color to DarkOliveGreen3
+  __114_=$( tput setf 114 || tput setaf 114 || : 2>/dev/null ); # SET FG color to PaleGreen3
+  __115_=$( tput setf 115 || tput setaf 115 || : 2>/dev/null ); # SET FG color to DarkSeaGreen3
+  __116_=$( tput setf 116 || tput setaf 116 || : 2>/dev/null ); # SET FG color to DarkSlateGray3
+  __117_=$( tput setf 117 || tput setaf 117 || : 2>/dev/null ); # SET FG color to SkyBlue1
+  __118_=$( tput setf 118 || tput setaf 118 || : 2>/dev/null ); # SET FG color to Chartreuse1
+  __119_=$( tput setf 119 || tput setaf 119 || : 2>/dev/null ); # SET FG color to LightGreen
+  __120_=$( tput setf 120 || tput setaf 120 || : 2>/dev/null ); # SET FG color to LightGreen
+  __121_=$( tput setf 121 || tput setaf 121 || : 2>/dev/null ); # SET FG color to PaleGreen1
+  __122_=$( tput setf 122 || tput setaf 122 || : 2>/dev/null ); # SET FG color to Aquamarine1
+  __123_=$( tput setf 123 || tput setaf 123 || : 2>/dev/null ); # SET FG color to DarkSlateGray1
+  __124_=$( tput setf 124 || tput setaf 124 || : 2>/dev/null ); # SET FG color to Red3
+  __125_=$( tput setf 125 || tput setaf 125 || : 2>/dev/null ); # SET FG color to DeepPink4
+  __126_=$( tput setf 126 || tput setaf 126 || : 2>/dev/null ); # SET FG color to MediumVioletRed
+  __127_=$( tput setf 127 || tput setaf 127 || : 2>/dev/null ); # SET FG color to Magenta3
+  __128_=$( tput setf 128 || tput setaf 128 || : 2>/dev/null ); # SET FG color to DarkViolet
+  __129_=$( tput setf 129 || tput setaf 129 || : 2>/dev/null ); # SET FG color to Purple
+  __130_=$( tput setf 130 || tput setaf 130 || : 2>/dev/null ); # SET FG color to DarkOrange3
+  __131_=$( tput setf 131 || tput setaf 131 || : 2>/dev/null ); # SET FG color to IndianRed
+  __132_=$( tput setf 132 || tput setaf 132 || : 2>/dev/null ); # SET FG color to HotPink3
+  __133_=$( tput setf 133 || tput setaf 133 || : 2>/dev/null ); # SET FG color to MediumOrchid3
+  __134_=$( tput setf 134 || tput setaf 134 || : 2>/dev/null ); # SET FG color to MediumOrchid
+  __135_=$( tput setf 135 || tput setaf 135 || : 2>/dev/null ); # SET FG color to MediumPurple2
+  __136_=$( tput setf 136 || tput setaf 136 || : 2>/dev/null ); # SET FG color to DarkGoldenrod
+  __137_=$( tput setf 137 || tput setaf 137 || : 2>/dev/null ); # SET FG color to LightSalmon3
+  __138_=$( tput setf 138 || tput setaf 138 || : 2>/dev/null ); # SET FG color to RosyBrown
+  __139_=$( tput setf 139 || tput setaf 139 || : 2>/dev/null ); # SET FG color to Grey63
+  __140_=$( tput setf 140 || tput setaf 140 || : 2>/dev/null ); # SET FG color to MediumPurple2
+  __141_=$( tput setf 141 || tput setaf 141 || : 2>/dev/null ); # SET FG color to MediumPurple1
+  __142_=$( tput setf 142 || tput setaf 142 || : 2>/dev/null ); # SET FG color to Gold3
+  __143_=$( tput setf 143 || tput setaf 143 || : 2>/dev/null ); # SET FG color to DarkKhaki
+  __144_=$( tput setf 144 || tput setaf 144 || : 2>/dev/null ); # SET FG color to NavajoWhite3
+  __145_=$( tput setf 145 || tput setaf 145 || : 2>/dev/null ); # SET FG color to Grey69
+  __146_=$( tput setf 146 || tput setaf 146 || : 2>/dev/null ); # SET FG color to LightSteelBlue3
+  __147_=$( tput setf 147 || tput setaf 147 || : 2>/dev/null ); # SET FG color to LightSteelBlue
+  __148_=$( tput setf 148 || tput setaf 148 || : 2>/dev/null ); # SET FG color to Yellow3
+  __149_=$( tput setf 149 || tput setaf 149 || : 2>/dev/null ); # SET FG color to DarkOliveGreen3
+  __150_=$( tput setf 150 || tput setaf 150 || : 2>/dev/null ); # SET FG color to DarkSeaGreen3
+  __151_=$( tput setf 151 || tput setaf 151 || : 2>/dev/null ); # SET FG color to DarkSeaGreen2
+  __152_=$( tput setf 152 || tput setaf 152 || : 2>/dev/null ); # SET FG color to LightCyan3
+  __153_=$( tput setf 153 || tput setaf 153 || : 2>/dev/null ); # SET FG color to LightSkyBlue1
+  __154_=$( tput setf 154 || tput setaf 154 || : 2>/dev/null ); # SET FG color to GreenYellow
+  __155_=$( tput setf 155 || tput setaf 155 || : 2>/dev/null ); # SET FG color to DarkOliveGreen2
+  __156_=$( tput setf 156 || tput setaf 156 || : 2>/dev/null ); # SET FG color to PaleGreen1
+  __157_=$( tput setf 157 || tput setaf 157 || : 2>/dev/null ); # SET FG color to DarkSeaGreen2
+  __158_=$( tput setf 158 || tput setaf 158 || : 2>/dev/null ); # SET FG color to DarkSeaGreen1
+  __159_=$( tput setf 159 || tput setaf 159 || : 2>/dev/null ); # SET FG color to PaleTurquoise1
+  __160_=$( tput setf 160 || tput setaf 160 || : 2>/dev/null ); # SET FG color to Red3
+  __161_=$( tput setf 161 || tput setaf 161 || : 2>/dev/null ); # SET FG color to DeepPink3
+  __162_=$( tput setf 162 || tput setaf 162 || : 2>/dev/null ); # SET FG color to DeepPink3
+  __163_=$( tput setf 163 || tput setaf 163 || : 2>/dev/null ); # SET FG color to Magenta3
+  __164_=$( tput setf 164 || tput setaf 164 || : 2>/dev/null ); # SET FG color to Magenta3
+  __165_=$( tput setf 165 || tput setaf 165 || : 2>/dev/null ); # SET FG color to Magenta2
+  __166_=$( tput setf 166 || tput setaf 166 || : 2>/dev/null ); # SET FG color to DarkOrange3
+  __167_=$( tput setf 167 || tput setaf 167 || : 2>/dev/null ); # SET FG color to IndianRed
+  __168_=$( tput setf 168 || tput setaf 168 || : 2>/dev/null ); # SET FG color to HotPink3
+  __169_=$( tput setf 169 || tput setaf 169 || : 2>/dev/null ); # SET FG color to HotPink2
+  __170_=$( tput setf 170 || tput setaf 170 || : 2>/dev/null ); # SET FG color to Orchid
+  __171_=$( tput setf 171 || tput setaf 171 || : 2>/dev/null ); # SET FG color to MediumOrchid1
+  __172_=$( tput setf 172 || tput setaf 172 || : 2>/dev/null ); # SET FG color to Orange3
+  __173_=$( tput setf 173 || tput setaf 173 || : 2>/dev/null ); # SET FG color to LightSalmon3
+  __174_=$( tput setf 174 || tput setaf 174 || : 2>/dev/null ); # SET FG color to LightPink3
+  __175_=$( tput setf 175 || tput setaf 175 || : 2>/dev/null ); # SET FG color to Pink3
+  __176_=$( tput setf 176 || tput setaf 176 || : 2>/dev/null ); # SET FG color to Plum3
+  __177_=$( tput setf 177 || tput setaf 177 || : 2>/dev/null ); # SET FG color to Violet
+  __178_=$( tput setf 178 || tput setaf 178 || : 2>/dev/null ); # SET FG color to Gold3
+  __179_=$( tput setf 179 || tput setaf 179 || : 2>/dev/null ); # SET FG color to LightGoldenrod3
+  __180_=$( tput setf 180 || tput setaf 180 || : 2>/dev/null ); # SET FG color to Tan
+  __181_=$( tput setf 181 || tput setaf 181 || : 2>/dev/null ); # SET FG color to MistyRose3
+  __182_=$( tput setf 182 || tput setaf 182 || : 2>/dev/null ); # SET FG color to Thistle3
+  __183_=$( tput setf 183 || tput setaf 183 || : 2>/dev/null ); # SET FG color to Plum2
+  __184_=$( tput setf 184 || tput setaf 184 || : 2>/dev/null ); # SET FG color to Yellow3
+  __185_=$( tput setf 185 || tput setaf 185 || : 2>/dev/null ); # SET FG color to Khaki3
+  __186_=$( tput setf 186 || tput setaf 186 || : 2>/dev/null ); # SET FG color to LightGoldenrod2
+  __187_=$( tput setf 187 || tput setaf 187 || : 2>/dev/null ); # SET FG color to LightYellow3
+  __188_=$( tput setf 188 || tput setaf 188 || : 2>/dev/null ); # SET FG color to Grey84
+  __189_=$( tput setf 189 || tput setaf 189 || : 2>/dev/null ); # SET FG color to LightSteelBlue1
+  __190_=$( tput setf 190 || tput setaf 190 || : 2>/dev/null ); # SET FG color to Yellow2
+  __191_=$( tput setf 191 || tput setaf 191 || : 2>/dev/null ); # SET FG color to DarkOliveGreen1
+  __192_=$( tput setf 192 || tput setaf 192 || : 2>/dev/null ); # SET FG color to DarkOliveGreen1
+  __193_=$( tput setf 193 || tput setaf 193 || : 2>/dev/null ); # SET FG color to DarkSeaGreen1
+  __194_=$( tput setf 194 || tput setaf 194 || : 2>/dev/null ); # SET FG color to Honeydew2
+  __195_=$( tput setf 195 || tput setaf 195 || : 2>/dev/null ); # SET FG color to LightCyan1
+  __196_=$( tput setf 196 || tput setaf 196 || : 2>/dev/null ); # SET FG color to Red1
+  __197_=$( tput setf 197 || tput setaf 197 || : 2>/dev/null ); # SET FG color to DeepPink2
+  __198_=$( tput setf 198 || tput setaf 198 || : 2>/dev/null ); # SET FG color to DeepPink1
+  __199_=$( tput setf 199 || tput setaf 199 || : 2>/dev/null ); # SET FG color to DeepPink1
+  __200_=$( tput setf 200 || tput setaf 200 || : 2>/dev/null ); # SET FG color to Magenta2
+  __201_=$( tput setf 201 || tput setaf 201 || : 2>/dev/null ); # SET FG color to Magenta1
+  __202_=$( tput setf 202 || tput setaf 202 || : 2>/dev/null ); # SET FG color to OrangeRed1
+  __203_=$( tput setf 203 || tput setaf 203 || : 2>/dev/null ); # SET FG color to IndianRed1
+  __204_=$( tput setf 204 || tput setaf 204 || : 2>/dev/null ); # SET FG color to IndianRed1
+  __205_=$( tput setf 205 || tput setaf 205 || : 2>/dev/null ); # SET FG color to HotPink
+  __206_=$( tput setf 206 || tput setaf 206 || : 2>/dev/null ); # SET FG color to HotPink
+  __207_=$( tput setf 207 || tput setaf 207 || : 2>/dev/null ); # SET FG color to MediumOrchid1
+  __208_=$( tput setf 208 || tput setaf 208 || : 2>/dev/null ); # SET FG color to DarkOrange
+  __209_=$( tput setf 209 || tput setaf 209 || : 2>/dev/null ); # SET FG color to Salmon1
+  __210_=$( tput setf 210 || tput setaf 210 || : 2>/dev/null ); # SET FG color to LightCoral
+  __211_=$( tput setf 211 || tput setaf 211 || : 2>/dev/null ); # SET FG color to PaleVioletRed1
+  __212_=$( tput setf 212 || tput setaf 212 || : 2>/dev/null ); # SET FG color to Orchid2
+  __213_=$( tput setf 213 || tput setaf 213 || : 2>/dev/null ); # SET FG color to Orchid1
+  __214_=$( tput setf 214 || tput setaf 214 || : 2>/dev/null ); # SET FG color to Orange1
+  __215_=$( tput setf 215 || tput setaf 215 || : 2>/dev/null ); # SET FG color to SandyBrown
+  __216_=$( tput setf 216 || tput setaf 216 || : 2>/dev/null ); # SET FG color to LightSalmon1
+  __217_=$( tput setf 217 || tput setaf 217 || : 2>/dev/null ); # SET FG color to LightPink1
+  __218_=$( tput setf 218 || tput setaf 218 || : 2>/dev/null ); # SET FG color to Pink1
+  __219_=$( tput setf 219 || tput setaf 219 || : 2>/dev/null ); # SET FG color to Plum1
+  __220_=$( tput setf 220 || tput setaf 220 || : 2>/dev/null ); # SET FG color to Gold1
+  __221_=$( tput setf 221 || tput setaf 221 || : 2>/dev/null ); # SET FG color to LightGoldenrod2
+  __222_=$( tput setf 222 || tput setaf 222 || : 2>/dev/null ); # SET FG color to LightGoldenrod2
+  __223_=$( tput setf 223 || tput setaf 223 || : 2>/dev/null ); # SET FG color to NavajoWhite1
+  __224_=$( tput setf 224 || tput setaf 224 || : 2>/dev/null ); # SET FG color to MistyRose1
+  __225_=$( tput setf 225 || tput setaf 225 || : 2>/dev/null ); # SET FG color to Thistle1
+  __226_=$( tput setf 226 || tput setaf 226 || : 2>/dev/null ); # SET FG color to Yellow1
+  __227_=$( tput setf 227 || tput setaf 227 || : 2>/dev/null ); # SET FG color to LightGoldenrod1
+  __228_=$( tput setf 228 || tput setaf 228 || : 2>/dev/null ); # SET FG color to Khaki1
+  __229_=$( tput setf 229 || tput setaf 229 || : 2>/dev/null ); # SET FG color to Wheat1
+  __230_=$( tput setf 230 || tput setaf 230 || : 2>/dev/null ); # SET FG color to Cornsilk1
+  __231_=$( tput setf 231 || tput setaf 231 || : 2>/dev/null ); # SET FG color to Grey100
+  __232_=$( tput setf 232 || tput setaf 232 || : 2>/dev/null ); # SET FG color to Grey3
+  __233_=$( tput setf 233 || tput setaf 233 || : 2>/dev/null ); # SET FG color to Grey7
+  __234_=$( tput setf 234 || tput setaf 234 || : 2>/dev/null ); # SET FG color to Grey11
+  __235_=$( tput setf 235 || tput setaf 235 || : 2>/dev/null ); # SET FG color to Grey15
+  __236_=$( tput setf 236 || tput setaf 236 || : 2>/dev/null ); # SET FG color to Grey19
+  __237_=$( tput setf 237 || tput setaf 237 || : 2>/dev/null ); # SET FG color to Grey23
+  __238_=$( tput setf 238 || tput setaf 238 || : 2>/dev/null ); # SET FG color to Grey27
+  __239_=$( tput setf 239 || tput setaf 239 || : 2>/dev/null ); # SET FG color to Grey30
+  __240_=$( tput setf 240 || tput setaf 240 || : 2>/dev/null ); # SET FG color to Grey35
+  __241_=$( tput setf 241 || tput setaf 241 || : 2>/dev/null ); # SET FG color to Grey39
+  __242_=$( tput setf 242 || tput setaf 242 || : 2>/dev/null ); # SET FG color to Grey42
+  __243_=$( tput setf 243 || tput setaf 243 || : 2>/dev/null ); # SET FG color to Grey46
+  __244_=$( tput setf 244 || tput setaf 244 || : 2>/dev/null ); # SET FG color to Grey50
+  __245_=$( tput setf 245 || tput setaf 245 || : 2>/dev/null ); # SET FG color to Grey54
+  __246_=$( tput setf 246 || tput setaf 246 || : 2>/dev/null ); # SET FG color to Grey58
+  __247_=$( tput setf 247 || tput setaf 247 || : 2>/dev/null ); # SET FG color to Grey62
+  __248_=$( tput setf 248 || tput setaf 248 || : 2>/dev/null ); # SET FG color to Grey66
+  __249_=$( tput setf 249 || tput setaf 249 || : 2>/dev/null ); # SET FG color to Grey70
+  __250_=$( tput setf 250 || tput setaf 250 || : 2>/dev/null ); # SET FG color to Grey74
+  __251_=$( tput setf 251 || tput setaf 251 || : 2>/dev/null ); # SET FG color to Grey78
+  __252_=$( tput setf 252 || tput setaf 252 || : 2>/dev/null ); # SET FG color to Grey82
+  __253_=$( tput setf 253 || tput setaf 253 || : 2>/dev/null ); # SET FG color to Grey85
+  __254_=$( tput setf 254 || tput setaf 254 || : 2>/dev/null ); # SET FG color to Grey89
+  __255_=$( tput setf 255 || tput setaf 255 || : 2>/dev/null ); # SET FG color to Grey93
 
 
 
@@ -264,246 +282,262 @@ function __define_tput_colors_additional_256terms() {
 
 
   # BACKGROUND COLORS
-  export __BGGrey0_=$(             tput setb 16 ||  tput setab 16 || : 2>/dev/null  ); export __BG16_=$__BGGrey0_             ;   # SET BG color to Grey0
-  export __BGNavyBlue_=$(          tput setb 17 ||  tput setab 17 || : 2>/dev/null  ); export __BG17_=$__BGNavyBlue_          ;   # SET BG color to NavyBlue
-  export __BGDarkBlue_=$(          tput setb 18 ||  tput setab 18 || : 2>/dev/null  ); export __BG18_=$__BGDarkBlue_          ;   # SET BG color to DarkBlue
-  export __BGBlue3_=$(             tput setb 19 ||  tput setab 19 || : 2>/dev/null  ); export __BG19_=$__BGBlue3_             ;   # SET BG color to Blue3
-  export __BGBlue3_=$(             tput setb 20 ||  tput setab 20 || : 2>/dev/null  ); export __BG20_=$__BGBlue3_             ;   # SET BG color to Blue3
-  export __BGBlue1_=$(             tput setb 21 ||  tput setab 21 || : 2>/dev/null  ); export __BG21_=$__BGBlue1_             ;   # SET BG color to Blue1
-  export __BGDarkGreen_=$(         tput setb 22 ||  tput setab 22 || : 2>/dev/null  ); export __BG22_=$__BGDarkGreen_         ;   # SET BG color to DarkGreen
-  export __BGDeepSkyBlue4_=$(      tput setb 23 ||  tput setab 23 || : 2>/dev/null  ); export __BG23_=$__BGDeepSkyBlue4_      ;   # SET BG color to DeepSkyBlue4
-  export __BGDeepSkyBlue4_=$(      tput setb 24 ||  tput setab 24 || : 2>/dev/null  ); export __BG24_=$__BGDeepSkyBlue4_      ;   # SET BG color to DeepSkyBlue4
-  export __BGDeepSkyBlue4_=$(      tput setb 25 ||  tput setab 25 || : 2>/dev/null  ); export __BG25_=$__BGDeepSkyBlue4_      ;   # SET BG color to DeepSkyBlue4
-  export __BGDodgerBlue3_=$(       tput setb 26 ||  tput setab 26 || : 2>/dev/null  ); export __BG26_=$__BGDodgerBlue3_       ;   # SET BG color to DodgerBlue3
-  export __BGDodgerBlue2_=$(       tput setb 27 ||  tput setab 27 || : 2>/dev/null  ); export __BG27_=$__BGDodgerBlue2_       ;   # SET BG color to DodgerBlue2
-  export __BGGreen4_=$(            tput setb 28 ||  tput setab 28 || : 2>/dev/null  ); export __BG28_=$__BGGreen4_            ;   # SET BG color to Green4
-  export __BGSpringGreen4_=$(      tput setb 29 ||  tput setab 29 || : 2>/dev/null  ); export __BG29_=$__BGSpringGreen4_      ;   # SET BG color to SpringGreen4
-  export __BGTurquoise4_=$(        tput setb 30 ||  tput setab 30 || : 2>/dev/null  ); export __BG30_=$__BGTurquoise4_        ;   # SET BG color to Turquoise4
-  export __BGDeepSkyBlue3_=$(      tput setb 31 ||  tput setab 31 || : 2>/dev/null  ); export __BG31_=$__BGDeepSkyBlue3_      ;   # SET BG color to DeepSkyBlue3
-  export __BGDeepSkyBlue3_=$(      tput setb 32 ||  tput setab 32 || : 2>/dev/null  ); export __BG32_=$__BGDeepSkyBlue3_      ;   # SET BG color to DeepSkyBlue3
-  export __BGDodgerBlue1_=$(       tput setb 33 ||  tput setab 33 || : 2>/dev/null  ); export __BG33_=$__BGDodgerBlue1_       ;   # SET BG color to DodgerBlue1
-  export __BGGreen3_=$(            tput setb 34 ||  tput setab 34 || : 2>/dev/null  ); export __BG34_=$__BGGreen3_            ;   # SET BG color to Green3
-  export __BGSpringGreen3_=$(      tput setb 35 ||  tput setab 35 || : 2>/dev/null  ); export __BG35_=$__BGSpringGreen3_      ;   # SET BG color to SpringGreen3
-  export __BGDarkCyan_=$(          tput setb 36 ||  tput setab 36 || : 2>/dev/null  ); export __BG36_=$__BGDarkCyan_          ;   # SET BG color to DarkCyan
-  export __BGLightSeaGreen_=$(     tput setb 37 ||  tput setab 37 || : 2>/dev/null  ); export __BG37_=$__BGLightSeaGreen_     ;   # SET BG color to LightSeaGreen
-  export __BGDeepSkyBlue2_=$(      tput setb 38 ||  tput setab 38 || : 2>/dev/null  ); export __BG38_=$__BGDeepSkyBlue2_      ;   # SET BG color to DeepSkyBlue2
-  export __BGDeepSkyBlue1_=$(      tput setb 39 ||  tput setab 39 || : 2>/dev/null  ); export __BG39_=$__BGDeepSkyBlue1_      ;   # SET BG color to DeepSkyBlue1
-  export __BGGreen3_=$(            tput setb 40 ||  tput setab 40 || : 2>/dev/null  ); export __BG40_=$__BGGreen3_            ;   # SET BG color to Green3
-  export __BGSpringGreen3_=$(      tput setb 41 ||  tput setab 41 || : 2>/dev/null  ); export __BG41_=$__BGSpringGreen3_      ;   # SET BG color to SpringGreen3
-  export __BGSpringGreen2_=$(      tput setb 42 ||  tput setab 42 || : 2>/dev/null  ); export __BG42_=$__BGSpringGreen2_      ;   # SET BG color to SpringGreen2
-  export __BGCyan3_=$(             tput setb 43 ||  tput setab 43 || : 2>/dev/null  ); export __BG43_=$__BGCyan3_             ;   # SET BG color to Cyan3
-  export __BGDarkTurquoise_=$(     tput setb 44 ||  tput setab 44 || : 2>/dev/null  ); export __BG44_=$__BGDarkTurquoise_     ;   # SET BG color to DarkTurquoise
-  export __BGTurquoise2_=$(        tput setb 45 ||  tput setab 45 || : 2>/dev/null  ); export __BG45_=$__BGTurquoise2_        ;   # SET BG color to Turquoise2
-  export __BGGreen1_=$(            tput setb 46 ||  tput setab 46 || : 2>/dev/null  ); export __BG46_=$__BGGreen1_            ;   # SET BG color to Green1
-  export __BGSpringGreen2_=$(      tput setb 47 ||  tput setab 47 || : 2>/dev/null  ); export __BG47_=$__BGSpringGreen2_      ;   # SET BG color to SpringGreen2
-  export __BGSpringGreen1_=$(      tput setb 48 ||  tput setab 48 || : 2>/dev/null  ); export __BG48_=$__BGSpringGreen1_      ;   # SET BG color to SpringGreen1
-  export __BGMediumSpringGreen_=$( tput setb 49 ||  tput setab 49 || : 2>/dev/null  ); export __BG49_=$__BGMediumSpringGreen_ ;   # SET BG color to MediumSpringGreen
-  export __BGCyan2_=$(             tput setb 50 ||  tput setab 50 || : 2>/dev/null  ); export __BG50_=$__BGCyan2_             ;   # SET BG color to Cyan2
-  export __BGCyan1_=$(             tput setb 51 ||  tput setab 51 || : 2>/dev/null  ); export __BG51_=$__BGCyan1_             ;   # SET BG color to Cyan1
-  export __BGDarkRed_=$(           tput setb 52 ||  tput setab 52 || : 2>/dev/null  ); export __BG52_=$__BGDarkRed_           ;   # SET BG color to DarkRed
-  export __BGDeepPink4_=$(         tput setb 53 ||  tput setab 53 || : 2>/dev/null  ); export __BG53_=$__BGDeepPink4_         ;   # SET BG color to DeepPink4
-  export __BGPurple4_=$(           tput setb 54 ||  tput setab 54 || : 2>/dev/null  ); export __BG54_=$__BGPurple4_           ;   # SET BG color to Purple4
-  export __BGPurple4_=$(           tput setb 55 ||  tput setab 55 || : 2>/dev/null  ); export __BG55_=$__BGPurple4_           ;   # SET BG color to Purple4
-  export __BGPurple3_=$(           tput setb 56 ||  tput setab 56 || : 2>/dev/null  ); export __BG56_=$__BGPurple3_           ;   # SET BG color to Purple3
-  export __BGBlueViolet_=$(        tput setb 57 ||  tput setab 57 || : 2>/dev/null  ); export __BG57_=$__BGBlueViolet_        ;   # SET BG color to BlueViolet
-  export __BGOrange4_=$(           tput setb 58 ||  tput setab 58 || : 2>/dev/null  ); export __BG58_=$__BGOrange4_           ;   # SET BG color to Orange4
-  export __BGGrey37_=$(            tput setb 59 ||  tput setab 59 || : 2>/dev/null  ); export __BG59_=$__BGGrey37_            ;   # SET BG color to Grey37
-  export __BGMediumPurple4_=$(     tput setb 60 ||  tput setab 60 || : 2>/dev/null  ); export __BG60_=$__BGMediumPurple4_     ;   # SET BG color to MediumPurple4
-  export __BGSlateBlue3_=$(        tput setb 61 ||  tput setab 61 || : 2>/dev/null  ); export __BG61_=$__BGSlateBlue3_        ;   # SET BG color to SlateBlue3
-  export __BGSlateBlue3_=$(        tput setb 62 ||  tput setab 62 || : 2>/dev/null  ); export __BG62_=$__BGSlateBlue3_        ;   # SET BG color to SlateBlue3
-  export __BGRoyalBlue1_=$(        tput setb 63 ||  tput setab 63 || : 2>/dev/null  ); export __BG63_=$__BGRoyalBlue1_        ;   # SET BG color to RoyalBlue1
-  export __BGChartreuse4_=$(       tput setb 64 ||  tput setab 64 || : 2>/dev/null  ); export __BG64_=$__BGChartreuse4_       ;   # SET BG color to Chartreuse4
-  export __BGDarkSeaGreen4_=$(     tput setb 65 ||  tput setab 65 || : 2>/dev/null  ); export __BG65_=$__BGDarkSeaGreen4_     ;   # SET BG color to DarkSeaGreen4
-  export __BGPaleTurquoise4_=$(    tput setb 66 ||  tput setab 66 || : 2>/dev/null  ); export __BG66_=$__BGPaleTurquoise4_    ;   # SET BG color to PaleTurquoise4
-  export __BGSteelBlue_=$(         tput setb 67 ||  tput setab 67 || : 2>/dev/null  ); export __BG67_=$__BGSteelBlue_         ;   # SET BG color to SteelBlue
-  export __BGSteelBlue3_=$(        tput setb 68 ||  tput setab 68 || : 2>/dev/null  ); export __BG68_=$__BGSteelBlue3_        ;   # SET BG color to SteelBlue3
-  export __BGCornflowerBlue_=$(    tput setb 69 ||  tput setab 69 || : 2>/dev/null  ); export __BG69_=$__BGCornflowerBlue_    ;   # SET BG color to CornflowerBlue
-  export __BGChartreuse3_=$(       tput setb 70 ||  tput setab 70 || : 2>/dev/null  ); export __BG70_=$__BGChartreuse3_       ;   # SET BG color to Chartreuse3
-  export __BGDarkSeaGreen4_=$(     tput setb 71 ||  tput setab 71 || : 2>/dev/null  ); export __BG71_=$__BGDarkSeaGreen4_     ;   # SET BG color to DarkSeaGreen4
-  export __BGCadetBlue_=$(         tput setb 72 ||  tput setab 72 || : 2>/dev/null  ); export __BG72_=$__BGCadetBlue_         ;   # SET BG color to CadetBlue
-  export __BGCadetBlue_=$(         tput setb 73 ||  tput setab 73 || : 2>/dev/null  ); export __BG73_=$__BGCadetBlue_         ;   # SET BG color to CadetBlue
-  export __BGSkyBlue3_=$(          tput setb 74 ||  tput setab 74 || : 2>/dev/null  ); export __BG74_=$__BGSkyBlue3_          ;   # SET BG color to SkyBlue3
-  export __BGSteelBlue1_=$(        tput setb 75 ||  tput setab 75 || : 2>/dev/null  ); export __BG75_=$__BGSteelBlue1_        ;   # SET BG color to SteelBlue1
-  export __BGChartreuse3_=$(       tput setb 76 ||  tput setab 76 || : 2>/dev/null  ); export __BG76_=$__BGChartreuse3_       ;   # SET BG color to Chartreuse3
-  export __BGPaleGreen3_=$(        tput setb 77 ||  tput setab 77 || : 2>/dev/null  ); export __BG77_=$__BGPaleGreen3_        ;   # SET BG color to PaleGreen3
-  export __BGSeaGreen3_=$(         tput setb 78 ||  tput setab 78 || : 2>/dev/null  ); export __BG78_=$__BGSeaGreen3_         ;   # SET BG color to SeaGreen3
-  export __BGAquamarine3_=$(       tput setb 79 ||  tput setab 79 || : 2>/dev/null  ); export __BG79_=$__BGAquamarine3_       ;   # SET BG color to Aquamarine3
-  export __BGMediumTurquoise_=$(   tput setb 80 ||  tput setab 80 || : 2>/dev/null  ); export __BG80_=$__BGMediumTurquoise_   ;   # SET BG color to MediumTurquoise
-  export __BGSteelBlue1_=$(        tput setb 81 ||  tput setab 81 || : 2>/dev/null  ); export __BG81_=$__BGSteelBlue1_        ;   # SET BG color to SteelBlue1
-  export __BGChartreuse2_=$(       tput setb 82 ||  tput setab 82 || : 2>/dev/null  ); export __BG82_=$__BGChartreuse2_       ;   # SET BG color to Chartreuse2
-  export __BGSeaGreen2_=$(         tput setb 83 ||  tput setab 83 || : 2>/dev/null  ); export __BG83_=$__BGSeaGreen2_         ;   # SET BG color to SeaGreen2
-  export __BGSeaGreen1_=$(         tput setb 84 ||  tput setab 84 || : 2>/dev/null  ); export __BG84_=$__BGSeaGreen1_         ;   # SET BG color to SeaGreen1
-  export __BGSeaGreen1_=$(         tput setb 85 ||  tput setab 85 || : 2>/dev/null  ); export __BG85_=$__BGSeaGreen1_         ;   # SET BG color to SeaGreen1
-  export __BGAquamarine1_=$(       tput setb 86 ||  tput setab 86 || : 2>/dev/null  ); export __BG86_=$__BGAquamarine1_       ;   # SET BG color to Aquamarine1
-  export __BGDarkSlateGray2_=$(    tput setb 87 ||  tput setab 87 || : 2>/dev/null  ); export __BG87_=$__BGDarkSlateGray2_    ;   # SET BG color to DarkSlateGray2
-  export __BGDarkRed_=$(           tput setb 88 ||  tput setab 88 || : 2>/dev/null  ); export __BG88_=$__BGDarkRed_           ;   # SET BG color to DarkRed
-  export __BGDeepPink4_=$(         tput setb 89 ||  tput setab 89 || : 2>/dev/null  ); export __BG89_=$__BGDeepPink4_         ;   # SET BG color to DeepPink4
-  export __BGDarkMagenta_=$(       tput setb 90 ||  tput setab 90 || : 2>/dev/null  ); export __BG90_=$__BGDarkMagenta_       ;   # SET BG color to DarkMagenta
-  export __BGDarkMagenta_=$(       tput setb 91 ||  tput setab 91 || : 2>/dev/null  ); export __BG91_=$__BGDarkMagenta_       ;   # SET BG color to DarkMagenta
-  export __BGDarkViolet_=$(        tput setb 92 ||  tput setab 92 || : 2>/dev/null  ); export __BG92_=$__BGDarkViolet_        ;   # SET BG color to DarkViolet
-  export __BGPurple_=$(            tput setb 93 ||  tput setab 93 || : 2>/dev/null  ); export __BG93_=$__BGPurple_            ;   # SET BG color to Purple
-  export __BGOrange4_=$(           tput setb 94 ||  tput setab 94 || : 2>/dev/null  ); export __BG94_=$__BGOrange4_           ;   # SET BG color to Orange4
-  export __BGLightPink4_=$(        tput setb 95 ||  tput setab 95 || : 2>/dev/null  ); export __BG95_=$__BGLightPink4_        ;   # SET BG color to LightPink4
-  export __BGPlum4_=$(             tput setb 96 ||  tput setab 96 || : 2>/dev/null  ); export __BG96_=$__BGPlum4_             ;   # SET BG color to Plum4
-  export __BGMediumPurple3_=$(     tput setb 97 ||  tput setab 97 || : 2>/dev/null  ); export __BG97_=$__BGMediumPurple3_     ;   # SET BG color to MediumPurple3
-  export __BGMediumPurple3_=$(     tput setb 98 ||  tput setab 98 || : 2>/dev/null  ); export __BG98_=$__BGMediumPurple3_     ;   # SET BG color to MediumPurple3
-  export __BGSlateBlue1_=$(        tput setb 99 ||  tput setab 99 || : 2>/dev/null  ); export __BG99_=$__BGSlateBlue1_        ;   # SET BG color to SlateBlue1
-  export __BGYellow4_=$(           tput setb 100 || tput setab 100 || : 2>/dev/null ); export __BG100_=$__BGYellow4_          ;   # SET BG color to Yellow4
-  export __BGWheat4_=$(            tput setb 101 || tput setab 101 || : 2>/dev/null ); export __BG101_=$__BGWheat4_           ;   # SET BG color to Wheat4
-  export __BGGrey53_=$(            tput setb 102 || tput setab 102 || : 2>/dev/null ); export __BG102_=$__BGGrey53_           ;   # SET BG color to Grey53
-  export __BGLightSlateGrey_=$(    tput setb 103 || tput setab 103 || : 2>/dev/null ); export __BG103_=$__BGLightSlateGrey_   ;   # SET BG color to LightSlateGrey
-  export __BGMediumPurple_=$(      tput setb 104 || tput setab 104 || : 2>/dev/null ); export __BG104_=$__BGMediumPurple_     ;   # SET BG color to MediumPurple
-  export __BGLightSlateBlue_=$(    tput setb 105 || tput setab 105 || : 2>/dev/null ); export __BG105_=$__BGLightSlateBlue_   ;   # SET BG color to LightSlateBlue
-  export __BGYellow4_=$(           tput setb 106 || tput setab 106 || : 2>/dev/null ); export __BG106_=$__BGYellow4_          ;   # SET BG color to Yellow4
-  export __BGDarkOliveGreen3_=$(   tput setb 107 || tput setab 107 || : 2>/dev/null ); export __BG107_=$__BGDarkOliveGreen3_  ;   # SET BG color to DarkOliveGreen3
-  export __BGDarkSeaGreen_=$(      tput setb 108 || tput setab 108 || : 2>/dev/null ); export __BG108_=$__BGDarkSeaGreen_     ;   # SET BG color to DarkSeaGreen
-  export __BGLightSkyBlue3_=$(     tput setb 109 || tput setab 109 || : 2>/dev/null ); export __BG109_=$__BGLightSkyBlue3_    ;   # SET BG color to LightSkyBlue3
-  export __BGLightSkyBlue3_=$(     tput setb 110 || tput setab 110 || : 2>/dev/null ); export __BG110_=$__BGLightSkyBlue3_    ;   # SET BG color to LightSkyBlue3
-  export __BGSkyBlue2_=$(          tput setb 111 || tput setab 111 || : 2>/dev/null ); export __BG111_=$__BGSkyBlue2_         ;   # SET BG color to SkyBlue2
-  export __BGChartreuse2_=$(       tput setb 112 || tput setab 112 || : 2>/dev/null ); export __BG112_=$__BGChartreuse2_      ;   # SET BG color to Chartreuse2
-  export __BGDarkOliveGreen3_=$(   tput setb 113 || tput setab 113 || : 2>/dev/null ); export __BG113_=$__BGDarkOliveGreen3_  ;   # SET BG color to DarkOliveGreen3
-  export __BGPaleGreen3_=$(        tput setb 114 || tput setab 114 || : 2>/dev/null ); export __BG114_=$__BGPaleGreen3_       ;   # SET BG color to PaleGreen3
-  export __BGDarkSeaGreen3_=$(     tput setb 115 || tput setab 115 || : 2>/dev/null ); export __BG115_=$__BGDarkSeaGreen3_    ;   # SET BG color to DarkSeaGreen3
-  export __BGDarkSlateGray3_=$(    tput setb 116 || tput setab 116 || : 2>/dev/null ); export __BG116_=$__BGDarkSlateGray3_   ;   # SET BG color to DarkSlateGray3
-  export __BGSkyBlue1_=$(          tput setb 117 || tput setab 117 || : 2>/dev/null ); export __BG117_=$__BGSkyBlue1_         ;   # SET BG color to SkyBlue1
-  export __BGChartreuse1_=$(       tput setb 118 || tput setab 118 || : 2>/dev/null ); export __BG118_=$__BGChartreuse1_      ;   # SET BG color to Chartreuse1
-  export __BGLightGreen_=$(        tput setb 119 || tput setab 119 || : 2>/dev/null ); export __BG119_=$__BGLightGreen_       ;   # SET BG color to LightGreen
-  export __BGLightGreen_=$(        tput setb 120 || tput setab 120 || : 2>/dev/null ); export __BG120_=$__BGLightGreen_       ;   # SET BG color to LightGreen
-  export __BGPaleGreen1_=$(        tput setb 121 || tput setab 121 || : 2>/dev/null ); export __BG121_=$__BGPaleGreen1_       ;   # SET BG color to PaleGreen1
-  export __BGAquamarine1_=$(       tput setb 122 || tput setab 122 || : 2>/dev/null ); export __BG122_=$__BGAquamarine1_      ;   # SET BG color to Aquamarine1
-  export __BGDarkSlateGray1_=$(    tput setb 123 || tput setab 123 || : 2>/dev/null ); export __BG123_=$__BGDarkSlateGray1_   ;   # SET BG color to DarkSlateGray1
-  export __BGRed3_=$(              tput setb 124 || tput setab 124 || : 2>/dev/null ); export __BG124_=$__BGRed3_             ;   # SET BG color to Red3
-  export __BGDeepPink4_=$(         tput setb 125 || tput setab 125 || : 2>/dev/null ); export __BG125_=$__BGDeepPink4_        ;   # SET BG color to DeepPink4
-  export __BGMediumVioletRed_=$(   tput setb 126 || tput setab 126 || : 2>/dev/null ); export __BG126_=$__BGMediumVioletRed_  ;   # SET BG color to MediumVioletRed
-  export __BGMagenta3_=$(          tput setb 127 || tput setab 127 || : 2>/dev/null ); export __BG127_=$__BGMagenta3_         ;   # SET BG color to Magenta3
-  export __BGDarkViolet_=$(        tput setb 128 || tput setab 128 || : 2>/dev/null ); export __BG128_=$__BGDarkViolet_       ;   # SET BG color to DarkViolet
-  export __BGPurple_=$(            tput setb 129 || tput setab 129 || : 2>/dev/null ); export __BG129_=$__BGPurple_           ;   # SET BG color to Purple
-  export __BGDarkOrange3_=$(       tput setb 130 || tput setab 130 || : 2>/dev/null ); export __BG130_=$__BGDarkOrange3_      ;   # SET BG color to DarkOrange3
-  export __BGIndianRed_=$(         tput setb 131 || tput setab 131 || : 2>/dev/null ); export __BG131_=$__BGIndianRed_        ;   # SET BG color to IndianRed
-  export __BGHotPink3_=$(          tput setb 132 || tput setab 132 || : 2>/dev/null ); export __BG132_=$__BGHotPink3_         ;   # SET BG color to HotPink3
-  export __BGMediumOrchid3_=$(     tput setb 133 || tput setab 133 || : 2>/dev/null ); export __BG133_=$__BGMediumOrchid3_    ;   # SET BG color to MediumOrchid3
-  export __BGMediumOrchid_=$(      tput setb 134 || tput setab 134 || : 2>/dev/null ); export __BG134_=$__BGMediumOrchid_     ;   # SET BG color to MediumOrchid
-  export __BGMediumPurple2_=$(     tput setb 135 || tput setab 135 || : 2>/dev/null ); export __BG135_=$__BGMediumPurple2_    ;   # SET BG color to MediumPurple2
-  export __BGDarkGoldenrod_=$(     tput setb 136 || tput setab 136 || : 2>/dev/null ); export __BG136_=$__BGDarkGoldenrod_    ;   # SET BG color to DarkGoldenrod
-  export __BGLightSalmon3_=$(      tput setb 137 || tput setab 137 || : 2>/dev/null ); export __BG137_=$__BGLightSalmon3_     ;   # SET BG color to LightSalmon3
-  export __BGRosyBrown_=$(         tput setb 138 || tput setab 138 || : 2>/dev/null ); export __BG138_=$__BGRosyBrown_        ;   # SET BG color to RosyBrown
-  export __BGGrey63_=$(            tput setb 139 || tput setab 139 || : 2>/dev/null ); export __BG139_=$__BGGrey63_           ;   # SET BG color to Grey63
-  export __BGMediumPurple2_=$(     tput setb 140 || tput setab 140 || : 2>/dev/null ); export __BG140_=$__BGMediumPurple2_    ;   # SET BG color to MediumPurple2
-  export __BGMediumPurple1_=$(     tput setb 141 || tput setab 141 || : 2>/dev/null ); export __BG141_=$__BGMediumPurple1_    ;   # SET BG color to MediumPurple1
-  export __BGGold3_=$(             tput setb 142 || tput setab 142 || : 2>/dev/null ); export __BG142_=$__BGGold3_            ;   # SET BG color to Gold3
-  export __BGDarkKhaki_=$(         tput setb 143 || tput setab 143 || : 2>/dev/null ); export __BG143_=$__BGDarkKhaki_        ;   # SET BG color to DarkKhaki
-  export __BGNavajoWhite3_=$(      tput setb 144 || tput setab 144 || : 2>/dev/null ); export __BG144_=$__BGNavajoWhite3_     ;   # SET BG color to NavajoWhite3
-  export __BGGrey69_=$(            tput setb 145 || tput setab 145 || : 2>/dev/null ); export __BG145_=$__BGGrey69_           ;   # SET BG color to Grey69
-  export __BGLightSteelBlue3_=$(   tput setb 146 || tput setab 146 || : 2>/dev/null ); export __BG146_=$__BGLightSteelBlue3_  ;   # SET BG color to LightSteelBlue3
-  export __BGLightSteelBlue_=$(    tput setb 147 || tput setab 147 || : 2>/dev/null ); export __BG147_=$__BGLightSteelBlue_   ;   # SET BG color to LightSteelBlue
-  export __BGYellow3_=$(           tput setb 148 || tput setab 148 || : 2>/dev/null ); export __BG148_=$__BGYellow3_          ;   # SET BG color to Yellow3
-  export __BGDarkOliveGreen3_=$(   tput setb 149 || tput setab 149 || : 2>/dev/null ); export __BG149_=$__BGDarkOliveGreen3_  ;   # SET BG color to DarkOliveGreen3
-  export __BGDarkSeaGreen3_=$(     tput setb 150 || tput setab 150 || : 2>/dev/null ); export __BG150_=$__BGDarkSeaGreen3_    ;   # SET BG color to DarkSeaGreen3
-  export __BGDarkSeaGreen2_=$(     tput setb 151 || tput setab 151 || : 2>/dev/null ); export __BG151_=$__BGDarkSeaGreen2_    ;   # SET BG color to DarkSeaGreen2
-  export __BGLightCyan3_=$(        tput setb 152 || tput setab 152 || : 2>/dev/null ); export __BG152_=$__BGLightCyan3_       ;   # SET BG color to LightCyan3
-  export __BGLightSkyBlue1_=$(     tput setb 153 || tput setab 153 || : 2>/dev/null ); export __BG153_=$__BGLightSkyBlue1_    ;   # SET BG color to LightSkyBlue1
-  export __BGGreenYellow_=$(       tput setb 154 || tput setab 154 || : 2>/dev/null ); export __BG154_=$__BGGreenYellow_      ;   # SET BG color to GreenYellow
-  export __BGDarkOliveGreen2_=$(   tput setb 155 || tput setab 155 || : 2>/dev/null ); export __BG155_=$__BGDarkOliveGreen2_  ;   # SET BG color to DarkOliveGreen2
-  export __BGPaleGreen1_=$(        tput setb 156 || tput setab 156 || : 2>/dev/null ); export __BG156_=$__BGPaleGreen1_       ;   # SET BG color to PaleGreen1
-  export __BGDarkSeaGreen2_=$(     tput setb 157 || tput setab 157 || : 2>/dev/null ); export __BG157_=$__BGDarkSeaGreen2_    ;   # SET BG color to DarkSeaGreen2
-  export __BGDarkSeaGreen1_=$(     tput setb 158 || tput setab 158 || : 2>/dev/null ); export __BG158_=$__BGDarkSeaGreen1_    ;   # SET BG color to DarkSeaGreen1
-  export __BGPaleTurquoise1_=$(    tput setb 159 || tput setab 159 || : 2>/dev/null ); export __BG159_=$__BGPaleTurquoise1_   ;   # SET BG color to PaleTurquoise1
-  export __BGRed3_=$(              tput setb 160 || tput setab 160 || : 2>/dev/null ); export __BG160_=$__BGRed3_             ;   # SET BG color to Red3
-  export __BGDeepPink3_=$(         tput setb 161 || tput setab 161 || : 2>/dev/null ); export __BG161_=$__BGDeepPink3_        ;   # SET BG color to DeepPink3
-  export __BGDeepPink3_=$(         tput setb 162 || tput setab 162 || : 2>/dev/null ); export __BG162_=$__BGDeepPink3_        ;   # SET BG color to DeepPink3
-  export __BGMagenta3_=$(          tput setb 163 || tput setab 163 || : 2>/dev/null ); export __BG163_=$__BGMagenta3_         ;   # SET BG color to Magenta3
-  export __BGMagenta3_=$(          tput setb 164 || tput setab 164 || : 2>/dev/null ); export __BG164_=$__BGMagenta3_         ;   # SET BG color to Magenta3
-  export __BGMagenta2_=$(          tput setb 165 || tput setab 165 || : 2>/dev/null ); export __BG165_=$__BGMagenta2_         ;   # SET BG color to Magenta2
-  export __BGDarkOrange3_=$(       tput setb 166 || tput setab 166 || : 2>/dev/null ); export __BG166_=$__BGDarkOrange3_      ;   # SET BG color to DarkOrange3
-  export __BGIndianRed_=$(         tput setb 167 || tput setab 167 || : 2>/dev/null ); export __BG167_=$__BGIndianRed_        ;   # SET BG color to IndianRed
-  export __BGHotPink3_=$(          tput setb 168 || tput setab 168 || : 2>/dev/null ); export __BG168_=$__BGHotPink3_         ;   # SET BG color to HotPink3
-  export __BGHotPink2_=$(          tput setb 169 || tput setab 169 || : 2>/dev/null ); export __BG169_=$__BGHotPink2_         ;   # SET BG color to HotPink2
-  export __BGOrchid_=$(            tput setb 170 || tput setab 170 || : 2>/dev/null ); export __BG170_=$__BGOrchid_           ;   # SET BG color to Orchid
-  export __BGMediumOrchid1_=$(     tput setb 171 || tput setab 171 || : 2>/dev/null ); export __BG171_=$__BGMediumOrchid1_    ;   # SET BG color to MediumOrchid1
-  export __BGOrange3_=$(           tput setb 172 || tput setab 172 || : 2>/dev/null ); export __BG172_=$__BGOrange3_          ;   # SET BG color to Orange3
-  export __BGLightSalmon3_=$(      tput setb 173 || tput setab 173 || : 2>/dev/null ); export __BG173_=$__BGLightSalmon3_     ;   # SET BG color to LightSalmon3
-  export __BGLightPink3_=$(        tput setb 174 || tput setab 174 || : 2>/dev/null ); export __BG174_=$__BGLightPink3_       ;   # SET BG color to LightPink3
-  export __BGPink3_=$(             tput setb 175 || tput setab 175 || : 2>/dev/null ); export __BG175_=$__BGPink3_            ;   # SET BG color to Pink3
-  export __BGPlum3_=$(             tput setb 176 || tput setab 176 || : 2>/dev/null ); export __BG176_=$__BGPlum3_            ;   # SET BG color to Plum3
-  export __BGViolet_=$(            tput setb 177 || tput setab 177 || : 2>/dev/null ); export __BG177_=$__BGViolet_           ;   # SET BG color to Violet
-  export __BGGold3_=$(             tput setb 178 || tput setab 178 || : 2>/dev/null ); export __BG178_=$__BGGold3_            ;   # SET BG color to Gold3
-  export __BGLightGoldenrod3_=$(   tput setb 179 || tput setab 179 || : 2>/dev/null ); export __BG179_=$__BGLightGoldenrod3_  ;   # SET BG color to LightGoldenrod3
-  export __BGTan_=$(               tput setb 180 || tput setab 180 || : 2>/dev/null ); export __BG180_=$__BGTan_              ;   # SET BG color to Tan
-  export __BGMistyRose3_=$(        tput setb 181 || tput setab 181 || : 2>/dev/null ); export __BG181_=$__BGMistyRose3_       ;   # SET BG color to MistyRose3
-  export __BGThistle3_=$(          tput setb 182 || tput setab 182 || : 2>/dev/null ); export __BG182_=$__BGThistle3_         ;   # SET BG color to Thistle3
-  export __BGPlum2_=$(             tput setb 183 || tput setab 183 || : 2>/dev/null ); export __BG183_=$__BGPlum2_            ;   # SET BG color to Plum2
-  export __BGYellow3_=$(           tput setb 184 || tput setab 184 || : 2>/dev/null ); export __BG184_=$__BGYellow3_          ;   # SET BG color to Yellow3
-  export __BGKhaki3_=$(            tput setb 185 || tput setab 185 || : 2>/dev/null ); export __BG185_=$__BGKhaki3_           ;   # SET BG color to Khaki3
-  export __BGLightGoldenrod2_=$(   tput setb 186 || tput setab 186 || : 2>/dev/null ); export __BG186_=$__BGLightGoldenrod2_  ;   # SET BG color to LightGoldenrod2
-  export __BGLightYellow3_=$(      tput setb 187 || tput setab 187 || : 2>/dev/null ); export __BG187_=$__BGLightYellow3_     ;   # SET BG color to LightYellow3
-  export __BGGrey84_=$(            tput setb 188 || tput setab 188 || : 2>/dev/null ); export __BG188_=$__BGGrey84_           ;   # SET BG color to Grey84
-  export __BGLightSteelBlue1_=$(   tput setb 189 || tput setab 189 || : 2>/dev/null ); export __BG189_=$__BGLightSteelBlue1_  ;   # SET BG color to LightSteelBlue1
-  export __BGYellow2_=$(           tput setb 190 || tput setab 190 || : 2>/dev/null ); export __BG190_=$__BGYellow2_          ;   # SET BG color to Yellow2
-  export __BGDarkOliveGreen1_=$(   tput setb 191 || tput setab 191 || : 2>/dev/null ); export __BG191_=$__BGDarkOliveGreen1_  ;   # SET BG color to DarkOliveGreen1
-  export __BGDarkOliveGreen1_=$(   tput setb 192 || tput setab 192 || : 2>/dev/null ); export __BG192_=$__BGDarkOliveGreen1_  ;   # SET BG color to DarkOliveGreen1
-  export __BGDarkSeaGreen1_=$(     tput setb 193 || tput setab 193 || : 2>/dev/null ); export __BG193_=$__BGDarkSeaGreen1_    ;   # SET BG color to DarkSeaGreen1
-  export __BGHoneydew2_=$(         tput setb 194 || tput setab 194 || : 2>/dev/null ); export __BG194_=$__BGHoneydew2_        ;   # SET BG color to Honeydew2
-  export __BGLightCyan1_=$(        tput setb 195 || tput setab 195 || : 2>/dev/null ); export __BG195_=$__BGLightCyan1_       ;   # SET BG color to LightCyan1
-  export __BGRed1_=$(              tput setb 196 || tput setab 196 || : 2>/dev/null ); export __BG196_=$__BGRed1_             ;   # SET BG color to Red1
-  export __BGDeepPink2_=$(         tput setb 197 || tput setab 197 || : 2>/dev/null ); export __BG197_=$__BGDeepPink2_        ;   # SET BG color to DeepPink2
-  export __BGDeepPink1_=$(         tput setb 198 || tput setab 198 || : 2>/dev/null ); export __BG198_=$__BGDeepPink1_        ;   # SET BG color to DeepPink1
-  export __BGDeepPink1_=$(         tput setb 199 || tput setab 199 || : 2>/dev/null ); export __BG199_=$__BGDeepPink1_        ;   # SET BG color to DeepPink1
-  export __BGMagenta2_=$(          tput setb 200 || tput setab 200 || : 2>/dev/null ); export __BG200_=$__BGMagenta2_         ;   # SET BG color to Magenta2
-  export __BGMagenta1_=$(          tput setb 201 || tput setab 201 || : 2>/dev/null ); export __BG201_=$__BGMagenta1_         ;   # SET BG color to Magenta1
-  export __BGOrangeRed1_=$(        tput setb 202 || tput setab 202 || : 2>/dev/null ); export __BG202_=$__BGOrangeRed1_       ;   # SET BG color to OrangeRed1
-  export __BGIndianRed1_=$(        tput setb 203 || tput setab 203 || : 2>/dev/null ); export __BG203_=$__BGIndianRed1_       ;   # SET BG color to IndianRed1
-  export __BGIndianRed1_=$(        tput setb 204 || tput setab 204 || : 2>/dev/null ); export __BG204_=$__BGIndianRed1_       ;   # SET BG color to IndianRed1
-  export __BGHotPink_=$(           tput setb 205 || tput setab 205 || : 2>/dev/null ); export __BG205_=$__BGHotPink_          ;   # SET BG color to HotPink
-  export __BGHotPink_=$(           tput setb 206 || tput setab 206 || : 2>/dev/null ); export __BG206_=$__BGHotPink_          ;   # SET BG color to HotPink
-  export __BGMediumOrchid1_=$(     tput setb 207 || tput setab 207 || : 2>/dev/null ); export __BG207_=$__BGMediumOrchid1_    ;   # SET BG color to MediumOrchid1
-  export __BGDarkOrange_=$(        tput setb 208 || tput setab 208 || : 2>/dev/null ); export __BG208_=$__BGDarkOrange_       ;   # SET BG color to DarkOrange
-  export __BGSalmon1_=$(           tput setb 209 || tput setab 209 || : 2>/dev/null ); export __BG209_=$__BGSalmon1_          ;   # SET BG color to Salmon1
-  export __BGLightCoral_=$(        tput setb 210 || tput setab 210 || : 2>/dev/null ); export __BG210_=$__BGLightCoral_       ;   # SET BG color to LightCoral
-  export __BGPaleVioletRed1_=$(    tput setb 211 || tput setab 211 || : 2>/dev/null ); export __BG211_=$__BGPaleVioletRed1_   ;   # SET BG color to PaleVioletRed1
-  export __BGOrchid2_=$(           tput setb 212 || tput setab 212 || : 2>/dev/null ); export __BG212_=$__BGOrchid2_          ;   # SET BG color to Orchid2
-  export __BGOrchid1_=$(           tput setb 213 || tput setab 213 || : 2>/dev/null ); export __BG213_=$__BGOrchid1_          ;   # SET BG color to Orchid1
-  export __BGOrange1_=$(           tput setb 214 || tput setab 214 || : 2>/dev/null ); export __BG214_=$__BGOrange1_          ;   # SET BG color to Orange1
-  export __BGSandyBrown_=$(        tput setb 215 || tput setab 215 || : 2>/dev/null ); export __BG215_=$__BGSandyBrown_       ;   # SET BG color to SandyBrown
-  export __BGLightSalmon1_=$(      tput setb 216 || tput setab 216 || : 2>/dev/null ); export __BG216_=$__BGLightSalmon1_     ;   # SET BG color to LightSalmon1
-  export __BGLightPink1_=$(        tput setb 217 || tput setab 217 || : 2>/dev/null ); export __BG217_=$__BGLightPink1_       ;   # SET BG color to LightPink1
-  export __BGPink1_=$(             tput setb 218 || tput setab 218 || : 2>/dev/null ); export __BG218_=$__BGPink1_            ;   # SET BG color to Pink1
-  export __BGPlum1_=$(             tput setb 219 || tput setab 219 || : 2>/dev/null ); export __BG219_=$__BGPlum1_            ;   # SET BG color to Plum1
-  export __BGGold1_=$(             tput setb 220 || tput setab 220 || : 2>/dev/null ); export __BG220_=$__BGGold1_            ;   # SET BG color to Gold1
-  export __BGLightGoldenrod2_=$(   tput setb 221 || tput setab 221 || : 2>/dev/null ); export __BG221_=$__BGLightGoldenrod2_  ;   # SET BG color to LightGoldenrod2
-  export __BGLightGoldenrod2_=$(   tput setb 222 || tput setab 222 || : 2>/dev/null ); export __BG222_=$__BGLightGoldenrod2_  ;   # SET BG color to LightGoldenrod2
-  export __BGNavajoWhite1_=$(      tput setb 223 || tput setab 223 || : 2>/dev/null ); export __BG223_=$__BGNavajoWhite1_     ;   # SET BG color to NavajoWhite1
-  export __BGMistyRose1_=$(        tput setb 224 || tput setab 224 || : 2>/dev/null ); export __BG224_=$__BGMistyRose1_       ;   # SET BG color to MistyRose1
-  export __BGThistle1_=$(          tput setb 225 || tput setab 225 || : 2>/dev/null ); export __BG225_=$__BGThistle1_         ;   # SET BG color to Thistle1
-  export __BGYellow1_=$(           tput setb 226 || tput setab 226 || : 2>/dev/null ); export __BG226_=$__BGYellow1_          ;   # SET BG color to Yellow1
-  export __BGLightGoldenrod1_=$(   tput setb 227 || tput setab 227 || : 2>/dev/null ); export __BG227_=$__BGLightGoldenrod1_  ;   # SET BG color to LightGoldenrod1
-  export __BGKhaki1_=$(            tput setb 228 || tput setab 228 || : 2>/dev/null ); export __BG228_=$__BGKhaki1_           ;   # SET BG color to Khaki1
-  export __BGWheat1_=$(            tput setb 229 || tput setab 229 || : 2>/dev/null ); export __BG229_=$__BGWheat1_           ;   # SET BG color to Wheat1
-  export __BGCornsilk1_=$(         tput setb 230 || tput setab 230 || : 2>/dev/null ); export __BG230_=$__BGCornsilk1_        ;   # SET BG color to Cornsilk1
-  export __BGGrey100_=$(           tput setb 231 || tput setab 231 || : 2>/dev/null ); export __BG231_=$__BGGrey100_          ;   # SET BG color to Grey100
-  export __BGGrey3_=$(             tput setb 232 || tput setab 232 || : 2>/dev/null ); export __BG232_=$__BGGrey3_            ;   # SET BG color to Grey3
-  export __BGGrey7_=$(             tput setb 233 || tput setab 233 || : 2>/dev/null ); export __BG233_=$__BGGrey7_            ;   # SET BG color to Grey7
-  export __BGGrey11_=$(            tput setb 234 || tput setab 234 || : 2>/dev/null ); export __BG234_=$__BGGrey11_           ;   # SET BG color to Grey11
-  export __BGGrey15_=$(            tput setb 235 || tput setab 235 || : 2>/dev/null ); export __BG235_=$__BGGrey15_           ;   # SET BG color to Grey15
-  export __BGGrey19_=$(            tput setb 236 || tput setab 236 || : 2>/dev/null ); export __BG236_=$__BGGrey19_           ;   # SET BG color to Grey19
-  export __BGGrey23_=$(            tput setb 237 || tput setab 237 || : 2>/dev/null ); export __BG237_=$__BGGrey23_           ;   # SET BG color to Grey23
-  export __BGGrey27_=$(            tput setb 238 || tput setab 238 || : 2>/dev/null ); export __BG238_=$__BGGrey27_           ;   # SET BG color to Grey27
-  export __BGGrey30_=$(            tput setb 239 || tput setab 239 || : 2>/dev/null ); export __BG239_=$__BGGrey30_           ;   # SET BG color to Grey30
-  export __BGGrey35_=$(            tput setb 240 || tput setab 240 || : 2>/dev/null ); export __BG240_=$__BGGrey35_           ;   # SET BG color to Grey35
-  export __BGGrey39_=$(            tput setb 241 || tput setab 241 || : 2>/dev/null ); export __BG241_=$__BGGrey39_           ;   # SET BG color to Grey39
-  export __BGGrey42_=$(            tput setb 242 || tput setab 242 || : 2>/dev/null ); export __BG242_=$__BGGrey42_           ;   # SET BG color to Grey42
-  export __BGGrey46_=$(            tput setb 243 || tput setab 243 || : 2>/dev/null ); export __BG243_=$__BGGrey46_           ;   # SET BG color to Grey46
-  export __BGGrey50_=$(            tput setb 244 || tput setab 244 || : 2>/dev/null ); export __BG244_=$__BGGrey50_           ;   # SET BG color to Grey50
-  export __BGGrey54_=$(            tput setb 245 || tput setab 245 || : 2>/dev/null ); export __BG245_=$__BGGrey54_           ;   # SET BG color to Grey54
-  export __BGGrey58_=$(            tput setb 246 || tput setab 246 || : 2>/dev/null ); export __BG246_=$__BGGrey58_           ;   # SET BG color to Grey58
-  export __BGGrey62_=$(            tput setb 247 || tput setab 247 || : 2>/dev/null ); export __BG247_=$__BGGrey62_           ;   # SET BG color to Grey62
-  export __BGGrey66_=$(            tput setb 248 || tput setab 248 || : 2>/dev/null ); export __BG248_=$__BGGrey66_           ;   # SET BG color to Grey66
-  export __BGGrey70_=$(            tput setb 249 || tput setab 249 || : 2>/dev/null ); export __BG249_=$__BGGrey70_           ;   # SET BG color to Grey70
-  export __BGGrey74_=$(            tput setb 250 || tput setab 250 || : 2>/dev/null ); export __BG250_=$__BGGrey74_           ;   # SET BG color to Grey74
-  export __BGGrey78_=$(            tput setb 251 || tput setab 251 || : 2>/dev/null ); export __BG251_=$__BGGrey78_           ;   # SET BG color to Grey78
-  export __BGGrey82_=$(            tput setb 252 || tput setab 252 || : 2>/dev/null ); export __BG252_=$__BGGrey82_           ;   # SET BG color to Grey82
-  export __BGGrey85_=$(            tput setb 253 || tput setab 253 || : 2>/dev/null ); export __BG253_=$__BGGrey85_           ;   # SET BG color to Grey85
-  export __BGGrey89_=$(            tput setb 254 || tput setab 254 || : 2>/dev/null ); export __BG254_=$__BGGrey89_           ;   # SET BG color to Grey89
-  export __BGGrey93_=$(            tput setb 255 || tput setab 255 || : 2>/dev/null ); export __BG255_=$__BGGrey93_           ;   # SET BG color to Grey93
+  __BG0_=$(   tput setb 0   || tput setab 0   || : 2>/dev/null  );
+  __BG1_=$(   tput setb 1   || tput setab 1   || : 2>/dev/null  );
+  __BG2_=$(   tput setb 2   || tput setab 2   || : 2>/dev/null  );
+  __BG3_=$(   tput setb 3   || tput setab 3   || : 2>/dev/null  );
+  __BG4_=$(   tput setb 4   || tput setab 4   || : 2>/dev/null  );
+  __BG5_=$(   tput setb 5   || tput setab 5   || : 2>/dev/null  );
+  __BG6_=$(   tput setb 6   || tput setab 6   || : 2>/dev/null  );
+  __BG7_=$(   tput setb 7   || tput setab 7   || : 2>/dev/null  );
+  __BG8_=$(   tput setb 8   || tput setab 8   || : 2>/dev/null  );
+  __BG9_=$(   tput setb 9   || tput setab 9   || : 2>/dev/null  );
+  __BG10_=$(  tput setb 10  || tput setab 10  || : 2>/dev/null  );
+  __BG11_=$(  tput setb 11  || tput setab 11  || : 2>/dev/null  );
+  __BG12_=$(  tput setb 12  || tput setab 12  || : 2>/dev/null  );
+  __BG13_=$(  tput setb 13  || tput setab 13  || : 2>/dev/null  );
+  __BG14_=$(  tput setb 14  || tput setab 14  || : 2>/dev/null  );
+  __BG15_=$(  tput setb 15  || tput setab 15  || : 2>/dev/null  );
+  __BG16_=$(  tput setb 16  || tput setab 16  || : 2>/dev/null  ); # SET BG color to Grey0
+  __BG17_=$(  tput setb 17  || tput setab 17  || : 2>/dev/null  ); # SET BG color to NavyBlue
+  __BG18_=$(  tput setb 18  || tput setab 18  || : 2>/dev/null  ); # SET BG color to DarkBlue
+  __BG19_=$(  tput setb 19  || tput setab 19  || : 2>/dev/null  ); # SET BG color to Blue3
+  __BG20_=$(  tput setb 20  || tput setab 20  || : 2>/dev/null  ); # SET BG color to Blue3
+  __BG21_=$(  tput setb 21  || tput setab 21  || : 2>/dev/null  ); # SET BG color to Blue1
+  __BG22_=$(  tput setb 22  || tput setab 22  || : 2>/dev/null  ); # SET BG color to DarkGreen
+  __BG23_=$(  tput setb 23  || tput setab 23  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue4
+  __BG24_=$(  tput setb 24  || tput setab 24  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue4
+  __BG25_=$(  tput setb 25  || tput setab 25  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue4
+  __BG26_=$(  tput setb 26  || tput setab 26  || : 2>/dev/null  ); # SET BG color to DodgerBlue3
+  __BG27_=$(  tput setb 27  || tput setab 27  || : 2>/dev/null  ); # SET BG color to DodgerBlue2
+  __BG28_=$(  tput setb 28  || tput setab 28  || : 2>/dev/null  ); # SET BG color to Green4
+  __BG29_=$(  tput setb 29  || tput setab 29  || : 2>/dev/null  ); # SET BG color to SpringGreen4
+  __BG30_=$(  tput setb 30  || tput setab 30  || : 2>/dev/null  ); # SET BG color to Turquoise4
+  __BG31_=$(  tput setb 31  || tput setab 31  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue3
+  __BG32_=$(  tput setb 32  || tput setab 32  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue3
+  __BG33_=$(  tput setb 33  || tput setab 33  || : 2>/dev/null  ); # SET BG color to DodgerBlue1
+  __BG34_=$(  tput setb 34  || tput setab 34  || : 2>/dev/null  ); # SET BG color to Green3
+  __BG35_=$(  tput setb 35  || tput setab 35  || : 2>/dev/null  ); # SET BG color to SpringGreen3
+  __BG36_=$(  tput setb 36  || tput setab 36  || : 2>/dev/null  ); # SET BG color to DarkCyan
+  __BG37_=$(  tput setb 37  || tput setab 37  || : 2>/dev/null  ); # SET BG color to LightSeaGreen
+  __BG38_=$(  tput setb 38  || tput setab 38  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue2
+  __BG39_=$(  tput setb 39  || tput setab 39  || : 2>/dev/null  ); # SET BG color to DeepSkyBlue1
+  __BG40_=$(  tput setb 40  || tput setab 40  || : 2>/dev/null  ); # SET BG color to Green3
+  __BG41_=$(  tput setb 41  || tput setab 41  || : 2>/dev/null  ); # SET BG color to SpringGreen3
+  __BG42_=$(  tput setb 42  || tput setab 42  || : 2>/dev/null  ); # SET BG color to SpringGreen2
+  __BG43_=$(  tput setb 43  || tput setab 43  || : 2>/dev/null  ); # SET BG color to Cyan3
+  __BG44_=$(  tput setb 44  || tput setab 44  || : 2>/dev/null  ); # SET BG color to DarkTurquoise
+  __BG45_=$(  tput setb 45  || tput setab 45  || : 2>/dev/null  ); # SET BG color to Turquoise2
+  __BG46_=$(  tput setb 46  || tput setab 46  || : 2>/dev/null  ); # SET BG color to Green1
+  __BG47_=$(  tput setb 47  || tput setab 47  || : 2>/dev/null  ); # SET BG color to SpringGreen2
+  __BG48_=$(  tput setb 48  || tput setab 48  || : 2>/dev/null  ); # SET BG color to SpringGreen1
+  __BG49_=$(  tput setb 49  || tput setab 49  || : 2>/dev/null  ); # SET BG color to MediumSpringGreen
+  __BG50_=$(  tput setb 50  || tput setab 50  || : 2>/dev/null  ); # SET BG color to Cyan2
+  __BG51_=$(  tput setb 51  || tput setab 51  || : 2>/dev/null  ); # SET BG color to Cyan1
+  __BG52_=$(  tput setb 52  || tput setab 52  || : 2>/dev/null  ); # SET BG color to DarkRed
+  __BG53_=$(  tput setb 53  || tput setab 53  || : 2>/dev/null  ); # SET BG color to DeepPink4
+  __BG54_=$(  tput setb 54  || tput setab 54  || : 2>/dev/null  ); # SET BG color to Purple4
+  __BG55_=$(  tput setb 55  || tput setab 55  || : 2>/dev/null  ); # SET BG color to Purple4
+  __BG56_=$(  tput setb 56  || tput setab 56  || : 2>/dev/null  ); # SET BG color to Purple3
+  __BG57_=$(  tput setb 57  || tput setab 57  || : 2>/dev/null  ); # SET BG color to BlueViolet
+  __BG58_=$(  tput setb 58  || tput setab 58  || : 2>/dev/null  ); # SET BG color to Orange4
+  __BG59_=$(  tput setb 59  || tput setab 59  || : 2>/dev/null  ); # SET BG color to Grey37
+  __BG60_=$(  tput setb 60  || tput setab 60  || : 2>/dev/null  ); # SET BG color to MediumPurple4
+  __BG61_=$(  tput setb 61  || tput setab 61  || : 2>/dev/null  ); # SET BG color to SlateBlue3
+  __BG62_=$(  tput setb 62  || tput setab 62  || : 2>/dev/null  ); # SET BG color to SlateBlue3
+  __BG63_=$(  tput setb 63  || tput setab 63  || : 2>/dev/null  ); # SET BG color to RoyalBlue1
+  __BG64_=$(  tput setb 64  || tput setab 64  || : 2>/dev/null  ); # SET BG color to Chartreuse4
+  __BG65_=$(  tput setb 65  || tput setab 65  || : 2>/dev/null  ); # SET BG color to DarkSeaGreen4
+  __BG66_=$(  tput setb 66  || tput setab 66  || : 2>/dev/null  ); # SET BG color to PaleTurquoise4
+  __BG67_=$(  tput setb 67  || tput setab 67  || : 2>/dev/null  ); # SET BG color to SteelBlue
+  __BG68_=$(  tput setb 68  || tput setab 68  || : 2>/dev/null  ); # SET BG color to SteelBlue3
+  __BG69_=$(  tput setb 69  || tput setab 69  || : 2>/dev/null  ); # SET BG color to CornflowerBlue
+  __BG70_=$(  tput setb 70  || tput setab 70  || : 2>/dev/null  ); # SET BG color to Chartreuse3
+  __BG71_=$(  tput setb 71  || tput setab 71  || : 2>/dev/null  ); # SET BG color to DarkSeaGreen4
+  __BG72_=$(  tput setb 72  || tput setab 72  || : 2>/dev/null  ); # SET BG color to CadetBlue
+  __BG73_=$(  tput setb 73  || tput setab 73  || : 2>/dev/null  ); # SET BG color to CadetBlue
+  __BG74_=$(  tput setb 74  || tput setab 74  || : 2>/dev/null  ); # SET BG color to SkyBlue3
+  __BG75_=$(  tput setb 75  || tput setab 75  || : 2>/dev/null  ); # SET BG color to SteelBlue1
+  __BG76_=$(  tput setb 76  || tput setab 76  || : 2>/dev/null  ); # SET BG color to Chartreuse3
+  __BG77_=$(  tput setb 77  || tput setab 77  || : 2>/dev/null  ); # SET BG color to PaleGreen3
+  __BG78_=$(  tput setb 78  || tput setab 78  || : 2>/dev/null  ); # SET BG color to SeaGreen3
+  __BG79_=$(  tput setb 79  || tput setab 79  || : 2>/dev/null  ); # SET BG color to Aquamarine3
+  __BG80_=$(  tput setb 80  || tput setab 80  || : 2>/dev/null  ); # SET BG color to MediumTurquoise
+  __BG81_=$(  tput setb 81  || tput setab 81  || : 2>/dev/null  ); # SET BG color to SteelBlue1
+  __BG82_=$(  tput setb 82  || tput setab 82  || : 2>/dev/null  ); # SET BG color to Chartreuse2
+  __BG83_=$(  tput setb 83  || tput setab 83  || : 2>/dev/null  ); # SET BG color to SeaGreen2
+  __BG84_=$(  tput setb 84  || tput setab 84  || : 2>/dev/null  ); # SET BG color to SeaGreen1
+  __BG85_=$(  tput setb 85  || tput setab 85  || : 2>/dev/null  ); # SET BG color to SeaGreen1
+  __BG86_=$(  tput setb 86  || tput setab 86  || : 2>/dev/null  ); # SET BG color to Aquamarine1
+  __BG87_=$(  tput setb 87  || tput setab 87  || : 2>/dev/null  ); # SET BG color to DarkSlateGray2
+  __BG88_=$(  tput setb 88  || tput setab 88  || : 2>/dev/null  ); # SET BG color to DarkRed
+  __BG89_=$(  tput setb 89  || tput setab 89  || : 2>/dev/null  ); # SET BG color to DeepPink4
+  __BG90_=$(  tput setb 90  || tput setab 90  || : 2>/dev/null  ); # SET BG color to DarkMagenta
+  __BG91_=$(  tput setb 91  || tput setab 91  || : 2>/dev/null  ); # SET BG color to DarkMagenta
+  __BG92_=$(  tput setb 92  || tput setab 92  || : 2>/dev/null  ); # SET BG color to DarkViolet
+  __BG93_=$(  tput setb 93  || tput setab 93  || : 2>/dev/null  ); # SET BG color to Purple
+  __BG94_=$(  tput setb 94  || tput setab 94  || : 2>/dev/null  ); # SET BG color to Orange4
+  __BG95_=$(  tput setb 95  || tput setab 95  || : 2>/dev/null  ); # SET BG color to LightPink4
+  __BG96_=$(  tput setb 96  || tput setab 96  || : 2>/dev/null  ); # SET BG color to Plum4
+  __BG97_=$(  tput setb 97  || tput setab 97  || : 2>/dev/null  ); # SET BG color to MediumPurple3
+  __BG98_=$(  tput setb 98  || tput setab 98  || : 2>/dev/null  ); # SET BG color to MediumPurple3
+  __BG99_=$(  tput setb 99  || tput setab 99  || : 2>/dev/null  ); # SET BG color to SlateBlue1
+  __BG100_=$( tput setb 100 || tput setab 100 || : 2>/dev/null ); # SET BG color to Yellow4
+  __BG101_=$( tput setb 101 || tput setab 101 || : 2>/dev/null ); # SET BG color to Wheat4
+  __BG102_=$( tput setb 102 || tput setab 102 || : 2>/dev/null ); # SET BG color to Grey53
+  __BG103_=$( tput setb 103 || tput setab 103 || : 2>/dev/null ); # SET BG color to LightSlateGrey
+  __BG104_=$( tput setb 104 || tput setab 104 || : 2>/dev/null ); # SET BG color to MediumPurple
+  __BG105_=$( tput setb 105 || tput setab 105 || : 2>/dev/null ); # SET BG color to LightSlateBlue
+  __BG106_=$( tput setb 106 || tput setab 106 || : 2>/dev/null ); # SET BG color to Yellow4
+  __BG107_=$( tput setb 107 || tput setab 107 || : 2>/dev/null ); # SET BG color to DarkOliveGreen3
+  __BG108_=$( tput setb 108 || tput setab 108 || : 2>/dev/null ); # SET BG color to DarkSeaGreen
+  __BG109_=$( tput setb 109 || tput setab 109 || : 2>/dev/null ); # SET BG color to LightSkyBlue3
+  __BG110_=$( tput setb 110 || tput setab 110 || : 2>/dev/null ); # SET BG color to LightSkyBlue3
+  __BG111_=$( tput setb 111 || tput setab 111 || : 2>/dev/null ); # SET BG color to SkyBlue2
+  __BG112_=$( tput setb 112 || tput setab 112 || : 2>/dev/null ); # SET BG color to Chartreuse2
+  __BG113_=$( tput setb 113 || tput setab 113 || : 2>/dev/null ); # SET BG color to DarkOliveGreen3
+  __BG114_=$( tput setb 114 || tput setab 114 || : 2>/dev/null ); # SET BG color to PaleGreen3
+  __BG115_=$( tput setb 115 || tput setab 115 || : 2>/dev/null ); # SET BG color to DarkSeaGreen3
+  __BG116_=$( tput setb 116 || tput setab 116 || : 2>/dev/null ); # SET BG color to DarkSlateGray3
+  __BG117_=$( tput setb 117 || tput setab 117 || : 2>/dev/null ); # SET BG color to SkyBlue1
+  __BG118_=$( tput setb 118 || tput setab 118 || : 2>/dev/null ); # SET BG color to Chartreuse1
+  __BG119_=$( tput setb 119 || tput setab 119 || : 2>/dev/null ); # SET BG color to LightGreen
+  __BG120_=$( tput setb 120 || tput setab 120 || : 2>/dev/null ); # SET BG color to LightGreen
+  __BG121_=$( tput setb 121 || tput setab 121 || : 2>/dev/null ); # SET BG color to PaleGreen1
+  __BG122_=$( tput setb 122 || tput setab 122 || : 2>/dev/null ); # SET BG color to Aquamarine1
+  __BG123_=$( tput setb 123 || tput setab 123 || : 2>/dev/null ); # SET BG color to DarkSlateGray1
+  __BG124_=$( tput setb 124 || tput setab 124 || : 2>/dev/null ); # SET BG color to Red3
+  __BG125_=$( tput setb 125 || tput setab 125 || : 2>/dev/null ); # SET BG color to DeepPink4
+  __BG126_=$( tput setb 126 || tput setab 126 || : 2>/dev/null ); # SET BG color to MediumVioletRed
+  __BG127_=$( tput setb 127 || tput setab 127 || : 2>/dev/null ); # SET BG color to Magenta3
+  __BG128_=$( tput setb 128 || tput setab 128 || : 2>/dev/null ); # SET BG color to DarkViolet
+  __BG129_=$( tput setb 129 || tput setab 129 || : 2>/dev/null ); # SET BG color to Purple
+  __BG130_=$( tput setb 130 || tput setab 130 || : 2>/dev/null ); # SET BG color to DarkOrange3
+  __BG131_=$( tput setb 131 || tput setab 131 || : 2>/dev/null ); # SET BG color to IndianRed
+  __BG132_=$( tput setb 132 || tput setab 132 || : 2>/dev/null ); # SET BG color to HotPink3
+  __BG133_=$( tput setb 133 || tput setab 133 || : 2>/dev/null ); # SET BG color to MediumOrchid3
+  __BG134_=$( tput setb 134 || tput setab 134 || : 2>/dev/null ); # SET BG color to MediumOrchid
+  __BG135_=$( tput setb 135 || tput setab 135 || : 2>/dev/null ); # SET BG color to MediumPurple2
+  __BG136_=$( tput setb 136 || tput setab 136 || : 2>/dev/null ); # SET BG color to DarkGoldenrod
+  __BG137_=$( tput setb 137 || tput setab 137 || : 2>/dev/null ); # SET BG color to LightSalmon3
+  __BG138_=$( tput setb 138 || tput setab 138 || : 2>/dev/null ); # SET BG color to RosyBrown
+  __BG139_=$( tput setb 139 || tput setab 139 || : 2>/dev/null ); # SET BG color to Grey63
+  __BG140_=$( tput setb 140 || tput setab 140 || : 2>/dev/null ); # SET BG color to MediumPurple2
+  __BG141_=$( tput setb 141 || tput setab 141 || : 2>/dev/null ); # SET BG color to MediumPurple1
+  __BG142_=$( tput setb 142 || tput setab 142 || : 2>/dev/null ); # SET BG color to Gold3
+  __BG143_=$( tput setb 143 || tput setab 143 || : 2>/dev/null ); # SET BG color to DarkKhaki
+  __BG144_=$( tput setb 144 || tput setab 144 || : 2>/dev/null ); # SET BG color to NavajoWhite3
+  __BG145_=$( tput setb 145 || tput setab 145 || : 2>/dev/null ); # SET BG color to Grey69
+  __BG146_=$( tput setb 146 || tput setab 146 || : 2>/dev/null ); # SET BG color to LightSteelBlue3
+  __BG147_=$( tput setb 147 || tput setab 147 || : 2>/dev/null ); # SET BG color to LightSteelBlue
+  __BG148_=$( tput setb 148 || tput setab 148 || : 2>/dev/null ); # SET BG color to Yellow3
+  __BG149_=$( tput setb 149 || tput setab 149 || : 2>/dev/null ); # SET BG color to DarkOliveGreen3
+  __BG150_=$( tput setb 150 || tput setab 150 || : 2>/dev/null ); # SET BG color to DarkSeaGreen3
+  __BG151_=$( tput setb 151 || tput setab 151 || : 2>/dev/null ); # SET BG color to DarkSeaGreen2
+  __BG152_=$( tput setb 152 || tput setab 152 || : 2>/dev/null ); # SET BG color to LightCyan3
+  __BG153_=$( tput setb 153 || tput setab 153 || : 2>/dev/null ); # SET BG color to LightSkyBlue1
+  __BG154_=$( tput setb 154 || tput setab 154 || : 2>/dev/null ); # SET BG color to GreenYellow
+  __BG155_=$( tput setb 155 || tput setab 155 || : 2>/dev/null ); # SET BG color to DarkOliveGreen2
+  __BG156_=$( tput setb 156 || tput setab 156 || : 2>/dev/null ); # SET BG color to PaleGreen1
+  __BG157_=$( tput setb 157 || tput setab 157 || : 2>/dev/null ); # SET BG color to DarkSeaGreen2
+  __BG158_=$( tput setb 158 || tput setab 158 || : 2>/dev/null ); # SET BG color to DarkSeaGreen1
+  __BG159_=$( tput setb 159 || tput setab 159 || : 2>/dev/null ); # SET BG color to PaleTurquoise1
+  __BG160_=$( tput setb 160 || tput setab 160 || : 2>/dev/null ); # SET BG color to Red3
+  __BG161_=$( tput setb 161 || tput setab 161 || : 2>/dev/null ); # SET BG color to DeepPink3
+  __BG162_=$( tput setb 162 || tput setab 162 || : 2>/dev/null ); # SET BG color to DeepPink3
+  __BG163_=$( tput setb 163 || tput setab 163 || : 2>/dev/null ); # SET BG color to Magenta3
+  __BG164_=$( tput setb 164 || tput setab 164 || : 2>/dev/null ); # SET BG color to Magenta3
+  __BG165_=$( tput setb 165 || tput setab 165 || : 2>/dev/null ); # SET BG color to Magenta2
+  __BG166_=$( tput setb 166 || tput setab 166 || : 2>/dev/null ); # SET BG color to DarkOrange3
+  __BG167_=$( tput setb 167 || tput setab 167 || : 2>/dev/null ); # SET BG color to IndianRed
+  __BG168_=$( tput setb 168 || tput setab 168 || : 2>/dev/null ); # SET BG color to HotPink3
+  __BG169_=$( tput setb 169 || tput setab 169 || : 2>/dev/null ); # SET BG color to HotPink2
+  __BG170_=$( tput setb 170 || tput setab 170 || : 2>/dev/null ); # SET BG color to Orchid
+  __BG171_=$( tput setb 171 || tput setab 171 || : 2>/dev/null ); # SET BG color to MediumOrchid1
+  __BG172_=$( tput setb 172 || tput setab 172 || : 2>/dev/null ); # SET BG color to Orange3
+  __BG173_=$( tput setb 173 || tput setab 173 || : 2>/dev/null ); # SET BG color to LightSalmon3
+  __BG174_=$( tput setb 174 || tput setab 174 || : 2>/dev/null ); # SET BG color to LightPink3
+  __BG175_=$( tput setb 175 || tput setab 175 || : 2>/dev/null ); # SET BG color to Pink3
+  __BG176_=$( tput setb 176 || tput setab 176 || : 2>/dev/null ); # SET BG color to Plum3
+  __BG177_=$( tput setb 177 || tput setab 177 || : 2>/dev/null ); # SET BG color to Violet
+  __BG178_=$( tput setb 178 || tput setab 178 || : 2>/dev/null ); # SET BG color to Gold3
+  __BG179_=$( tput setb 179 || tput setab 179 || : 2>/dev/null ); # SET BG color to LightGoldenrod3
+  __BG180_=$( tput setb 180 || tput setab 180 || : 2>/dev/null ); # SET BG color to Tan
+  __BG181_=$( tput setb 181 || tput setab 181 || : 2>/dev/null ); # SET BG color to MistyRose3
+  __BG182_=$( tput setb 182 || tput setab 182 || : 2>/dev/null ); # SET BG color to Thistle3
+  __BG183_=$( tput setb 183 || tput setab 183 || : 2>/dev/null ); # SET BG color to Plum2
+  __BG184_=$( tput setb 184 || tput setab 184 || : 2>/dev/null ); # SET BG color to Yellow3
+  __BG185_=$( tput setb 185 || tput setab 185 || : 2>/dev/null ); # SET BG color to Khaki3
+  __BG186_=$( tput setb 186 || tput setab 186 || : 2>/dev/null ); # SET BG color to LightGoldenrod2
+  __BG187_=$( tput setb 187 || tput setab 187 || : 2>/dev/null ); # SET BG color to LightYellow3
+  __BG188_=$( tput setb 188 || tput setab 188 || : 2>/dev/null ); # SET BG color to Grey84
+  __BG189_=$( tput setb 189 || tput setab 189 || : 2>/dev/null ); # SET BG color to LightSteelBlue1
+  __BG190_=$( tput setb 190 || tput setab 190 || : 2>/dev/null ); # SET BG color to Yellow2
+  __BG191_=$( tput setb 191 || tput setab 191 || : 2>/dev/null ); # SET BG color to DarkOliveGreen1
+  __BG192_=$( tput setb 192 || tput setab 192 || : 2>/dev/null ); # SET BG color to DarkOliveGreen1
+  __BG193_=$( tput setb 193 || tput setab 193 || : 2>/dev/null ); # SET BG color to DarkSeaGreen1
+  __BG194_=$( tput setb 194 || tput setab 194 || : 2>/dev/null ); # SET BG color to Honeydew2
+  __BG195_=$( tput setb 195 || tput setab 195 || : 2>/dev/null ); # SET BG color to LightCyan1
+  __BG196_=$( tput setb 196 || tput setab 196 || : 2>/dev/null ); # SET BG color to Red1
+  __BG197_=$( tput setb 197 || tput setab 197 || : 2>/dev/null ); # SET BG color to DeepPink2
+  __BG198_=$( tput setb 198 || tput setab 198 || : 2>/dev/null ); # SET BG color to DeepPink1
+  __BG199_=$( tput setb 199 || tput setab 199 || : 2>/dev/null ); # SET BG color to DeepPink1
+  __BG200_=$( tput setb 200 || tput setab 200 || : 2>/dev/null ); # SET BG color to Magenta2
+  __BG201_=$( tput setb 201 || tput setab 201 || : 2>/dev/null ); # SET BG color to Magenta1
+  __BG202_=$( tput setb 202 || tput setab 202 || : 2>/dev/null ); # SET BG color to OrangeRed1
+  __BG203_=$( tput setb 203 || tput setab 203 || : 2>/dev/null ); # SET BG color to IndianRed1
+  __BG204_=$( tput setb 204 || tput setab 204 || : 2>/dev/null ); # SET BG color to IndianRed1
+  __BG205_=$( tput setb 205 || tput setab 205 || : 2>/dev/null ); # SET BG color to HotPink
+  __BG206_=$( tput setb 206 || tput setab 206 || : 2>/dev/null ); # SET BG color to HotPink
+  __BG207_=$( tput setb 207 || tput setab 207 || : 2>/dev/null ); # SET BG color to MediumOrchid1
+  __BG208_=$( tput setb 208 || tput setab 208 || : 2>/dev/null ); # SET BG color to DarkOrange
+  __BG209_=$( tput setb 209 || tput setab 209 || : 2>/dev/null ); # SET BG color to Salmon1
+  __BG210_=$( tput setb 210 || tput setab 210 || : 2>/dev/null ); # SET BG color to LightCoral
+  __BG211_=$( tput setb 211 || tput setab 211 || : 2>/dev/null ); # SET BG color to PaleVioletRed1
+  __BG212_=$( tput setb 212 || tput setab 212 || : 2>/dev/null ); # SET BG color to Orchid2
+  __BG213_=$( tput setb 213 || tput setab 213 || : 2>/dev/null ); # SET BG color to Orchid1
+  __BG214_=$( tput setb 214 || tput setab 214 || : 2>/dev/null ); # SET BG color to Orange1
+  __BG215_=$( tput setb 215 || tput setab 215 || : 2>/dev/null ); # SET BG color to SandyBrown
+  __BG216_=$( tput setb 216 || tput setab 216 || : 2>/dev/null ); # SET BG color to LightSalmon1
+  __BG217_=$( tput setb 217 || tput setab 217 || : 2>/dev/null ); # SET BG color to LightPink1
+  __BG218_=$( tput setb 218 || tput setab 218 || : 2>/dev/null ); # SET BG color to Pink1
+  __BG219_=$( tput setb 219 || tput setab 219 || : 2>/dev/null ); # SET BG color to Plum1
+  __BG220_=$( tput setb 220 || tput setab 220 || : 2>/dev/null ); # SET BG color to Gold1
+  __BG221_=$( tput setb 221 || tput setab 221 || : 2>/dev/null ); # SET BG color to LightGoldenrod2
+  __BG222_=$( tput setb 222 || tput setab 222 || : 2>/dev/null ); # SET BG color to LightGoldenrod2
+  __BG223_=$( tput setb 223 || tput setab 223 || : 2>/dev/null ); # SET BG color to NavajoWhite1
+  __BG224_=$( tput setb 224 || tput setab 224 || : 2>/dev/null ); # SET BG color to MistyRose1
+  __BG225_=$( tput setb 225 || tput setab 225 || : 2>/dev/null ); # SET BG color to Thistle1
+  __BG226_=$( tput setb 226 || tput setab 226 || : 2>/dev/null ); # SET BG color to Yellow1
+  __BG227_=$( tput setb 227 || tput setab 227 || : 2>/dev/null ); # SET BG color to LightGoldenrod1
+  __BG228_=$( tput setb 228 || tput setab 228 || : 2>/dev/null ); # SET BG color to Khaki1
+  __BG229_=$( tput setb 229 || tput setab 229 || : 2>/dev/null ); # SET BG color to Wheat1
+  __BG230_=$( tput setb 230 || tput setab 230 || : 2>/dev/null ); # SET BG color to Cornsilk1
+  __BG231_=$( tput setb 231 || tput setab 231 || : 2>/dev/null ); # SET BG color to Grey100
+  __BG232_=$( tput setb 232 || tput setab 232 || : 2>/dev/null ); # SET BG color to Grey3
+  __BG233_=$( tput setb 233 || tput setab 233 || : 2>/dev/null ); # SET BG color to Grey7
+  __BG234_=$( tput setb 234 || tput setab 234 || : 2>/dev/null ); # SET BG color to Grey11
+  __BG235_=$( tput setb 235 || tput setab 235 || : 2>/dev/null ); # SET BG color to Grey15
+  __BG236_=$( tput setb 236 || tput setab 236 || : 2>/dev/null ); # SET BG color to Grey19
+  __BG237_=$( tput setb 237 || tput setab 237 || : 2>/dev/null ); # SET BG color to Grey23
+  __BG238_=$( tput setb 238 || tput setab 238 || : 2>/dev/null ); # SET BG color to Grey27
+  __BG239_=$( tput setb 239 || tput setab 239 || : 2>/dev/null ); # SET BG color to Grey30
+  __BG240_=$( tput setb 240 || tput setab 240 || : 2>/dev/null ); # SET BG color to Grey35
+  __BG241_=$( tput setb 241 || tput setab 241 || : 2>/dev/null ); # SET BG color to Grey39
+  __BG242_=$( tput setb 242 || tput setab 242 || : 2>/dev/null ); # SET BG color to Grey42
+  __BG243_=$( tput setb 243 || tput setab 243 || : 2>/dev/null ); # SET BG color to Grey46
+  __BG244_=$( tput setb 244 || tput setab 244 || : 2>/dev/null ); # SET BG color to Grey50
+  __BG245_=$( tput setb 245 || tput setab 245 || : 2>/dev/null ); # SET BG color to Grey54
+  __BG246_=$( tput setb 246 || tput setab 246 || : 2>/dev/null ); # SET BG color to Grey58
+  __BG247_=$( tput setb 247 || tput setab 247 || : 2>/dev/null ); # SET BG color to Grey62
+  __BG248_=$( tput setb 248 || tput setab 248 || : 2>/dev/null ); # SET BG color to Grey66
+  __BG249_=$( tput setb 249 || tput setab 249 || : 2>/dev/null ); # SET BG color to Grey70
+  __BG250_=$( tput setb 250 || tput setab 250 || : 2>/dev/null ); # SET BG color to Grey74
+  __BG251_=$( tput setb 251 || tput setab 251 || : 2>/dev/null ); # SET BG color to Grey78
+  __BG252_=$( tput setb 252 || tput setab 252 || : 2>/dev/null ); # SET BG color to Grey82
+  __BG253_=$( tput setb 253 || tput setab 253 || : 2>/dev/null ); # SET BG color to Grey85
+  __BG254_=$( tput setb 254 || tput setab 254 || : 2>/dev/null ); # SET BG color to Grey89
+  __BG255_=$( tput setb 255 || tput setab 255 || : 2>/dev/null ); # SET BG color to Grey93
 
 
 
