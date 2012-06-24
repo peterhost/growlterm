@@ -138,51 +138,51 @@ so that you can check later on that it's already done
 | MODIFIERS                                |
 | Variable NAME                            | equivalent ANSI escape | Description                           |
 |                                          | ATTR   FG   BG         |                                       |
-| \_\_NN\_                                    | \[ 0m                  | RESET ALL attributes                  |
+| \_\_NN\_                                 | \[ 0m                  | RESET ALL attributes                  |
 | STYLES                                   |
-| \_\_EM\_                                    | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode    |
-| \_\_DM\_                                    | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode    |
-| \_\_UN\_                                    | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode    |
-| \_\_BL\_                                    | \[ 5m                  | BEGIN BLINKING                mode    |
-| \_\_RV\_                                    | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode    |
-| \_\_SO\_                                    | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode    |
-| \_\_IN\_                                    | \[ 8m                  | BEGIN INVISIBLE               mode    |
-| \_\_DEL\_                                   |                        | MOVE cursor LEFT one space            |
-| \_\_SOQ\_                                   | ?\[ 27m                | END   STANDOUT      (reverse) mode    |
-| \_\_UNQ\_                                   | \[ 24m                 | END   UNDESCORE  (underlined) mode    |
+| \_\_EM\_                                 | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode    |
+| \_\_DM\_                                 | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode    |
+| \_\_UN\_                                 | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode    |
+| \_\_BL\_                                 | \[ 5m                  | BEGIN BLINKING                mode    |
+| \_\_RV\_                                 | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode    |
+| \_\_SO\_                                 | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode    |
+| \_\_IN\_                                 | \[ 8m                  | BEGIN INVISIBLE               mode    |
+| \_\_DEL\_                                |                        | MOVE cursor LEFT one space            |
+| \_\_SOQ\_                                | ?\[ 27m                | END   STANDOUT      (reverse) mode    |
+| \_\_UNQ\_                                | \[ 24m                 | END   UNDESCORE  (underlined) mode    |
 | DEFAULT SYSTEM COLORS                    |
 | <Foreground>                             |
-| \_\_K\_                                     | \[       0m            | SET   FG color to BLACK               |
-| \_\_R\_                                     | \[       1m            | SET   FG color to RED                 |
-| \_\_G\_                                     | \[       2m            | SET   FG color to GREEN               |
-| \_\_Y\_                                     | \[       3m            | SET   FG color to YELLOW              |
-| \_\_B\_                                     | \[       4m            | SET   FG color to BLUE                |
-| \_\_M\_                                     | \[       5m            | SET   FG color to MAGENTA             |
-| \_\_C\_                                     | \[       6m            | SET   FG color to CYAN                |
-| \_\_W\_                                     | \[       7m            | SET   FG color to WHITE               |
+| \_\_K\_                                  | \[       0m            | SET   FG color to BLACK               |
+| \_\_R\_                                  | \[       1m            | SET   FG color to RED                 |
+| \_\_G\_                                  | \[       2m            | SET   FG color to GREEN               |
+| \_\_Y\_                                  | \[       3m            | SET   FG color to YELLOW              |
+| \_\_B\_                                  | \[       4m            | SET   FG color to BLUE                |
+| \_\_M\_                                  | \[       5m            | SET   FG color to MAGENTA             |
+| \_\_C\_                                  | \[       6m            | SET   FG color to CYAN                |
+| \_\_W\_                                  | \[       7m            | SET   FG color to WHITE               |
 | <Backgound>                              |
-| \_\_BGK\_                                   | \[       0m            | SET   BG color to BLACK               |
-| \_\_BGR\_                                   | \[       1m            | SET   BG color to RED                 |
-| \_\_BGG\_                                   | \[       2m            | SET   BG color to GREEN               |
-| \_\_BGY\_                                   | \[       3m            | SET   BG color to YELLOW              |
-| \_\_BGB\_                                   | \[       4m            | SET   BG color to BLUE                |
-| \_\_BGM\_                                   | \[       5m            | SET   BG color to MAGENTA             |
-| \_\_BGC\_                                   | \[       6m            | SET   BG color to CYAN                |
-| \_\_BGW\_                                   | \[       7m            | SET   BG color to WHITE               |
+| \_\_BGK\_                                | \[       0m            | SET   BG color to BLACK               |
+| \_\_BGR\_                                | \[       1m            | SET   BG color to RED                 |
+| \_\_BGG\_                                | \[       2m            | SET   BG color to GREEN               |
+| \_\_BGY\_                                | \[       3m            | SET   BG color to YELLOW              |
+| \_\_BGB\_                                | \[       4m            | SET   BG color to BLUE                |
+| \_\_BGM\_                                | \[       5m            | SET   BG color to MAGENTA             |
+| \_\_BGC\_                                | \[       6m            | SET   BG color to CYAN                |
+| \_\_BGW\_                                | \[       7m            | SET   BG color to WHITE               |
 | <reset>                                  |
-| \_\_NF\_                                    | \[       39m           | RESET FG color to term's default      |
-| \_\_NG\_                                    | \[             49m     | RESET BG color to term's default      |
-| \_\_NFG\_                                   | \[       39;   49m     | RESET FG & BG color to term's default |
+| \_\_NF\_                                 | \[       39m           | RESET FG color to term's default      |
+| \_\_NG\_                                 | \[             49m     | RESET BG color to term's default      |
+| \_\_NFG\_                                | \[       39;   49m     | RESET FG & BG color to term's default |
 | PSOEUDO(BOLD) COLORS                     |
 | <Foreground-bold>                        |
-| \_\_EMK\_                                   | \[ 1;    20m           | SET   FG color to BOLD BLACK          |
-| \_\_EMR\_                                   | \[ 1;    21m           | SET   FG color to BOLD RED            |
-| \_\_EMG\_                                   | \[ 1;    22m           | SET   FG color to BOLD GREEN          |
-| \_\_EMY\_                                   | \[ 1;    23m           | SET   FG color to BOLD YELLOW         |
-| \_\_EMB\_                                   | \[ 1;    24m           | SET   FG color to BOLD BLUE           |
-| \_\_EMM\_                                   | \[ 1;    25m           | SET   FG color to BOLD MAGENTA        |
-| \_\_EMC\_                                   | \[ 1;    26m           | SET   FG color to BOLD CYAN           |
-| \_\_EMW\_                                   | \[ 1;    27m           | SET   FG color to BOLD RED            |
+| \_\_EMK\_                                | \[ 1;    20m           | SET   FG color to BOLD BLACK          |
+| \_\_EMR\_                                | \[ 1;    21m           | SET   FG color to BOLD RED            |
+| \_\_EMG\_                                | \[ 1;    22m           | SET   FG color to BOLD GREEN          |
+| \_\_EMY\_                                | \[ 1;    23m           | SET   FG color to BOLD YELLOW         |
+| \_\_EMB\_                                | \[ 1;    24m           | SET   FG color to BOLD BLUE           |
+| \_\_EMM\_                                | \[ 1;    25m           | SET   FG color to BOLD MAGENTA        |
+| \_\_EMC\_                                | \[ 1;    26m           | SET   FG color to BOLD CYAN           |
+| \_\_EMW\_                                | \[ 1;    27m           | SET   FG color to BOLD RED            |
 | MISC (non color)                         |
-| \_\_NL\_   most compatible NEWLINE ever     |
+| \_\_NL\_   most compatible NEWLINE ever  |
 
