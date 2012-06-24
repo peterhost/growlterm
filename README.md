@@ -205,13 +205,50 @@ safely use the `--nostripansi` switch.
 
 * make it ZSH compliant (be my guest !)
 
-# Additional scripts (you could even use them!)
+## Additional scripts (you could even use them!)
 
 add 2 scripts to define TERM safe color variables : `safetermcolors8.sh`
 and `safetermcolors-addit-256.sh`
 
+Source them before yout `thme`file and use fancy variable names for
+colors
 
-##`safetermcolors-addit-256.sh`
+    . safetermcolors-addit-256.sh
+    . theme
+    . growlterm
+
+Then you can define colors in your theme with :
+
+
+    # FOREGROUND color for OPTIONNAL UNDERLINE BAR : ONE COLOR per level of IMPORTANCE
+    NO256__COLOR_FG_UNDERLINE_IMPORT_0=$__7_
+    NO256__COLOR_FG_UNDERLINE_IMPORT_1=$__7_
+    NO256__COLOR_FG_UNDERLINE_IMPORT_2=$__7_
+    NO256__COLOR_FG_UNDERLINE_IMPORT_3=$__7_
+    NO256__COLOR_FG_UNDERLINE_IMPORT_4=$__7_
+
+         __COLOR_FG_UNDERLINE_IMPORT_0=$__58_
+         __COLOR_FG_UNDERLINE_IMPORT_1=$__236_
+         __COLOR_FG_UNDERLINE_IMPORT_2=$__60_
+         __COLOR_FG_UNDERLINE_IMPORT_3=$__58_
+         __COLOR_FG_UNDERLINE_IMPORT_4=$__124_
+
+Instead of :
+
+    # FOREGROUND color for OPTIONNAL UNDERLINE BAR : ONE COLOR per level of IMPORTANCE
+    NO256__COLOR_FG_UNDERLINE_IMPORT_0=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ;
+    NO256__COLOR_FG_UNDERLINE_IMPORT_1=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ;
+    NO256__COLOR_FG_UNDERLINE_IMPORT_2=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ;
+    NO256__COLOR_FG_UNDERLINE_IMPORT_3=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ;
+    NO256__COLOR_FG_UNDERLINE_IMPORT_4=$( tput setf 7   || tput setaf 7   || : 2>/dev/null )      ;
+
+         __COLOR_FG_UNDERLINE_IMPORT_0=$( tput setf 58  || tput setaf 58  || : 2>/dev/null )      ;
+         __COLOR_FG_UNDERLINE_IMPORT_1=$( tput setf 236 || tput setaf 236 || : 2>/dev/null )      ;
+         __COLOR_FG_UNDERLINE_IMPORT_2=$( tput setf 60  || tput setaf 60  || : 2>/dev/null )      ;
+         __COLOR_FG_UNDERLINE_IMPORT_3=$( tput setf 58  || tput setaf 58  || : 2>/dev/null )      ;
+         __COLOR_FG_UNDERLINE_IMPORT_4=$( tput setf 124 || tput setaf 124 || : 2>/dev/null )      ;
+
+###`safetermcolors-addit-256.sh`
 
 In a fancy mood ? add custom variables for all 256 color range
 (foreground and background) in a safe (*in terms of `terminfo`*) way
@@ -236,7 +273,7 @@ Access a color with the following naming convention :
     #  for BACKGROUND COLOR 123
     echo $__BG123_"my message"
 
-##`safetermcolors8.sh`
+###`safetermcolors8.sh`
 
 safely (*in terms on `terminfo`*) defines the 001-015 color range, which
 exist on any TERM which has more than 2 colors capacity, plus modifiers
@@ -244,7 +281,7 @@ exist on any TERM which has more than 2 colors capacity, plus modifiers
 degrading quietly and still provide modifier styles (underline & such)
 
 
-###NOta Bene
+####NOta Bene
 
 sourcing this script exports the aditional variable
 
@@ -253,9 +290,9 @@ sourcing this script exports the aditional variable
 so that you can check later on that it's already done
 
 
-###Variable List
+####Variable List
 
-####RESETS
+#####RESETS
 | Variable NAME | tput                  | equivalent ANSI escape | Description                           |
 | ------------- | --------------------- | ---------------------- | ------------------------------------- |
 |               |                       | ATTR     FG    BG      |                                       |
@@ -264,7 +301,7 @@ so that you can check later on that it's already done
 | \_\_NG\_      | tput setb 9 / setab 9 | \[       ;     49m     | RESET BG color to term's default      |
 | \_\_NFG\_     | last 2 combined       | \[       39;   49m     | RESET FG & BG color to term's default |
 
-####STYLES
+#####STYLES
 
 | Variable NAME | tput           | equivalent ANSI escape | Description                                                   |
 | ------------- | -------------- | ---------------------- | ------------------------------------------------------------- |
@@ -280,7 +317,7 @@ so that you can check later on that it's already done
 | \_\_SOQ\_     | tput rmso      | ?\[ 27m                | END   STANDOUT      (reverse) & DOUBLE INTENSITY (bold) modes |
 | \_\_UNQ\_     | tput rmul      | \[ 24m                 | END   UNDESCORE  (underlined) mode                            |
 
-####DEFAULT SYSTEM COLORS : FOREGROUND
+#####DEFAULT SYSTEM COLORS : FOREGROUND
 
 | Variable NAME | tput                | equivalent ANSI escape | Description                |
 | ------------- | ------------------- | ---------------------- | -------------------------- |
@@ -294,7 +331,7 @@ so that you can check later on that it's already done
 | \_\_C\_       | tput (setf/setaf) 6 | \[       6m            | SET   FG color to CYAN     |
 | \_\_W\_       | tput (setf/setaf) 7 | \[       7m            | SET   FG color to WHITE    |
 
-####DEFAULT SYSTEM COLORS : FOREGROUND
+#####DEFAULT SYSTEM COLORS : FOREGROUND
 
 | Variable NAME  | tput                 | equivalent ANSI escape | Description                           |
 | -------------- | -------------------- | ---------------------- | ------------------------------------- |
@@ -308,7 +345,7 @@ so that you can check later on that it's already done
 | \_\_BGC\_      | tput  (setb/setab) 6 | \[       ;    6m       | SET   BG color to CYAN                |
 | \_\_BGW\_      | tput  (setb/setab) 7 | \[       ;    7m       | SET   BG color to WHITE               |
 
-####PSEUDO BOLD FOREGROUND COLORS
+#####PSEUDO BOLD FOREGROUND COLORS
 
 | Variable NAME  | tput               | equivalent ANSI escape | Description                           |
 | -------------- | ------------------ | ---------------------- | ------------------------------------- |
@@ -322,7 +359,7 @@ so that you can check later on that it's already done
 | \_\_EMC\_      | ...                | \[ 1;    26m           | set   fg color to BOLD CYAN           |
 | \_\_EMW\_      | ...                | \[ 1;    27m           | set   fg color to BOLD RED            |
 
-####NEWLINE
+#####NEWLINE
 
 | Variable NAME  | tput           | Description                           |
 | -------------- | -------------- | ------------------------------------- |
