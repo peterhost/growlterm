@@ -112,7 +112,7 @@ terminates
 
     # (...)
 
-    #UPDATE RUBYGEMS
+    #UPDATE HOMEBREW
     (
       # Bail if another process is already updationg HOMEBREW
       [ -z "$(ps auxw | grep -v grep | grep -i 'brew update')" ] && {
