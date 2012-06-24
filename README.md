@@ -9,6 +9,21 @@ growl-like notifications for your terminal
 ![Growl-like notifications for your Terminal](https://github.com/peterhost/growlterm/raw/master/img/growlterm-error.png)
 
 
+##Idea
+
+* Is not a new one.
+* Graphic design of top statusbar shamelessly duplicates (or attempts to) 
+  copy **Kim Silkebækken**'s awesome [Vim-Powerline](https://github.com/Lokaltog/vim-powerline) 
+  plugin for `Vim`.
+* Is something I've used for 2 years on my `GIT for bash prompt` plugin (called
+  [bash-artify](https://github.com/peterhost/bash-tartify), go check it out, it's showing
+  in the screen captures below) :
+        * keep some infos in the prompt
+        * display parts of the prompt somewhere else on the screen (prefered by 
+          yours truly being "right edge of terminal, same line as prompt)
+        * adapt to 2liners or 3liners prompts
+* I've externalised that part from the Tartify Plugin, did a lot of reworking and added
+  my clone for Bash of `Vim-Powerline`.
 
 ##Installation
 
