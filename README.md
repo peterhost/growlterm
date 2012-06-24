@@ -256,73 +256,74 @@ so that you can check later on that it's already done
 ###Variable List
 
 ####RESETS
-| Variable NAME                            | equivalent ANSI escape | Description                           |
-| :--------------------------------------- | ---------------------- | ------------------------------------: |
-|                                          | ATTR   FG   BG         |                                       |
-| \_\_NN\_                                 | \[ 0m                  | RESET ALL attributes                  |
-| \_\_NF\_                                 | \[       39m           | RESET FG color to term's default      |
-| \_\_NG\_                                 | \[             49m     | RESET BG color to term's default      |
-| \_\_NFG\_                                | \[       39;   49m     | RESET FG & BG color to term's default |
+| Variable NAME | tput                  | equivalent ANSI escape | Description                           |
+| ------------- | --------------------- | ---------------------- | ------------------------------------- |
+|               |                       | ATTR     FG    BG      |                                       |
+| \_\_NN\_      | tput sgr0             | \[ 0m                  | RESET ALL attributes                  |
+| \_\_NF\_      | tput setf 9 / setaf 9 | \[       39m           | RESET FG color to term's default      |
+| \_\_NG\_      | tput setb 9 / setab 9 | \[       ;     49m     | RESET BG color to term's default      |
+| \_\_NFG\_     | last 2 combined       | \[       39;   49m     | RESET FG & BG color to term's default |
 
 ####STYLES
 
-| \_\_EM\_                                 | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode    |
-| \_\_DM\_                                 | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode    |
-| \_\_UN\_                                 | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode    |
-| \_\_BL\_                                 | \[ 5m                  | BEGIN BLINKING                mode    |
-| \_\_RV\_                                 | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode    |
-| \_\_SO\_                                 | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode    |
-| \_\_IN\_                                 | \[ 8m                  | BEGIN INVISIBLE               mode    |
-| \_\_DEL\_                                |                        | MOVE cursor LEFT one space            |
-| \_\_SOQ\_                                | ?\[ 27m                | END   STANDOUT      (reverse) mode    |
-| \_\_UNQ\_                                | \[ 24m                 | END   UNDESCORE  (underlined) mode    |
+| Variable NAME | tput           | equivalent ANSI escape | Description                                                   |
+| ------------- | -------------- | ---------------------- | ------------------------------------------------------------- |
+|               |                | ATTR   FG   BG         |                                                               |
+| \_\_EM\_      | tput bold      | \[ 1m                  | BEGIN DOUBLE INTENSITY (bold) mode                            |
+| \_\_DM\_      | tput dim       | \[ 2m                  | BEGIN HALF INTENSITY    (dim) mode                            |
+| \_\_UN\_      | tput smul      | \[ 4m                  | BEGIN UNDESCORE  (underlined) mode                            |
+| \_\_BL\_      | tput blink     | \[ 5m                  | BEGIN BLINKING                mode                            |
+| \_\_RV\_      | tput rev       | \[ 7m                  | BEGIN REVERSE VIDEO (reverse) mode                            |
+| \_\_SO\_      | tput smso      | ?\[ 7m                 | BEGIN STANDOUT      (reverse) mode                            |
+| \_\_IN\_      | tput invis     | \[ 8m                  | BEGIN INVISIBLE               mode                            |
+| \_\_DEL\_     | tput cub1      |                        | MOVE cursor LEFT one space                                    |
+| \_\_SOQ\_     | tput rmso      | ?\[ 27m                | END   STANDOUT      (reverse) & DOUBLE INTENSITY (bold) modes |
+| \_\_UNQ\_     | tput rmul      | \[ 24m                 | END   UNDESCORE  (underlined) mode                            |
 
 ####DEFAULT SYSTEM COLORS : FOREGROUND
 
-| Variable NAME                            | equivalent ANSI escape | Description                           |
-| :--------------------------------------- | ---------------------- | ------------------------------------: |
-|                                          | ATTR   FG   BG         |                                       |
-| \_\_K\_                                  | \[       0m            | SET   FG color to BLACK               |
-| \_\_R\_                                  | \[       1m            | SET   FG color to RED                 |
-| \_\_G\_                                  | \[       2m            | SET   FG color to GREEN               |
-| \_\_Y\_                                  | \[       3m            | SET   FG color to YELLOW              |
-| \_\_B\_                                  | \[       4m            | SET   FG color to BLUE                |
-| \_\_M\_                                  | \[       5m            | SET   FG color to MAGENTA             |
-| \_\_C\_                                  | \[       6m            | SET   FG color to CYAN                |
-| \_\_W\_                                  | \[       7m            | SET   FG color to WHITE               |
+| Variable NAME | tput                | equivalent ANSI escape | Description                |
+| ------------- | ------------------- | ---------------------- | -------------------------- |
+|               |                     | ATTR     FG   BG       |                            |
+| \_\_K\_       | tput (setf/setaf) 0 | \[       0m            | SET   FG color to BLACK    |
+| \_\_R\_       | tput (setf/setaf) 1 | \[       1m            | SET   FG color to RED      |
+| \_\_G\_       | tput (setf/setaf) 2 | \[       2m            | SET   FG color to GREEN    |
+| \_\_Y\_       | tput (setf/setaf) 3 | \[       3m            | SET   FG color to YELLOW   |
+| \_\_B\_       | tput (setf/setaf) 4 | \[       4m            | SET   FG color to BLUE     |
+| \_\_M\_       | tput (setf/setaf) 5 | \[       5m            | SET   FG color to MAGENTA  |
+| \_\_C\_       | tput (setf/setaf) 6 | \[       6m            | SET   FG color to CYAN     |
+| \_\_W\_       | tput (setf/setaf) 7 | \[       7m            | SET   FG color to WHITE    |
 
 ####DEFAULT SYSTEM COLORS : FOREGROUND
 
-|                                          | ATTR   FG   BG         |                                       |
-| :--------------------------------------- | ---------------------- | ------------------------------------: |
-| Variable NAME                            | equivalent ANSI escape | Description                           |
-| \_\_BGK\_                                | \[       0m            | SET   BG color to BLACK               |
-| \_\_BGR\_                                | \[       1m            | SET   BG color to RED                 |
-| \_\_BGG\_                                | \[       2m            | SET   BG color to GREEN               |
-| \_\_BGY\_                                | \[       3m            | SET   BG color to YELLOW              |
-| \_\_BGB\_                                | \[       4m            | SET   BG color to BLUE                |
-| \_\_BGM\_                                | \[       5m            | SET   BG color to MAGENTA             |
-| \_\_BGC\_                                | \[       6m            | SET   BG color to CYAN                |
-| \_\_BGW\_                                | \[       7m            | SET   BG color to WHITE               |
+| Variable NAME  | tput                 | equivalent ANSI escape | Description                           |
+| -------------- | -------------------- | ---------------------- | ------------------------------------- |
+|                |                      | ATTR     FG   BG       |                                       |
+| \_\_BGK\_      | tput  (setb/setab) 0 | \[       ;    0m       | SET   BG color to BLACK               |
+| \_\_BGR\_      | tput  (setb/setab) 1 | \[       ;    1m       | SET   BG color to RED                 |
+| \_\_BGG\_      | tput  (setb/setab) 2 | \[       ;    2m       | SET   BG color to GREEN               |
+| \_\_BGY\_      | tput  (setb/setab) 3 | \[       ;    3m       | SET   BG color to YELLOW              |
+| \_\_BGB\_      | tput  (setb/setab) 4 | \[       ;    4m       | SET   BG color to BLUE                |
+| \_\_BGM\_      | tput  (setb/setab) 5 | \[       ;    5m       | SET   BG color to MAGENTA             |
+| \_\_BGC\_      | tput  (setb/setab) 6 | \[       ;    6m       | SET   BG color to CYAN                |
+| \_\_BGW\_      | tput  (setb/setab) 7 | \[       ;    7m       | SET   BG color to WHITE               |
 
 ####PSEUDO BOLD FOREGROUND COLORS
 
-| Variable NAME                            | equivalent ANSI escape | Description                           |
-| :--------------------------------------- | ---------------------- | ------------------------------------: |
-|                                          | ATTR   FG   BG         |                                       |
-| \_\_EMK\_                                | \[ 1;    20m           | SET   FG color to BOLD BLACK          |
-| \_\_EMR\_                                | \[ 1;    21m           | SET   FG color to BOLD RED            |
-| \_\_EMG\_                                | \[ 1;    22m           | SET   FG color to BOLD GREEN          |
-| \_\_EMY\_                                | \[ 1;    23m           | SET   FG color to BOLD YELLOW         |
-| \_\_EMB\_                                | \[ 1;    24m           | SET   FG color to BOLD BLUE           |
-| \_\_EMM\_                                | \[ 1;    25m           | SET   FG color to BOLD MAGENTA        |
-| \_\_EMC\_                                | \[ 1;    26m           | SET   FG color to BOLD CYAN           |
-| \_\_EMW\_                                | \[ 1;    27m           | SET   FG color to BOLD RED            |
+| Variable NAME  | tput               | equivalent ANSI escape | Description                           |
+| -------------- | ------------------ | ---------------------- | ------------------------------------- |
+|                | tput bold; tput... | ATTR     FG    BG      |                                       |
+| \_\_EMK\_      | ...                | \[ 1;    20m           | set   fg color to BOLD BLACK          |
+| \_\_EMR\_      | ...                | \[ 1;    21m           | set   fg color to BOLD RED            |
+| \_\_EMG\_      | ...                | \[ 1;    22m           | set   fg color to BOLD GREEN          |
+| \_\_EMY\_      | ...                | \[ 1;    23m           | set   fg color to BOLD YELLOW         |
+| \_\_EMB\_      | ...                | \[ 1;    24m           | set   fg color to BOLD BLUE           |
+| \_\_EMM\_      | ...                | \[ 1;    25m           | set   fg color to BOLD MAGENTA        |
+| \_\_EMC\_      | ...                | \[ 1;    26m           | set   fg color to BOLD CYAN           |
+| \_\_EMW\_      | ...                | \[ 1;    27m           | set   fg color to BOLD RED            |
 
 ####NEWLINE
 
-| Variable NAME                            | Description                           |
-|                                          |                                       |
-| :--------------------------------------- | ------------------------------------: |
-| \_\_NL\_                                 | most compatible NEWLINE ever          |
-
+| Variable NAME  | tput           | Description                           |
+| -------------- | -------------- | ------------------------------------- |
+| \_\_NL\_       | tput           | most compatible NEWLINE ever          |
