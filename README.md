@@ -248,7 +248,7 @@ degrading quietly and still provide modifier styles (underline & such)
 
 sourcing this script exports the aditional variable
 
-    export \_\_TPUT_COLORS_DEFINED="true"
+    export __TPUT_COLORS_DEFINED="true"
 
 so that you can check later on that it's already done
 
@@ -257,8 +257,8 @@ so that you can check later on that it's already done
 
 ####RESETS
 | Variable NAME                            | equivalent ANSI escape | Description                           |
-|                                          | ATTR   FG   BG         |                                       |
 | :--------------------------------------- | ---------------------- | ------------------------------------: |
+|                                          | ATTR   FG   BG         |                                       |
 | \_\_NN\_                                 | \[ 0m                  | RESET ALL attributes                  |
 | \_\_NF\_                                 | \[       39m           | RESET FG color to term's default      |
 | \_\_NG\_                                 | \[             49m     | RESET BG color to term's default      |
@@ -280,8 +280,8 @@ so that you can check later on that it's already done
 ####DEFAULT SYSTEM COLORS : FOREGROUND
 
 | Variable NAME                            | equivalent ANSI escape | Description                           |
-|                                          | ATTR   FG   BG         |                                       |
 | :--------------------------------------- | ---------------------- | ------------------------------------: |
+|                                          | ATTR   FG   BG         |                                       |
 | \_\_K\_                                  | \[       0m            | SET   FG color to BLACK               |
 | \_\_R\_                                  | \[       1m            | SET   FG color to RED                 |
 | \_\_G\_                                  | \[       2m            | SET   FG color to GREEN               |
@@ -293,9 +293,9 @@ so that you can check later on that it's already done
 
 ####DEFAULT SYSTEM COLORS : FOREGROUND
 
-| Variable NAME                            | equivalent ANSI escape | Description                           |
 |                                          | ATTR   FG   BG         |                                       |
 | :--------------------------------------- | ---------------------- | ------------------------------------: |
+| Variable NAME                            | equivalent ANSI escape | Description                           |
 | \_\_BGK\_                                | \[       0m            | SET   BG color to BLACK               |
 | \_\_BGR\_                                | \[       1m            | SET   BG color to RED                 |
 | \_\_BGG\_                                | \[       2m            | SET   BG color to GREEN               |
@@ -308,8 +308,8 @@ so that you can check later on that it's already done
 ####PSEUDO BOLD FOREGROUND COLORS
 
 | Variable NAME                            | equivalent ANSI escape | Description                           |
-|                                          | ATTR   FG   BG         |                                       |
 | :--------------------------------------- | ---------------------- | ------------------------------------: |
+|                                          | ATTR   FG   BG         |                                       |
 | \_\_EMK\_                                | \[ 1;    20m           | SET   FG color to BOLD BLACK          |
 | \_\_EMR\_                                | \[ 1;    21m           | SET   FG color to BOLD RED            |
 | \_\_EMG\_                                | \[ 1;    22m           | SET   FG color to BOLD GREEN          |
