@@ -16,20 +16,23 @@ growl-like notifications for your terminal
   copy **Kim Silkebækken**'s awesome [Vim-Powerline](https://github.com/Lokaltog/vim-powerline) 
   plugin for `Vim`.
 * Is something I've used for 2 years on my `GIT for bash prompt` plugin (called
-  [bash-artify](https://github.com/peterhost/bash-tartify), go check it out, it's showing
+  [bash-tartify](https://github.com/peterhost/bash-tartify), go check it out, it's showing
   in the screen captures below) :
-        * keep some infos in the prompt
-        * display parts of the prompt somewhere else on the screen (prefered by 
-          yours truly being "right edge of terminal, same line as prompt)
-        * adapt to 2liners or 3liners prompts
-* I've externalised that part from the Tartify Plugin, did a lot of reworking and added
-  my clone for Bash of `Vim-Powerline`.
+     * keep some infos in the prompt
+     * display parts of the prompt somewhere else on the screen (prefered by 
+       yours truly being "right edge of terminal, same line as prompt)
+     * by so doing, never Fuck your Prompt up
+     * adapt to 2liners or 3liners prompts
+* I've externalised that part from the [bash-tartify](https://github.com/peterhost/bash-tartify)
+  Plugin, did a lot of reworking and added
+  my clone for Bash of `Vim-Powerline`, as a Handy notification
+  statusbar.
 
 ##Installation
 
 Just copy the `growlterm`script somewhere and source it in your
 `.bashrc` (didn't test other shells for now). It should work out of the
-box.
+box.,bv
 
     $ . growlterm
     $ growlterm --message "hey there, dinner's ready ! " -from "your (Girl/Boy)friend"
@@ -49,6 +52,130 @@ source it prior to sourcing `grouwlterm`
     $ growlterm -h
 
 ![Growlterm Documentation](https://github.com/peterhost/growlterm/raw/master/img/growlterm-help.png)
+
+
+##Examples
+
+###Background Job inside your BASHRC
+
+####1. Old Way
+> Notify me on job end (usefull at shell-loading time)
+
+> Note the >/dev/null 2>&1, a poor man's attempt to quiet down the
+background job on error. Result is, some time later...
+
+    . mytheme
+    . growlterm
+
+    # (...)
+
+    # UPDATE RUBYGEMS IN THE BACKGROUND, USUAL WAY
+    $ rvm rubygems current >/dev/null 2>&1 &
+    [1] 65272
+    $ ls
+    README.md colorscripts growlterm.sh img themes
+    #
+    # Some Time Later
+    # 
+    $ ls
+    [1]+ Done rvm rubygems current > /dev/null 2>&1
+    README.md colorscripts growlterm.sh img themes
+
+1. It does only quiet down STDIN/STDOUT output for background job
+2. You still get these notifications amidst your prompt when job
+terminates
+
+####2. Entomb/Burry it all
+
+    . mytheme
+    . growlterm
+
+    # (...)
+
+    # UPDATE RUBYGEMS IN THE BACKGROUND, FUCK-OFF WAY
+    $ (rvm rubygems current &) >/dev/null 2>&1
+    $ ls
+    README.md colorscripts growlterm.sh img themes
+    #
+    # Some Time Later
+    # 
+    $ ls
+    README.md colorscripts growlterm.sh img themes
+
+1. No notification at all AT ALL
+
+####3. New Way
+
+
+    . mytheme
+    . growlterm
+
+    # (...)
+
+    #UPDATE RUBYGEMS
+    (
+      # Bail if another process is already updationg HOMEBREW
+      [ -z "$(ps auxw | grep -v grep | grep -i 'brew update')" ] && {
+
+        brew update >/dev/null 2>&1  && { 
+          growlterm -i 1 -m "homebrew updated" -f "HOMEBREW" -u
+        } || {
+          growlterm -i 3 -m "error updating homebrew (maybe not installed ?)" -f  "HOMEBREW" -u
+        } &
+
+      } || growlterm -i 2 -m "homebrew already being updated by another process... Aborting" -f  "HOMEBREW" -u
+    )
+
+
+1. you still get notified
+2. but not under your cursor
+3. It's so Geeky it almost makes you cry
+
+###Inception : background Job inside your scripts (IE : subshell inside a subshell inside a ....)
+
+Replace in your Bashrc
+
+    . mytheme
+    . growlterm
+
+    # (...)
+
+with
+
+    . mytheme
+    . growlterm
+    export -f __growltermUsage; export -f __growltermHelpmsg;
+    export -f __growltermShortUsage; export -f __growltermVersion
+    export -f __growltermParseOpts; export -f __growltermAdditLines
+    export -f __growltermDefaultTheme; # or yours
+    export -f growlterm
+
+    # (...)
+
+
+## Drawbacks
+
+Major drawback is that these messages pollute your screen. They override
+whatever was under them before they popped out. If you wish to minimize
+this effect, you can use growlterm with option :
+
+    --position 1 (or2 or 3)
+    --position 0
+
+I didn't find any satisfying solution for this problem :
+
+>1) it's easy enough to save the TERMINAL window's state, print something
+  somewhere, then erase it by restoring the TERMINAL window's state
+
+    tput sc; # Save current cursor position
+    # do things
+    tput rc; # Restore to saved state
+
+>2) Only this affects the whole screen, and if you wish to leave
+  the message on screen long enough for the user to read it,then erase
+  it, then the TERMINAL window's state most probably has changed
+  (or you hit enter) and the `tput rc` fucks up. Terminals are not
+  `POST PC ERA` devices ^^
 
 ## Dependancies
 
