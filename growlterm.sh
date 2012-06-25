@@ -43,7 +43,8 @@ __growltermHelpmsg(){
   local __UN_=$( tput smul   || : 2>/dev/null                 ) #   BEGIN UNDESCORE  (underlined) mode
   local __UNQ_=$( tput rmul  || : 2>/dev/null                 ) #   END   UNDESCORE  (underlined) mode
 
-echo "
+  cat <<HELPTEXT
+
 ${__EM_}NAME : GROWLTERM${__UNQ_} - notifications for your terminal
 
 ${__EM_}EXAMPLE USAGE :${__UNQ_} growlterm  -m \"mymessage\" -f \"GIT\" -i 2
@@ -140,8 +141,8 @@ ${__EM_}FOLLOWING OPTIONS ONLY USED with  FANCY MENU : --position 10${__UNQ_}
        Only reason to use this switch is if Perl is not installed on your
        system, or gives you annoying messages
 
+HELPTEXT
 
-"
 
 
 
