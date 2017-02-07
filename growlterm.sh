@@ -202,7 +202,7 @@ __growltermParseOpts(){
   #echo "__menupos = $__menupos"
   # check that it's an integer
   declare -i  "tmpvar=$__menupos" 2>/dev/null             || { echo "ERROR : --position has to be an integer"                              ; __growltermShortUsage ; return 1 ; }
-  [ "$__menupos" -gt 10 ] || [ "$__menupos" -lt 0 ]           && { echo "ERROR : valid values for --position are 0,1,2,3,4,5,6,7,8,9,10" ; __growltermShortUsage ; return 1 ; }
+  [ "$__menupos" -gt "10" ] || [ "$__menupos" -lt "0" ]           && { echo "ERROR : valid values for --position are 0,1,2,3,4,5,6,7,8,9,10" ; __growltermShortUsage ; return 1 ; }
 
 
   # --importance
@@ -210,7 +210,7 @@ __growltermParseOpts(){
   #echo "__importance = $__importance"
   # check that it's an integer
   declare -i  "tmpvar=$__importance" 2>/dev/null          || { echo "ERROR : --importance has to be an integer"                            ; __growltermShortUsage ; return 1 ; }
-  [ 4 -lt "$__importance" ] || [ 0 -gt "$__importance" ]  && { echo "ERROR : valid values for --importance are 0,1,2,3,4"                  ; __growltermShortUsage ; return 1 ; }
+  [ "4" -lt "$__importance" ] || [ "0" -gt "$__importance" ]  && { echo "ERROR : valid values for --importance are 0,1,2,3,4"                  ; __growltermShortUsage ; return 1 ; }
 
 
   return 0
@@ -222,12 +222,12 @@ __growltermAdditLines() {
   #DYNAMIC SCOPE !
 
   [ -z "$additLines" ] || {
-    [ 2 -le $additLines ] && {
+    [ "2" -le $additLines ] && {
     tput cup $(($firstL - 2)) $firstC;
       printf "%s" "$__NN_$blankLine";
     }
 
-    [ 1 -le $additLines ] && {
+    [ "1" -le $additLines ] && {
     tput cup $(($firstL - 1)) $firstC;
       printf "%s" "$__NN_$blankLine";
     }
@@ -875,7 +875,7 @@ growlterm ()
   #---------------------------------------------------------------------
   # take care of non UTF-8 terminals
   locale >/dev/null 2>&1
-  [ $? = 0 ] && locale | grep -i utf-8 >/dev/null 2>&1 && __supports8="true"
+  [ "$?" = "0" ] && locale | grep -i utf-8 >/dev/null 2>&1 && __supports8="true"
 
   #---------------------------------------------------------------------
   # don't load default theme in case a user defined theme is already loaded
@@ -884,7 +884,7 @@ growlterm ()
 
   #---------------------------------------------------------------------
   # DETERMINE VARIABLE PREFIXES
-  [ 256 = "$(tput colors)" ]  || __colorPrefix="NO256"
+  [ "256" = "$(tput colors)" ]  || __colorPrefix="NO256"
   [ "true" = "$__supports8" ] || __UTFprefix="NO8"
 
   #---------------------------------------------------------------------
@@ -1000,7 +1000,7 @@ growlterm ()
     local __filler2=
 
     sttysize=$(stty size 2>/dev/null)
-    [ $? -eq 0 ]  && {
+    [ "$?" -eq "0" ]  && {
       nlines=${sttysize%% *}
       ncol=${sttysize##* }
     } || {
@@ -1124,7 +1124,7 @@ growlterm ()
       __msg="$__mystring"
       __strlen="${#__mystring}"
 
-      if [ $__strlen -gt $__remainmain ]; then
+      if [ "$__strlen" -gt "$__remainmain" ]; then
       # STRING TOO LONG ?
 
         # TRIM IT !
@@ -1141,12 +1141,12 @@ growlterm ()
         # and the remainder if ODD result
         __strlenremain="$((  $(($__remainmain - ${#__msg} )) % 2))"; # remainder : 0 or 1
 
-        [ $__strlendiv2 -gt 0 ] && {
+        [ "$__strlendiv2" -gt "0" ] && {
           __filler="$(head -c $__strlendiv2 < /dev/zero | tr '\0' ' ')"
           __msg="$__filler$__msg$__filler"
         }
 
-        [ $__strlenremain = 1 ] && {
+        [ "$__strlenremain" = "1" ] && {
           # add one space
           __msg="$__msg"" "
         }
